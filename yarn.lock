@@ -13539,9 +13539,9 @@ strip-indent@^1.0.1:
     get-stdin "^4.0.1"
 
 strip-json-comments@^3.0.1, strip-json-comments@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.0.tgz#7638d31422129ecf4457440009fba03f9f9ac180"
-  integrity sha512-e6/d0eBu7gHtdCqFt0xJr642LdToM5/cN4Qb9DbHjVx1CP5RyeM+zH7pbecEmDv/lBqb0QH+6Uqq75rxFPkM0w==
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
+  integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
 strip-json-comments@~2.0.1:
   version "2.0.1"
@@ -14114,11 +14114,6 @@ typeface-dm-sans@^1.1.3:
   resolved "https://registry.yarnpkg.com/typeface-dm-sans/-/typeface-dm-sans-1.1.3.tgz#bf955060c7b16ac9f360b1692acf2b0e66e9ac11"
   integrity sha512-ejUMYBGVp7RIIm4w1KaTaOE01JXFv7ChV5QQmVjqWzLZaXte6bZDBaAjGGizW0lmRrphzjZ3MQxjn+KV2RLA/Q==
 
-typeface-ibm-plex-sans@^0.0.75:
-  version "0.0.75"
-  resolved "https://registry.yarnpkg.com/typeface-ibm-plex-sans/-/typeface-ibm-plex-sans-0.0.75.tgz#47fffee4b9004e9d22300ed99bb679cbeed5c6ff"
-  integrity sha512-IBxDEt5r0Xo5EshGBb1CR1ec3ApNI0jK0o2gSGNZIoKml9q99a/Qcbb8u8IK0x/M+nso8FzcMW03Hz6gSfCIAg==
-
 typescript@^3.9.6:
   version "3.9.6"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.6.tgz#8f3e0198a34c3ae17091b35571d3afd31999365a"
@@ -14384,9 +14379,9 @@ unist-util-visit-parents@^2.0.0, unist-util-visit-parents@^2.1.2:
     unist-util-is "^3.0.0"
 
 unist-util-visit-parents@^3.0.0:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-3.0.2.tgz#d4076af3011739c71d2ce99d05de37d545f4351d"
-  integrity sha512-yJEfuZtzFpQmg1OSCyS9M5NJRrln/9FbYosH3iW0MG402QbdbaB8ZESwUv9RO6nRfLAKvWcMxCwdLWOov36x/g==
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-3.1.0.tgz#4dd262fb9dcfe44f297d53e882fc6ff3421173d5"
+  integrity sha512-0g4wbluTF93npyPrp/ymd3tCDTMnP0yo2akFD2FIBAYXq/Sga3lwaU1D8OYKbtpioaI6CkDcQ6fsMnmtzt7htw==
   dependencies:
     "@types/unist" "^2.0.0"
     unist-util-is "^4.0.0"
