@@ -2,26 +2,25 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /** @jsx jsx */
 import React from "react";
-import { jsx, Link as TLink } from "theme-ui";
+import { jsx, Flex, Link as TLink } from "theme-ui";
 import { Link } from "gatsby";
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
 import replaceSlashes from "../utils/replaceSlashes";
+import { SystemStyleObject } from "@styled-system/css";
 
 type NavigationProps = {
-  nav: {
-    title: string;
-    slug: string;
-  }[];
+  // empty
 };
 
-const Navigation = ({ nav }: NavigationProps) => {
-  const { basePath } = useMinimalBlogConfig();
+export const Navigation = () => {
+  const { basePath, navigation } = useMinimalBlogConfig();
 
   return (
     <React.Fragment>
-      {nav && nav.length > 0 && (
-        <nav sx={{ "a:not(:last-of-type)": { mr: 3 }, fontSize: [1, `18px`], ".active": { color: `heading` } }}>
-          {nav.map((item) => (
+      {navigation && navigation.length > 0 && (
+        <nav sx={sxNav}>
+          {/* <nav sx={{ "a:not(:last-of-type)": { mr: 3 }, fontSize: [1, `18px`], ".active": { color: `heading` } }}> */}
+          {navigation.map((item) => (
             // @ts-ignore
             <TLink key={item.slug} as={Link} activeClassName="active" to={replaceSlashes(`/${basePath}/${item.slug}`)}>
               {item.title}
@@ -32,5 +31,18 @@ const Navigation = ({ nav }: NavigationProps) => {
     </React.Fragment>
   );
 };
-
 export default Navigation;
+
+/**
+ * Styles
+ */
+
+const sxNav: SystemStyleObject = {
+  flex: "1 1 auto",
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "center",
+  overflow: "hidden",
+  border: "2px dashed mediumspringgreen",
+  height: "100%",
+};

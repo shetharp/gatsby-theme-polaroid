@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /** @jsx jsx */
 import React, { useCallback, useState, useRef } from "react";
-import { jsx, useColorMode } from "theme-ui";
+import { jsx, useThemeUI } from "theme-ui";
 import { Flex } from "@theme-ui/components";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import { SystemStyleObject } from "@styled-system/css";
 import ColorModeToggle from "./colormode-toggle";
 import Navigation from "./navigation";
 import HeaderTitle from "./header-title";
@@ -28,10 +29,11 @@ export type HeaderProps = {
  * Use `aria-label='Toggle Menu'`
  * https://negomi.github.io/react-burger-menu/
  * https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
+ *
+ * TODO: Use <HeaderExternalLinks /> or refactor it (possibly for the Footer)
  */
 export const Header: React.FC<HeaderProps> = (props) => {
-  const { navigation: nav } = useMinimalBlogConfig();
-  const [colorMode, setColorMode] = useColorMode();
+  const { theme, colorMode, setColorMode } = useThemeUI();
   const [isVisible, setIsVisible] = useState(true);
   const [isFixed, setIsFixed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -71,18 +73,17 @@ export const Header: React.FC<HeaderProps> = (props) => {
         wrapperStyle={{
           position: props.isTransparent ? "absolute" : "relative",
           width: "100%",
+          // @ts-ignore
+          zIndex: theme.zIndices && theme.zIndices["header"] ? theme.zIndices["header"] : 999,
         }}
       >
         <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false)}>
-          <Flex sx={sxFlex}>
-            <HeaderTitle />
+          <HeaderTitle />
+          <Navigation />
+          <Flex>
             <ColorModeToggle isDark={isDarkMode} toggle={toggleColorMode} />
             <img src={iMenuDark} alt="Toggle Menu" width={32} onClick={() => toggleHeaderMenu(!isOpen)} />
           </Flex>
-          <div sx={sxDiv}>
-            <Navigation nav={nav} />
-            <HeaderExternalLinks />
-          </div>
         </header>
       </Headroom>
 
@@ -96,23 +97,15 @@ export default Header;
  * Styles
  */
 
-const sxHeader = (isVisible: boolean, isFixed: boolean, isTransparent: boolean) => ({
-  outline: `4px solid mediumslateblue`, // TODO Remove
-  backgroundColor: !isFixed && isTransparent ? `transparent` : `background`,
+const sxHeader = (isVisible: boolean, isFixed: boolean, isTransparent: boolean): SystemStyleObject => ({
+  outline: "4px solid mediumslateblue", // TODO Remove
+  backgroundColor: !isFixed && isTransparent ? "transparent" : "background",
   opacity: isVisible ? 1 : 0,
-  transition: `all 300ms ease`,
+  display: "flex",
+  justifyContent: "space-between",
+  flexWrap: "nowrap",
+  alignItems: "center",
+  height: ["48", null, null, null, "64", null, null, "80"],
+  width: "100%",
+  transition: "all 300ms ease",
 });
-
-const sxFlex = { alignItems: `center`, justifyContent: `space-between` };
-
-const sxDiv = {
-  boxSizing: `border-box`,
-  display: `flex`,
-  variant: `dividers.bottom`,
-  alignItems: `center`,
-  justifyContent: `space-between`,
-  mt: 3,
-  color: `secondary`,
-  a: { color: `secondary`, ":hover": { color: `heading` } },
-  flexFlow: `wrap`,
-};

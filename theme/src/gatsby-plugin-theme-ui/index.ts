@@ -135,7 +135,9 @@ const sizes: ThemePolaroid["sizes"] = {
   screenWidth: "100vw",
 };
 
-const zIndices: ThemePolaroid["zIndices"] = {};
+const zIndices: ThemePolaroid["zIndices"] = {
+  header: 999,
+};
 
 // ==================================================
 // Theme scale > Borders

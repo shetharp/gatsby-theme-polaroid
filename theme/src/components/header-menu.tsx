@@ -53,7 +53,7 @@ const sxNav = (isOpen: boolean): SystemStyleObject => ({
   padding: 3,
   position: "fixed",
   top: 0,
-  left: 0,
-  transform: isOpen ? "translateX(0)" : "translateX(-100%)",
+  right: 0,
+  transform: isOpen ? "translateX(0)" : "translateX(100%)",
   transition: "transform 300ms ease-in-out",
 });
