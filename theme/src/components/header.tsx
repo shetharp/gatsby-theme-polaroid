@@ -8,7 +8,7 @@ import Navigation from "./navigation";
 import HeaderTitle from "./header-title";
 import HeaderExternalLinks from "./header-external-links";
 import Headroom from "react-headroom";
-import Menu from "./menu";
+import ToggleMenu from "./toggle-menu";
 import iMenuDark from "../assets/i-menu-dark.svg";
 import iMenuLight from "../assets/i-menu-light.svg";
 import iCloseDark from "../assets/i-close-dark.svg";
@@ -32,6 +32,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
   const [colorMode, setColorMode] = useColorMode();
   const [isVisible, setIsVisible] = useState(true);
   const [isFixed, setIsFixed] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const isDarkMode = colorMode === `dark`;
 
   const toggleColorMode = (e: React.MouseEvent) => {
@@ -40,34 +41,38 @@ export const Header: React.FC<HeaderProps> = (props) => {
   };
 
   return (
-    <Headroom
-      onPin={() => {
-        setIsVisible(true);
-        setIsFixed(true);
-      }}
-      onUnpin={() => {
-        setIsVisible(false);
-      }}
-      onUnfix={() => {
-        setIsFixed(false);
-      }}
-      wrapperStyle={{
-        position: props.isTransparent ? "absolute" : "relative",
-        width: "100%",
-      }}
-    >
-      <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false)}>
-        <Flex sx={sxFlex}>
-          <HeaderTitle />
-          <ColorModeToggle isDark={isDarkMode} toggle={toggleColorMode} />
-          <img src={iMenuDark} alt="Toggle Menu" width={32} />
-        </Flex>
-        <div sx={sxDiv}>
-          <Navigation nav={nav} />
-          <HeaderExternalLinks />
-        </div>
-      </header>
-    </Headroom>
+    <React.Fragment>
+      <Headroom
+        onPin={() => {
+          setIsVisible(true);
+          setIsFixed(true);
+        }}
+        onUnpin={() => {
+          setIsVisible(false);
+        }}
+        onUnfix={() => {
+          setIsFixed(false);
+        }}
+        wrapperStyle={{
+          position: props.isTransparent ? "absolute" : "relative",
+          width: "100%",
+        }}
+      >
+        <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false)}>
+          <Flex sx={sxFlex}>
+            <HeaderTitle />
+            <ColorModeToggle isDark={isDarkMode} toggle={toggleColorMode} />
+            <img src={iMenuDark} alt="Toggle Menu" width={32} onClick={() => setIsOpen(!isOpen)} />
+          </Flex>
+          <div sx={sxDiv}>
+            <Navigation nav={nav} />
+            <HeaderExternalLinks />
+          </div>
+        </header>
+      </Headroom>
+
+      <ToggleMenu isOpen={isOpen} />
+    </React.Fragment>
   );
 };
 export default Header;

@@ -9,7 +9,7 @@ import Footer from "./footer";
 import CodeStyles from "../styles/code";
 import SkipNavLink from "./skip-nav";
 
-type LayoutProps = {
+export type LayoutProps = {
   className?: string;
 };
 

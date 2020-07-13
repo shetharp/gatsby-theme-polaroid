@@ -4,7 +4,7 @@ import React from "react";
 import { jsx, Link } from "theme-ui";
 import useSiteMetadata from "../hooks/use-site-metadata";
 
-type FooterProps = {
+export type FooterProps = {
   // empty
 };
 
