@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useRef } from "react";
+import React, { useCallback, useState, useRef } from "react";
 import { jsx, useColorMode } from "theme-ui";
 import { Flex } from "@theme-ui/components";
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
@@ -10,6 +10,7 @@ import HeaderExternalLinks from "./header-external-links";
 import Headroom from "react-headroom";
 import ToggleMenu from "./toggle-menu";
 import { useOnClickOutside } from "../hooks/use-on-click-outside";
+import { useKeyPressCallback } from "../hooks/use-key-press";
 import iMenuDark from "../assets/i-menu-dark.svg";
 import iMenuLight from "../assets/i-menu-light.svg";
 import iCloseDark from "../assets/i-close-dark.svg";
@@ -36,13 +37,18 @@ export const Header: React.FC<HeaderProps> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const isDarkMode = colorMode === `dark`;
 
-  const headerRef = useRef(null);
-  useOnClickOutside(headerRef, () => setIsOpen(false));
-
   const toggleColorMode = (e: React.MouseEvent) => {
     e.preventDefault();
     setColorMode(isDarkMode ? `light` : `dark`);
   };
+
+  const onEscKey = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+  useKeyPressCallback("Escape", onEscKey);
+
+  const headerRef = useRef(null);
+  useOnClickOutside(headerRef, () => setIsOpen(false));
 
   return (
     <div ref={headerRef}>
