@@ -1,27 +1,27 @@
-# gatsby-theme-galleon-workspace
+# gatsby-theme-polaroid-workspace
 
-![Galleon Banner](./demo/static/banner.png)
+![Polaroid Banner](./demo/static/banner.png)
 
-Galleon is a Gatsby theme built on top of [`@lekoarts/gatsby-theme-minimal-blog`](https://www.gatsbyjs.org/packages/@lekoarts/gatsby-theme-minimal-blog/).
-Use Galleon to quickly build a gorgeous developer blog with support for Typescript, MDX, syntax-highlighted code blocks, and tags.
+Polaroid is a Gatsby theme built on top of [`@lekoarts/gatsby-theme-minimal-blog`](https://www.gatsbyjs.org/packages/@lekoarts/gatsby-theme-minimal-blog/).
+Use Polaroid to quickly build a gorgeous developer blog with support for Typescript, MDX, syntax-highlighted code blocks, and tags.
 
-### [⚓️ View Demo Site →](https://shetharp.github.io/gatsby-theme-galleon/)
+### [⚓️ View Demo Site →](https://shetharp.github.io/gatsby-theme-polaroid/)
 
-# Install the Galleon Theme
+# Install the Polaroid Theme
 
 1. Add the theme as a dependency to your Gatsby site.
 
 ```shell
-npm i --save @shetharp/gatsby-theme-galleon
+npm i --save @shetharp/gatsby-theme-polaroid
 # or
-yarn add @shetharp/gatsby-theme-galleon
+yarn add @shetharp/gatsby-theme-polaroid
 ```
 
 2. Add the theme to your `gatsby-config.js` file
 
 ```js:title=gatsby-config.js
 module.exports = {
-  plugins: ["@shetharp/gatsby-theme-galleon"],
+  plugins: ["@shetharp/gatsby-theme-polaroid"],
 };
 ```
 
@@ -33,12 +33,12 @@ module.exports = {
 
 ---
 
-# Start with the Galleon Workspace
+# Start with the Polaroid Workspace
 
 To start developing your own theme using this repo as a starting point:
 
 ```shell
-gatsby new gatsby-theme-custom https://github.com/shetharp/gatsby-theme-galleon
+gatsby new gatsby-theme-custom https://github.com/shetharp/gatsby-theme-polaroid
 cd gatsby-theme-custom
 yarn
 yarn workspace demo develop
@@ -61,7 +61,7 @@ The `demo` workspace directory contains the content, components, and styles for 
 
 # Features
 
-Galleon builds on top of the features provided in [@lekoarts/gatsby-theme-minimal-blog](https://www.gatsbyjs.org/packages/@lekoarts/gatsby-theme-minimal-blog/).
+Polaroid builds on top of the features provided in [@lekoarts/gatsby-theme-minimal-blog](https://www.gatsbyjs.org/packages/@lekoarts/gatsby-theme-minimal-blog/).
 
 - MDX
 - Theme UI
@@ -72,7 +72,7 @@ Galleon builds on top of the features provided in [@lekoarts/gatsby-theme-minima
 
 ## Code Highlighting
 
-If you want to change certain code styles or add additional language tabs, you need to shadow the file `src/@shetharp/gatsby-theme-galleon/styles/code.js`.
+If you want to change certain code styles or add additional language tabs, you need to shadow the file `src/@shetharp/gatsby-theme-polaroid/styles/code.js`.
 
 #### Language tabs:
 
@@ -129,7 +129,7 @@ If you want to hide line numbers you can either globally disable them (see Theme
 ## Shadowing
 
 Please read the guide [Shadowing in Gatsby Themes](https://www.gatsbyjs.org/docs/themes/shadowing/) to understand how to customize the this theme!
-In general, you will want to place your files in `src/@shetharp/gatsby-theme-galleon/` to shadow or override files.
+In general, you will want to place your files in `src/@shetharp/gatsby-theme-polaroid/` to shadow or override files.
 
 ## Adding content
 
@@ -186,5 +186,5 @@ Page content goes here...
 
 ### Changing homepage text
 
-- To edit the hero text ("Ahoy! This is Galleon &ndash; a Gatsby theme...), create a file at `src/@shetharp/gatsby-theme-galleon/texts/hero.mdx` to shadow the text.
-- To edit the projects part below "Latest posts", create a file at `src/@shetharp/gatsby-theme-galleon/texts/bottom.mdx` to shadow the contents.
+- To edit the hero text ("Ahoy! This is Polaroid &ndash; a Gatsby theme...), create a file at `src/@shetharp/gatsby-theme-polaroid/texts/hero.mdx` to shadow the text.
+- To edit the projects part below "Latest posts", create a file at `src/@shetharp/gatsby-theme-polaroid/texts/bottom.mdx` to shadow the contents.

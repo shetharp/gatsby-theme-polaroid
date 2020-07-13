@@ -5,7 +5,7 @@ import "typeface-dm-sans";
 // ==================================================
 // Theme type
 // ==================================================
-export type ThemeGalleon = Theme & {
+export type ThemePolaroid = Theme & {
   styles: Theme["styles"] & { del: SystemStyleObject };
   opacities: { [k: string]: string };
   transitions: { [k: string]: string };
@@ -26,7 +26,7 @@ const breakpointsDict = {
   laptopL: "1600px", // breakpoints[8]
 };
 
-const breakpoints: ThemeGalleon["breakpoints"] = Object.values(breakpointsDict);
+const breakpoints: ThemePolaroid["breakpoints"] = Object.values(breakpointsDict);
 
 // ==================================================
 // Theme scale > Colors
@@ -49,7 +49,7 @@ const palette = {
   properBlue: "#102341",
 };
 
-const colors: ThemeGalleon["colors"] = {
+const colors: ThemePolaroid["colors"] = {
   ...palette,
   text: palette.neutral[4],
   background: palette.neutral[0],
@@ -85,24 +85,24 @@ const colors: ThemeGalleon["colors"] = {
 // ==================================================
 // Theme scale > Typography
 // ==================================================
-const fonts: ThemeGalleon["fonts"] = {
+const fonts: ThemePolaroid["fonts"] = {
   body:
     '"DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   heading: '"DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   monospace: '"DM Sans", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
 };
 
-const fontSizes: ThemeGalleon["fontSizes"] = [16, 18, 20, 24, 28, 32, 40, 48, 60, 72];
+const fontSizes: ThemePolaroid["fontSizes"] = [16, 18, 20, 24, 28, 32, 40, 48, 60, 72];
 
-const fontWeights: ThemeGalleon["fontWeights"] = {
+const fontWeights: ThemePolaroid["fontWeights"] = {
   body: 300,
   bold: 500,
   heading: 700,
 };
 
-const letterSpacings: ThemeGalleon["letterSpacings"] = {};
+const letterSpacings: ThemePolaroid["letterSpacings"] = {};
 
-const lineHeights: ThemeGalleon["lineHeights"] = {
+const lineHeights: ThemePolaroid["lineHeights"] = {
   body: 1.667,
   heading: 1.125,
 };
@@ -125,9 +125,9 @@ const spaceDict = {
   "256": "256px",
 };
 
-const space: ThemeGalleon["space"] = Object.values(spaceDict);
+const space: ThemePolaroid["space"] = Object.values(spaceDict);
 
-const sizes: ThemeGalleon["sizes"] = {
+const sizes: ThemePolaroid["sizes"] = {
   ...spaceDict,
   ...breakpointsDict,
   full: "100%",
@@ -135,14 +135,14 @@ const sizes: ThemeGalleon["sizes"] = {
   screenWidth: "100vw",
 };
 
-const zIndices: ThemeGalleon["zIndices"] = {};
+const zIndices: ThemePolaroid["zIndices"] = {};
 
 // ==================================================
 // Theme scale > Borders
 // ==================================================
-const borders: ThemeGalleon["borders"] = {};
+const borders: ThemePolaroid["borders"] = {};
 
-const borderWidths: ThemeGalleon["borderWidths"] = {
+const borderWidths: ThemePolaroid["borderWidths"] = {
   "0": "0",
   none: "0",
   sm: "2px",
@@ -150,9 +150,9 @@ const borderWidths: ThemeGalleon["borderWidths"] = {
   lg: "8px",
 };
 
-const borderStyles: ThemeGalleon["borderStyles"] = {};
+const borderStyles: ThemePolaroid["borderStyles"] = {};
 
-const radii: ThemeGalleon["radii"] = {
+const radii: ThemePolaroid["radii"] = {
   "0": "0",
   none: "0",
   default: "4px",
@@ -162,7 +162,7 @@ const radii: ThemeGalleon["radii"] = {
 // ==================================================
 // Theme scale > Opacities + Shadows
 // ==================================================
-const opacities: ThemeGalleon["opacities"] = {
+const opacities: ThemePolaroid["opacities"] = {
   "0": "0",
   none: "0",
   low: "0.2",
@@ -171,12 +171,12 @@ const opacities: ThemeGalleon["opacities"] = {
   full: "1",
 };
 
-const shadows: ThemeGalleon["shadows"] = {};
+const shadows: ThemePolaroid["shadows"] = {};
 
 // ==================================================
 // Transitions
 // ==================================================
-const transitions: ThemeGalleon["transitions"] = {
+const transitions: ThemePolaroid["transitions"] = {
   default: "all 200ms ease",
   fast: "all 100ms ease",
 };
@@ -209,7 +209,7 @@ const baseHeading = {
 // ==================================================
 // Theme styles
 // ==================================================
-const styles: ThemeGalleon["styles"] = {
+const styles: ThemePolaroid["styles"] = {
   root: {
     fontSize: [0, null, 1, null, 2],
     fontFamily: "body",
@@ -292,7 +292,7 @@ const styles: ThemeGalleon["styles"] = {
 // ==================================================
 // Theme component variants
 // ==================================================
-const layout: ThemeGalleon["layout"] = {
+const layout: ThemePolaroid["layout"] = {
   container: {
     // borderWidth: "md",
     // borderStyle: ["solid", "solid", "dashed", "dotted", "solid", "dashed", "dotted", "solid", "dashed", "dotted"],
@@ -315,7 +315,7 @@ const baseButton = {
   },
 };
 
-const buttons: ThemeGalleon["buttons"] = {
+const buttons: ThemePolaroid["buttons"] = {
   primary: {
     ...baseButton,
     backgroundColor: "primary",
@@ -326,7 +326,7 @@ const buttons: ThemeGalleon["buttons"] = {
   },
 };
 
-const text: ThemeGalleon["text"] = {
+const text: ThemePolaroid["text"] = {
   default: { display: "inline" },
   mono: { display: "inline", fontFamily: "monospace" },
   heading: {
@@ -342,13 +342,13 @@ const text: ThemeGalleon["text"] = {
   },
 };
 
-const links: ThemeGalleon["links"] = {
+const links: ThemePolaroid["links"] = {
   secondary: {
     color: "secondary",
   },
 };
 
-const cards: ThemeGalleon["cards"] = {
+const cards: ThemePolaroid["cards"] = {
   primary: {
     borderWidth: "sm",
     borderStyle: "solid",
@@ -358,9 +358,9 @@ const cards: ThemeGalleon["cards"] = {
   },
 };
 
-const forms: ThemeGalleon["forms"] = {};
+const forms: ThemePolaroid["forms"] = {};
 
-const badges: ThemeGalleon["badges"] = {
+const badges: ThemePolaroid["badges"] = {
   primary: {
     backgroundColor: "primary",
   },
@@ -375,7 +375,7 @@ const badges: ThemeGalleon["badges"] = {
   },
 };
 
-const alerts: ThemeGalleon["alerts"] = {
+const alerts: ThemePolaroid["alerts"] = {
   primary: {
     backgroundColor: "primary",
     color: "white",
@@ -394,14 +394,14 @@ const alerts: ThemeGalleon["alerts"] = {
   },
 };
 
-const messages: ThemeGalleon["messages"] = {};
+const messages: ThemePolaroid["messages"] = {};
 
 // ==================================================
 // THEME OBJECT
-// Galleon theme
+// Polaroid theme
 // https://theme-ui.com/theme-spec
 // ==================================================
-export const themeGalleon: ThemeGalleon = {
+export const themePolaroid: ThemePolaroid = {
   initialColorModeName: "light",
   breakpoints,
   borders,
@@ -431,4 +431,4 @@ export const themeGalleon: ThemeGalleon = {
   alerts,
   messages,
 };
-export default themeGalleon;
+export default themePolaroid;

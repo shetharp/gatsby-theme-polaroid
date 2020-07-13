@@ -1,13 +1,13 @@
 {
-  "name": "@shetharp/gatsby-theme-galleon",
+  "name": "@shetharp/gatsby-theme-polaroid",
   "author": "Arpit Sheth <arpit@arpitsheth.com> (@shetharp)",
   "version": "0.1.1",
   "main": "index.js",
   "license": "MIT",
-  "homepage": "https://shetharp.github.io/gatsby-theme-galleon/",
+  "homepage": "https://shetharp.github.io/gatsby-theme-polaroid/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shetharp/gatsby-theme-galleon.git"
+    "url": "https://github.com/shetharp/gatsby-theme-polaroid.git"
   },
   "keywords": [
     "gatsby",

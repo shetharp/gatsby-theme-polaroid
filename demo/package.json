@@ -13,7 +13,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
-    "@shetharp/gatsby-theme-galleon": "*",
+    "@shetharp/gatsby-theme-polaroid": "*",
     "gatsby": "^2.23.12",
     "gatsby-plugin-google-analytics": "^2.3.10",
     "gatsby-plugin-manifest": "^2.4.17",
