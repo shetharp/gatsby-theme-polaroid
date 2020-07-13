@@ -9,7 +9,7 @@ import HeaderTitle from "./header-title";
 import HeaderExternalLinks from "./header-external-links";
 import Headroom from "react-headroom";
 import ToggleMenu from "./toggle-menu";
-import { useOnClickOutsideToggleMenu } from "../hooks/use-on-click-outside-toggle-menu";
+import { useOnClickOutside } from "../hooks/use-on-click-outside";
 import iMenuDark from "../assets/i-menu-dark.svg";
 import iMenuLight from "../assets/i-menu-light.svg";
 import iCloseDark from "../assets/i-close-dark.svg";
@@ -37,7 +37,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
   const isDarkMode = colorMode === `dark`;
 
   const headerRef = useRef(null);
-  useOnClickOutsideToggleMenu(headerRef, () => setIsOpen(false));
+  useOnClickOutside(headerRef, () => setIsOpen(false));
 
   const toggleColorMode = (e: React.MouseEvent) => {
     e.preventDefault();
