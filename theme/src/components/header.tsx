@@ -8,7 +8,7 @@ import Navigation from "./navigation";
 import HeaderTitle from "./header-title";
 import HeaderExternalLinks from "./header-external-links";
 import Headroom from "react-headroom";
-import ToggleMenu from "./toggle-menu";
+import HeaderMenu from "./header-menu";
 import { useOnClickOutside } from "../hooks/use-on-click-outside";
 import { useKeyPressCallback } from "../hooks/use-key-press";
 import iMenuDark from "../assets/i-menu-dark.svg";
@@ -42,13 +42,18 @@ export const Header: React.FC<HeaderProps> = (props) => {
     setColorMode(isDarkMode ? `light` : `dark`);
   };
 
+  const toggleHeaderMenu = (shouldOpen: boolean) => {
+    shouldOpen ? document.body.classList.add("disable-scroll") : document.body.classList.remove("disable-scroll");
+    setIsOpen(shouldOpen);
+  };
+
   const onEscKey = useCallback(() => {
-    setIsOpen(false);
+    toggleHeaderMenu(false);
   }, []);
   useKeyPressCallback("Escape", onEscKey);
 
   const headerRef = useRef(null);
-  useOnClickOutside(headerRef, () => setIsOpen(false));
+  useOnClickOutside(headerRef, () => toggleHeaderMenu(false));
 
   return (
     <div ref={headerRef}>
@@ -72,7 +77,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
           <Flex sx={sxFlex}>
             <HeaderTitle />
             <ColorModeToggle isDark={isDarkMode} toggle={toggleColorMode} />
-            <img src={iMenuDark} alt="Toggle Menu" width={32} onClick={() => setIsOpen(!isOpen)} />
+            <img src={iMenuDark} alt="Toggle Menu" width={32} onClick={() => toggleHeaderMenu(!isOpen)} />
           </Flex>
           <div sx={sxDiv}>
             <Navigation nav={nav} />
@@ -81,7 +86,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
         </header>
       </Headroom>
 
-      <ToggleMenu isOpen={isOpen} />
+      <HeaderMenu isOpen={isOpen} />
     </div>
   );
 };

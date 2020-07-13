@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 import { jsx } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 
-export type ToggleMenuProps = {
+export type HeaderMenuProps = {
   isOpen: boolean;
 };
 
-export const ToggleMenu: React.FC<ToggleMenuProps> = (props) => {
+export const HeaderMenu: React.FC<HeaderMenuProps> = (props) => {
   return (
     <nav sx={sxNav(props.isOpen)}>
       <a href="/">
@@ -32,9 +32,9 @@ export const ToggleMenu: React.FC<ToggleMenuProps> = (props) => {
     </nav>
   );
 };
-export default ToggleMenu;
+export default HeaderMenu;
 
-ToggleMenu.propTypes = {
+HeaderMenu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
 };
 

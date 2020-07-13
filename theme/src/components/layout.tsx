@@ -27,6 +27,11 @@ export const Layout: React.FC<LayoutProps> = ({ children, className = `` }) => (
         html: {
           WebkitTextSizeAdjust: `100%`,
         },
+        body: {
+          "&.disable-scroll": {
+            overflow: "hidden",
+          },
+        },
         img: {
           borderStyle: `none`,
         },
@@ -49,7 +54,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, className = `` }) => (
     />
     <SEO />
     <SkipNavLink>Skip to content</SkipNavLink>
-    <Header isTransparent />
+    <Header />
     <Container>
       {/* @ts-ignore */}
       <Box id="skip-nav" sx={{ ...CodeStyles }} className={className}>
