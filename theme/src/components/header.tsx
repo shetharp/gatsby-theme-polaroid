@@ -8,21 +8,35 @@ import Navigation from "./navigation";
 import HeaderTitle from "./header-title";
 import HeaderExternalLinks from "./header-external-links";
 import Headroom from "react-headroom";
+import Menu from "./menu";
+import iMenuDark from "../assets/i-menu-dark.svg";
+import iMenuLight from "../assets/i-menu-light.svg";
+import iCloseDark from "../assets/i-close-dark.svg";
+import iCloseLight from "../assets/i-close-light.svg";
 
 export type HeaderProps = {
   isTransparent?: boolean;
 };
 
+/**
+ * Uses react-headroom to show/hide the header when the user scrolls.
+ * https://kyleamathews.github.io/react-headroom/
+ *
+ * TODO: Expanded Menu
+ * Use `aria-label='Toggle Menu'`
+ * https://negomi.github.io/react-burger-menu/
+ * https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
+ */
 export const Header: React.FC<HeaderProps> = (props) => {
   const { navigation: nav } = useMinimalBlogConfig();
   const [colorMode, setColorMode] = useColorMode();
   const [isVisible, setIsVisible] = useState(true);
   const [isFixed, setIsFixed] = useState(false);
-  const isDark = colorMode === `dark`;
+  const isDarkMode = colorMode === `dark`;
 
   const toggleColorMode = (e: React.MouseEvent) => {
     e.preventDefault();
-    setColorMode(isDark ? `light` : `dark`);
+    setColorMode(isDarkMode ? `light` : `dark`);
   };
 
   return (
@@ -45,7 +59,8 @@ export const Header: React.FC<HeaderProps> = (props) => {
       <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false)}>
         <Flex sx={sxFlex}>
           <HeaderTitle />
-          <ColorModeToggle isDark={isDark} toggle={toggleColorMode} />
+          <ColorModeToggle isDark={isDarkMode} toggle={toggleColorMode} />
+          <img src={iMenuDark} alt="Toggle Menu" width={32} />
         </Flex>
         <div sx={sxDiv}>
           <Navigation nav={nav} />

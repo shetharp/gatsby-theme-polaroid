@@ -49,7 +49,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, className = `` }) => (
     />
     <SEO />
     <SkipNavLink>Skip to content</SkipNavLink>
-    <Header />
+    <Header isTransparent />
     <Container>
       {/* @ts-ignore */}
       <Box id="skip-nav" sx={{ ...CodeStyles }} className={className}>

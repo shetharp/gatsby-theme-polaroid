@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.414 15.414">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #333;
+        stroke-width: 2px;
+      }
+
+      .cls-1 {
+        opacity: 0.8;
+      }
+    </style>
+  </defs>
+  <g id="i-close-dark" transform="translate(-320.293 -48.293)">
+    <path id="Intersection_1" data-name="Intersection 1" class="cls-1" d="M438.21,8.708l6.372,6.372Z" transform="translate(-117.21 40.293)"/>
+    <line id="Line_4" data-name="Line 4" class="cls-2" y1="14" x2="14" transform="translate(321 49)"/>
+    <line id="Line_5" data-name="Line 5" class="cls-2" x2="7" y2="7" transform="translate(328 56)"/>
+  </g>
+</svg>
