@@ -1,0 +1,408 @@
+---
+title: Theme Galleon
+author: Arpit Sheth
+date: 2020-07-30
+slug: "/theme-preview"
+---
+
+import {
+  Grid,
+  Card,
+  Box,
+  Text,
+  Button,
+  Heading,
+  Link,
+  Image,
+  Label,
+  Input,
+  Checkbox,
+  Select,
+  Textarea,
+  Flex,
+  Radio,
+  Slider,
+  Spinner,
+  Badge,
+  NavLink,
+  Alert,
+  Message,
+} from "theme-ui";
+import imgRedwood1 from "./redwood-1.jpg";
+import imgRedwood2 from "./redwood-2.jpg";
+
+# Theme Preview
+
+Preview the look and feel of the **Gatsby Galleon** theme and its components.
+
+## How to override theme styles
+
+You can override the theme in your site by leveraging [Shadowing in Gatsby](https://www.gatsbyjs.org/docs/themes/shadowing/). Shadow the `index.js` or `index.ts` file in the `src/gatsby-plugin-theme-ui/` directory of your site. You can create this file if it doesn't exist yet.
+
+```ts
+import themeGalleon from "@shetharp/gatsby-theme-galleon/src/gatsby-plugin-theme-ui";
+
+export default {
+  ...themeGalleon,
+
+  // ==================================================
+  // This site's theme overrides
+  // ==================================================
+  // TODO
+};
+```
+
+---
+
+# Colors
+
+<Grid columns={[2, null, 3, null, 4]}>
+  <Card>
+    <Box bg="text" padding={6}>
+      &nbsp;
+    </Box>
+    <Text variant="mono">text</Text>
+  </Card>
+  <Card>
+    <Box bg="background" padding={6}>
+      &nbsp;
+    </Box>
+    <Text variant="mono">background</Text>
+  </Card>
+  <Card>
+    <Box bg="primary" padding={6}>
+      &nbsp;
+    </Box>
+    <Text variant="mono">primary</Text>
+  </Card>
+  <Card>
+    <Box bg="secondary" padding={6}>
+      &nbsp;
+    </Box>
+    <Text variant="mono">secondary</Text>
+  </Card>
+  <Card>
+    <Box bg="accent" padding={6}>
+      &nbsp;
+    </Box>
+    <Text variant="mono">accent</Text>
+  </Card>
+  <Card>
+    <Box bg="highlight" padding={6}>
+      &nbsp;
+    </Box>
+    <Text variant="mono">highlight</Text>
+  </Card>
+  <Card>
+    <Box bg="muted" padding={6}>
+      &nbsp;
+    </Box>
+    <Text variant="mono">muted</Text>
+  </Card>
+</Grid>
+
+---
+
+# Typography
+
+# Deep breath in & exhale 🕊
+
+## Deep breath in & exhale 🕊
+
+### Deep breath in & exhale 🕊
+
+#### Deep breath in & exhale 🕊
+
+##### Deep breath in & exhale 🕊
+
+###### Deep breath in & exhale 🕊
+
+Freedom of speech is **bold**, has _emphasis_, and should not be ~~deleted~~.
+
+The excerpts below come from the [Project Gutenberg](https://www.gutenberg.org/) catalog of classic books.
+
+The top authors on Project Gutenberg in the past week were:
+
+1. Dickens, Charles (18920)
+1. Austen, Jane (17559)
+1. Doyle, Arthur Conan (14906)
+1. Twain, Mark (14285)
+1. Carroll, Lewis (11222)
+1. Stevenson, Robert Louis (10875)
+1. Wilde, Oscar (10529)
+1. Plato (9810)
+1. Jowett, Benjamin (9396)
+1. Shakespeare, William (8693)
+
+Browse books by
+
+- Author
+- Title
+- Language
+- Recently posted
+
+> “There is, I believe, in every disposition a tendency to some particular evil, a natural defect, which not even the best education can overcome."<br/>
+> "And your defect is a propensity to hate everybody."<br/>
+> "And yours," he replied with a smile, "is wilfully to misunderstand them.”<br/>
+>
+> _― Jane Austen, Pride and Prejudice_
+
+## Little Women
+
+### By Louisa May Alcott
+
+As Amy spoke, a great tear dropped on the golden hair of the sleeping child in her arms, for her one well-beloved daughter was a frail little creature and the dread of losing her was the shadow over Amy's sunshine. This cross was doing much for both father and mother, for one love and sorrow bound them closely together. Amy's nature was growing sweeter, deeper, and more tender. Laurie was growing more serious, strong, and firm, and both were learning that beauty, youth, good fortune, even love itself, cannot keep care and pain, loss and sorrow, from the most blessed for ...
+
+> Into each life some rain must fall, Some days must be dark and sad and dreary.
+
+"She is growing better, I am sure of it, my dear. Don't despond, but hope and keep happy," said Mrs. March, as tenderhearted Daisy stooped from her knee to lay her rosy cheek against her little cousin's pale one.
+
+"I never ought to, while I have you to cheer me up, Marmee, and Laurie to take more than half of every burden," replied Amy warmly. "He never lets me see his anxiety, but is so sweet and patient with me, so devoted to Beth, and such a stay and comfort to me always that I can't love him enough. So, in spite of my one cross, I can say with Meg, 'Thank God, I'm a happy woman.'"
+
+"There's no need for me to say it, for everyone can see that I'm far happier than I deserve," added Jo, glancing from her good husband to her chubby children, tumbling on the grass beside her. "Fritz is getting gray and stout. I'm growing as thin as a shadow, and am thirty. We never shall be rich, and Plumfield may burn up any night, for that incorrigible Tommy Bangs will smoke sweet-fern cigars under the bed-clothes, though he's set himself afire three times already. But in spite of these unromantic facts, I have nothing to complain of, and never was so jolly in my life. Excuse the remark, but living among boys, I can't help using their expressions now and then."
+
+## The Raven
+
+### By Edgar Allan Poe
+
+> Once upon a midnight dreary, while I pondered, weak and weary,<br /> Over many a quaint and curious volume of forgotten lore—<br /> While I nodded, nearly napping, suddenly there came a tapping,<br /> As of some one gently rapping, rapping at my chamber door.<br /> &ldquo;&lsquo;Tis some visitor,&rdquo; I muttered, &ldquo;tapping at my chamber door—<br />
+>
+> <em>Only this and nothing more.&rdquo;</em>
+>
+> Ah, distinctly I remember it was in the bleak December,<br /> And each separate dying ember wrought its ghost upon the floor.<br /> Eagerly I wished the morrow;—vainly I had sought to borrow<br /> From my books surcease of sorrow—sorrow for the lost Lenore—<br /> For the rare and radiant maiden whom the angels name Lenore—<br />
+>
+> <em>Nameless here for evermore.</em>
+
+## The Picture of Dorian Gray
+
+### By Oscar Wilde
+
+The artist is the creator of beautiful things. To reveal art and conceal the artist is art's aim. The critic is he who can translate into another manner or a new material his impression of beautiful things.
+
+The highest as the lowest form of criticism is a mode of autobiography. Those who find ugly meanings in beautiful things are corrupt without being charming. This is a fault.
+
+Those who find beautiful meanings in beautiful things are the cultivated. For these there is hope. They are the elect to whom beautiful things mean only beauty.
+
+There is no such thing as a moral or an immoral book. Books are well written, or badly written. That is all.
+
+The nineteenth century dislike of realism is the rage of Caliban seeing his own face in a glass.
+
+<code>"All art is quite useless." - OSCAR WILDE</code>
+
+## Ion
+
+### By Plato
+
+<pre>
+  <p>
+    <b>PERSONS OF THE DIALOGUE:</b> Socrates, Ion.
+  </p>
+
+  <p>
+    <b>SOCRATES:</b> Welcome, Ion. Are you from your native city of Ephesus?
+  </p>
+
+  <p>
+    <b>ION:</b> No, Socrates; but from Epidaurus, where I attended the festival of Asclepius.
+  </p>
+
+  <p>
+    <b>SOCRATES:</b> And do the Epidaurians have contests of rhapsodes at the festival?
+  </p>
+
+  <p>
+    <b>ION:</b> O yes; and of all sorts of musical performers.
+  </p>
+
+  <p>
+    <i>[...]</i>
+  </p>
+
+  <p>
+    <b>SOCRATES:</b>
+    <br />
+    I often envy the profession of a rhapsode, Ion; for you have always to wear fine clothes,
+    <br />
+    and to look as beautiful as you can is a part of your art.
+    <br />
+    Then, again, you are obliged to be continually in the company of many good poets;
+    <br />
+    and especially of Homer, who is the best and most divine of them; and to understand him, and not merely learn his
+    words by rote, is a thing greatly to be envied.
+    <br />
+    And no man can be a rhapsode who does not understand the meaning of the poet.
+    <br />
+    For the rhapsode ought to interpret the mind of the poet to his hearers, but how can he interpret him well unless he
+    knows what he means?
+    <br />
+    All this is greatly to be envied.
+  </p>
+</pre>
+
+# Table
+
+| `isAdmin` | Name          | ID  | City            | Icon |
+| --------- | ------------- | --- | --------------- | ---- |
+| [x]       | Alicia Serato | 421 | New York, NY    | 🏙    |
+| [x]       | Bansi Kerla   | 952 | Jersey City, NJ | 🗽   |
+| [ ]       | Civi Landip   | 847 | Washington, DC  | 🇺🇸   |
+| [ ]       | Dawyer Uris   | 603 | Boston, MA      | 🏛    |
+
+# Code
+
+```jsx
+const settings: CardGameSettings = {
+    firstPlayerName: 'dealer',
+    deckShuffled: true,
+
+    // Number of decks to start the game with. Each deck has 52 cards.
+    deckCount: 1,
+
+    // Number of total players including the dealer. There will always be one dealer.
+    numPlayers: 2,
+}
+
+export settings;
+```
+
+# Image
+
+![Green-crowned brilliant](https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Green-crowned_brilliant_%28Heliodoxa_jacula_henryi%29_female.jpg/480px-Green-crowned_brilliant_%28Heliodoxa_jacula_henryi%29_female.jpg)
+
+![Redwood3](./redwood-1.jpg)
+
+![Redwood3](./redwood-2.jpg)
+
+![Redwood3](./redwood-3.jpg)
+
+---
+
+# Theme-UI Components
+
+## Button
+
+<Button
+  mr={2}
+  onClick={() => {
+    console.log("Clicked Beep");
+  }}
+>
+  Beep
+</Button>
+<Button
+  variant="secondary"
+  onClick={() => {
+    console.log("Clicked Boop");
+  }}
+>
+  Boop
+</Button>
+
+## Text
+
+<Text>Default text variant</Text>
+<Text variant="mono">Mono text variant</Text>
+
+## Heading
+
+<Heading>Heading defaults to h2</Heading>
+<Heading variant="subheading">Subheading variant</Heading>
+
+<Heading as="h3">Heading set to h3</Heading>
+<Heading as="h3" variant="subheading">
+  Subheading variant
+</Heading>
+
+## Link
+
+<Link href="#!">Hello</Link>
+
+## Image
+
+<Image src={imgRedwood2} />
+
+## Card
+
+<Card
+  sx={{
+    maxWidth: 400,
+  }}
+>
+  <Image src={imgRedwood1} />
+  <Text>Card</Text>
+</Card>
+
+## Forms
+
+<Box as="form" onSubmit={(e) => e.preventDefault()}>
+  <Label htmlFor="username">Username</Label>
+  <Input name="username" id="username" mb={3} />
+  <Label htmlFor="password">Password</Label>
+  <Input type="password" name="password" id="password" mb={3} />
+  <Box>
+    <Label mb={3}>
+      <Checkbox />
+      Remember me
+    </Label>
+  </Box>
+  <Label htmlFor="sound">Sound</Label>
+  <Select name="sound" id="sound" mb={3}>
+    <option>Beep</option>
+    <option>Boop</option>
+    <option>Blip</option>
+  </Select>
+  <Label htmlFor="comment">Comment</Label>
+  <Textarea name="comment" id="comment" rows="6" mb={3} />
+  <Flex mb={3}>
+    <Label>
+      <Radio name="letter" /> Alpha
+    </Label>
+    <Label>
+      <Radio name="letter" /> Bravo
+    </Label>
+    <Label>
+      <Radio name="letter" /> Charlie
+    </Label>
+  </Flex>
+  <Label>Slider</Label>
+  <Slider mb={3} />
+  <Button>Submit</Button>
+</Box>
+
+## Spinner
+
+<Spinner />
+
+## Badge
+
+<Badge>Badge</Badge>
+
+## NavLink
+
+<Flex as="nav">
+  <NavLink href="#!" p={2}>
+    Home
+  </NavLink>
+  <NavLink href="#!" p={2}>
+    Blog
+  </NavLink>
+  <NavLink href="#!" p={2}>
+    About
+  </NavLink>
+</Flex>
+
+## Alert
+
+<Alert variant="secondary" mb={2}>
+  Secondary
+</Alert>
+<Alert variant="accent" mb={2}>
+  Accent
+</Alert>
+<Alert variant="highlight" mb={2}>
+  Highlight
+</Alert>
+
+## Message
+
+<Message>This is just a message for someone to read</Message>
