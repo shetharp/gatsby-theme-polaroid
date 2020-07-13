@@ -9,9 +9,15 @@ import Footer from "./footer";
 import CodeStyles from "../styles/code";
 import SkipNavLink from "./skip-nav";
 
-type LayoutProps = { children: React.ReactNode; className?: string };
+type LayoutProps = {
+  className?: string;
+};
 
-const Layout = ({ children, className = `` }: LayoutProps) => (
+/**
+ * The Layout component is used as the default layout for all pages/posts on the site.
+ * It applies the global styles to the page using the ThemeProvider.
+ */
+export const Layout: React.FC<LayoutProps> = ({ children, className = `` }) => (
   <React.Fragment>
     <Global
       styles={(theme) => ({
@@ -25,7 +31,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           borderStyle: `none`,
         },
         pre: {
-          fontFamily: `monospace`,
+          fontFamily: theme.fonts.monospace,
           fontSize: `1em`,
         },
         "[hidden]": {
@@ -37,21 +43,20 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
         },
         a: {
           transition: theme.transitions.default,
-          color: `text`,
+          color: "inherit",
         },
       })}
     />
     <SEO />
     <SkipNavLink>Skip to content</SkipNavLink>
+    <Header />
     <Container>
-      <Header />
       {/* @ts-ignore */}
       <Box id="skip-nav" sx={{ ...CodeStyles }} className={className}>
         {children}
       </Box>
-      <Footer />
     </Container>
+    <Footer />
   </React.Fragment>
 );
-
 export default Layout;

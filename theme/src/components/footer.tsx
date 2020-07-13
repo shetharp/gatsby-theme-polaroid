@@ -1,26 +1,18 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /** @jsx jsx */
+import React from "react";
 import { jsx, Link } from "theme-ui";
 import useSiteMetadata from "../hooks/use-site-metadata";
 
-const Footer = () => {
+type FooterProps = {
+  // empty
+};
+
+const Footer: React.FC<FooterProps> = () => {
   const { siteTitle } = useSiteMetadata();
 
   return (
-    <footer
-      sx={{
-        boxSizing: `border-box`,
-        display: `flex`,
-        justifyContent: `space-between`,
-        mt: [6],
-        color: `secondary`,
-        a: {
-          variant: `links.secondary`,
-        },
-        flexDirection: [`column`, `column`, `row`],
-        variant: `dividers.top`,
-      }}
-    >
+    <footer sx={sxFooter}>
       <div>
         &copy; {new Date().getFullYear()} by {siteTitle}. All rights reserved.
       </div>
@@ -41,5 +33,22 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
+
+/**
+ * Styles
+ */
+
+const sxFooter = {
+  outline: `4px solid mediumslateblue`, // TODO Remove
+  boxSizing: `border-box`,
+  display: `flex`,
+  justifyContent: `space-between`,
+  mt: [6],
+  color: `secondary`,
+  a: {
+    variant: `links.secondary`,
+  },
+  flexDirection: [`column`, `column`, `row`],
+  variant: `dividers.top`,
+};
