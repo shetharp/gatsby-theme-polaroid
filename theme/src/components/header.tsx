@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { jsx, useColorMode } from "theme-ui";
 import { Flex } from "@theme-ui/components";
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
@@ -9,6 +9,7 @@ import HeaderTitle from "./header-title";
 import HeaderExternalLinks from "./header-external-links";
 import Headroom from "react-headroom";
 import ToggleMenu from "./toggle-menu";
+import { useOnClickOutsideToggleMenu } from "../hooks/use-on-click-outside-toggle-menu";
 import iMenuDark from "../assets/i-menu-dark.svg";
 import iMenuLight from "../assets/i-menu-light.svg";
 import iCloseDark from "../assets/i-close-dark.svg";
@@ -35,13 +36,16 @@ export const Header: React.FC<HeaderProps> = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const isDarkMode = colorMode === `dark`;
 
+  const headerRef = useRef(null);
+  useOnClickOutsideToggleMenu(headerRef, () => setIsOpen(false));
+
   const toggleColorMode = (e: React.MouseEvent) => {
     e.preventDefault();
     setColorMode(isDarkMode ? `light` : `dark`);
   };
 
   return (
-    <React.Fragment>
+    <div ref={headerRef}>
       <Headroom
         onPin={() => {
           setIsVisible(true);
@@ -72,7 +76,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
       </Headroom>
 
       <ToggleMenu isOpen={isOpen} />
-    </React.Fragment>
+    </div>
   );
 };
 export default Header;
