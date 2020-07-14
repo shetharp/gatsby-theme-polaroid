@@ -8,11 +8,11 @@ import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
 import replaceSlashes from "../utils/replaceSlashes";
 import { SystemStyleObject } from "@styled-system/css";
 
-type NavigationProps = {
+export type NavigationProps = {
   // empty
 };
 
-export const Navigation = () => {
+export const Navigation: React.FC<NavigationProps> = () => {
   const { basePath, navigation } = useMinimalBlogConfig();
 
   return (

@@ -6,7 +6,7 @@ import { Flex } from "@theme-ui/components";
 import { SystemStyleObject } from "@styled-system/css";
 import ColorModeToggle from "./colormode-toggle";
 import Navigation from "./navigation";
-import HeaderTitle from "./header-title";
+import HeaderLogo from "./header-logo";
 import HeaderExternalLinks from "./header-external-links";
 import Headroom from "react-headroom";
 import HeaderMenu from "./header-menu";
@@ -78,7 +78,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
         }}
       >
         <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false)}>
-          <HeaderTitle />
+          <HeaderLogo isDark={!isDarkMode} />
           <Navigation />
           <Flex>
             <ColorModeToggle isDark={isDarkMode} toggle={toggleColorMode} />
