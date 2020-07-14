@@ -147,7 +147,8 @@ const sizes: ThemePolaroid["sizes"] = {
 };
 
 const zIndices: ThemePolaroid["zIndices"] = {
-  header: 999,
+  header: 9999,
+  headerMenu: 999,
 };
 
 // ==================================================

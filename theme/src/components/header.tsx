@@ -42,6 +42,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
   const toggleHeaderMenu = (shouldOpen: boolean) => {
     shouldOpen ? document.body.classList.add("disable-scroll") : document.body.classList.remove("disable-scroll");
     setIsOpen(shouldOpen);
+    setIsFixed(shouldOpen);
   };
 
   const onEscKey = useCallback(() => {
