@@ -4,7 +4,7 @@
 import React from "react";
 import { jsx, NavLink } from "theme-ui";
 import { Link } from "gatsby";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import { useMinimalBlogConfig } from "../hooks";
 import replaceSlashes from "../utils/replaceSlashes";
 import { SystemStyleObject } from "@styled-system/css";
 

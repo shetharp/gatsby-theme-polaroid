@@ -2,7 +2,7 @@
 import React from "react";
 import { Link as TLink } from "theme-ui";
 import { Link } from "gatsby";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import { useMinimalBlogConfig } from "../hooks";
 import replaceSlashes from "../utils/replaceSlashes";
 
 type TagsProps = {

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /** @jsx jsx */
 import React, { useCallback, useState, useRef } from "react";
+import PropTypes from "prop-types";
 import { jsx, useThemeUI } from "theme-ui";
 import { Flex } from "@theme-ui/components";
 import { SystemStyleObject } from "@styled-system/css";
@@ -11,8 +12,8 @@ import HeaderMenuToggle from "./header-menu-toggle";
 import HeaderExternalLinks from "./header-external-links";
 import Headroom from "react-headroom";
 import HeaderMenu from "./header-menu";
-import { useOnClickOutside } from "../hooks/use-on-click-outside";
-import { useKeyPressCallback } from "../hooks/use-key-press";
+import { useOnClickOutside } from "../hooks";
+import { useKeyPressCallback } from "../hooks";
 import { ThemePolaroid } from "../gatsby-plugin-theme-ui";
 
 export type HeaderProps = {
@@ -22,11 +23,6 @@ export type HeaderProps = {
 /**
  * Uses react-headroom to show/hide the header when the user scrolls.
  * https://kyleamathews.github.io/react-headroom/
- *
- * TODO: Expanded Menu
- * Use `aria-label='Toggle Menu'`
- * https://negomi.github.io/react-burger-menu/
- * https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
  *
  * TODO: Use <HeaderExternalLinks /> or refactor it (possibly for the Footer)
  */
@@ -88,6 +84,10 @@ export const Header: React.FC<HeaderProps> = (props) => {
   );
 };
 export default Header;
+
+Header.propTypes = {
+  isTransparent: PropTypes.bool,
+};
 
 /**
  * Styles

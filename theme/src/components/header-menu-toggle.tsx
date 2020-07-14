@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, useColorMode } from "theme-ui";
+import { jsx } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 import iMenuDark from "../assets/i-menu-dark.svg";
 import iMenuLight from "../assets/i-menu-light.svg";
@@ -17,7 +17,12 @@ export const HeaderMenuToggle: React.FC<HeaderMenuToggleProps> = (props) => {
   const { isTextDark, isOpen } = props;
 
   return (
-    <button onClick={props.onToggle} sx={sxButton} aria-label={isOpen ? "Close Menu" : "Open Menu"}>
+    <button
+      onClick={props.onToggle}
+      sx={sxButton}
+      aria-label={isOpen ? "Close Menu (Esc)" : "Open Menu"}
+      title={isOpen ? "Close Menu (Esc)" : "Open Menu"}
+    >
       {isOpen ? (
         <img src={isTextDark ? iCloseDark : iCloseLight} alt="Toggle Menu" />
       ) : (

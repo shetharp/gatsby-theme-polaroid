@@ -7,7 +7,7 @@ import Layout from "./layout";
 import Title from "./title";
 import Listing from "./listing";
 import List from "./list";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import { useMinimalBlogConfig } from "../hooks";
 import replaceSlashes from "../utils/replaceSlashes";
 // @ts-ignore
 import Hero from "../texts/hero";

@@ -5,7 +5,7 @@ import { jsx, Heading, Link as TLink } from "theme-ui";
 import { Flex } from "@theme-ui/components";
 import { Link } from "gatsby";
 import Layout from "./layout";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import { useMinimalBlogConfig } from "../hooks";
 import Listing from "./listing";
 import replaceSlashes from "../utils/replaceSlashes";
 import SEO from "./seo";

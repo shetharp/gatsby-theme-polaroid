@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { graphql, useStaticQuery } from "gatsby";
 
-type UseSiteMetadataProps = {
+export type UseSiteMetadataProps = {
   site: {
     siteMetadata: {
       siteTitle: string;
@@ -17,7 +17,7 @@ type UseSiteMetadataProps = {
   };
 };
 
-const useSiteMetadata = () => {
+export const useSiteMetadata = () => {
   const data = useStaticQuery<UseSiteMetadataProps>(graphql`
     query {
       site {

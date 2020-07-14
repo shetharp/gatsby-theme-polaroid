@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { Flex } from "@theme-ui/components";
 import Layout from "./layout";
 import Listing from "./listing";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import { useMinimalBlogConfig } from "../hooks";
 import replaceSlashes from "../utils/replaceSlashes";
 import SEO from "./seo";
 

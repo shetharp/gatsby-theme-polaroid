@@ -8,7 +8,7 @@ import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import theme from "prism-react-renderer/themes/nightOwl";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import { useMinimalBlogConfig } from "../hooks";
 import { Language } from "../types";
 
 type CodeProps = {

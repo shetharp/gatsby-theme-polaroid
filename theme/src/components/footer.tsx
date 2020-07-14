@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx, Link } from "theme-ui";
-import useSiteMetadata from "../hooks/use-site-metadata";
+import { useSiteMetadata } from "../hooks";
 
 export type FooterProps = {
   // empty

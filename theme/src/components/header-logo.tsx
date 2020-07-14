@@ -3,8 +3,8 @@
 import { Link } from "gatsby";
 import { jsx } from "theme-ui";
 import replaceSlashes from "../utils/replaceSlashes";
-import useSiteMetadata from "../hooks/use-site-metadata";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import { useSiteMetadata } from "../hooks";
+import { useMinimalBlogConfig } from "../hooks";
 import { SystemStyleObject } from "@styled-system/css";
 import imgLogoDark from "../assets/logo-dark.svg";
 import imgLogoLight from "../assets/logo-light.svg";

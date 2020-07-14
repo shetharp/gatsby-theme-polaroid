@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx, Link as TLink } from "theme-ui";
-import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
+import { useMinimalBlogConfig } from "../hooks";
 
 const HeaderExternalLinks = () => {
   const { externalLinks } = useMinimalBlogConfig();
