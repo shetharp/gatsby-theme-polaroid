@@ -33,7 +33,7 @@ const Homepage = ({ posts }: PostsProps) => {
   const { basePath, blogPath } = useMinimalBlogConfig();
 
   return (
-    <Layout>
+    <Layout hasTransparentHeader>
       <section sx={{ mb: [10, null, null, null, 11], p: { fontSize: [2, null, 3, null, 4], mt: 2 } }}>
         <Hero />
       </section>

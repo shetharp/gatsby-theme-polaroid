@@ -12,7 +12,7 @@ export const HeaderColorModeToggle: React.FC<HeaderColorModeToggleProps> = (prop
   const { isTextDark } = props;
   const { theme, colorMode, setColorMode } = useThemeUI();
   const isDarkMode = colorMode === `dark`;
-  const fillColor = isTextDark ? (theme.colors?.black as string) : (theme.colors?.white as string);
+  const fillColor = isTextDark ? (theme.colors?.neutral as string[])[4] : (theme.colors?.neutral as string[])[0];
 
   const toggleColorMode = (e: React.MouseEvent) => {
     e.preventDefault();
