@@ -347,6 +347,10 @@ const text: ThemePolaroid["text"] = {
 };
 
 const links: ThemePolaroid["links"] = {
+  nav: {
+    textTransform: "uppercase",
+    border: "1px dotted mediumvioletred",
+  },
   secondary: {
     color: "secondary",
   },

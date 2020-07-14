@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /** @jsx jsx */
 import React from "react";
-import { jsx, Flex, Link as TLink } from "theme-ui";
+import { jsx, NavLink } from "theme-ui";
 import { Link } from "gatsby";
 import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
 import replaceSlashes from "../utils/replaceSlashes";
@@ -22,9 +22,9 @@ export const Navigation = () => {
           {/* <nav sx={{ "a:not(:last-of-type)": { mr: 3 }, fontSize: [1, `18px`], ".active": { color: `heading` } }}> */}
           {navigation.map((item) => (
             // @ts-ignore
-            <TLink key={item.slug} as={Link} activeClassName="active" to={replaceSlashes(`/${basePath}/${item.slug}`)}>
+            <NavLink key={item.slug} as={Link} to={replaceSlashes(`/${basePath}/${item.slug}`)} sx={sxNavLink}>
               {item.title}
-            </TLink>
+            </NavLink>
           ))}
         </nav>
       )}
@@ -45,4 +45,12 @@ const sxNav: SystemStyleObject = {
   overflow: "hidden",
   border: "2px dashed mediumspringgreen",
   height: "100%",
+};
+
+const sxNavLink: SystemStyleObject = {
+  display: "flex",
+  alignItems: "center",
+  whiteSpace: "nowrap",
+  height: "100%",
+  marginLeft: [2, null, null, null, 3, null, null, 4, null, 5],
 };
