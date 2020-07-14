@@ -60,7 +60,7 @@ const colors: ThemePolaroid["colors"] = {
   muted: palette.genuineSilver,
 
   // Custom Color Definitions
-  toggleIcon: palette.neutral[2],
+  toggleIcon: palette.neutral[4],
   heading: palette.black,
   divide: palette.neutral[1],
 
@@ -333,6 +333,7 @@ const buttons: ThemePolaroid["buttons"] = {
 const text: ThemePolaroid["text"] = {
   default: { display: "inline" },
   mono: { display: "inline", fontFamily: "monospace" },
+  uppercase: { textTransform: "uppercase", letterSpacing: "0.2ch" },
   heading: {
     ...baseHeading,
     fontSize: [4, null, 5, null, 6],
@@ -348,8 +349,8 @@ const text: ThemePolaroid["text"] = {
 
 const links: ThemePolaroid["links"] = {
   nav: {
-    textTransform: "uppercase",
-    border: "1px dotted mediumvioletred",
+    ...text.uppercase,
+    fontSize: [1, null, null, null, 2],
   },
   secondary: {
     color: "secondary",

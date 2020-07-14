@@ -17,11 +17,11 @@ const ColorModeToggle = ({ isDark, toggle }: Props) => (
     aria-label={isDark ? `Activate Light Mode` : `Activate Dark Mode`}
     title={isDark ? `Activate Light Mode` : `Activate Dark Mode`}
     sx={{
-      opacity: 0.65,
+      opacity: (theme) => theme.opacities.high,
       position: `relative`,
       borderRadius: `5px`,
       width: `40px`,
-      height: `25px`,
+      height: `100%`,
       display: `flex`,
       alignItems: `center`,
       justifyContent: `center`,

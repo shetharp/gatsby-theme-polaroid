@@ -16,6 +16,7 @@ export type HeaderLogoProps = {
 export const HeaderLogo: React.FC<HeaderLogoProps> = (props) => {
   const { siteTitle } = useSiteMetadata();
   const { basePath } = useMinimalBlogConfig();
+  const { isDark } = props;
 
   return (
     <Link
@@ -24,7 +25,7 @@ export const HeaderLogo: React.FC<HeaderLogoProps> = (props) => {
       sx={{ color: `heading`, textDecoration: `none`, height: "100%" }}
     >
       <h1 sx={sxH1}>
-        {props.isDark ? <img src={imgLogoDark} alt={siteTitle} /> : <img src={imgLogoLight} alt={siteTitle} />}
+        {isDark ? <img src={imgLogoDark} alt={siteTitle} /> : <img src={imgLogoLight} alt={siteTitle} />}
       </h1>
     </Link>
   );

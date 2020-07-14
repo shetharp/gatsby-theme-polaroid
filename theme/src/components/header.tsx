@@ -4,18 +4,15 @@ import React, { useCallback, useState, useRef } from "react";
 import { jsx, useThemeUI } from "theme-ui";
 import { Flex } from "@theme-ui/components";
 import { SystemStyleObject } from "@styled-system/css";
-import ColorModeToggle from "./colormode-toggle";
 import Navigation from "./navigation";
 import HeaderLogo from "./header-logo";
+import HeaderColorModeToggle from "./header-colormode-toggle";
+import HeaderMenuToggle from "./header-menu-toggle";
 import HeaderExternalLinks from "./header-external-links";
 import Headroom from "react-headroom";
 import HeaderMenu from "./header-menu";
 import { useOnClickOutside } from "../hooks/use-on-click-outside";
 import { useKeyPressCallback } from "../hooks/use-key-press";
-import iMenuDark from "../assets/i-menu-dark.svg";
-import iMenuLight from "../assets/i-menu-light.svg";
-import iCloseDark from "../assets/i-close-dark.svg";
-import iCloseLight from "../assets/i-close-light.svg";
 
 export type HeaderProps = {
   isTransparent?: boolean;
@@ -33,16 +30,11 @@ export type HeaderProps = {
  * TODO: Use <HeaderExternalLinks /> or refactor it (possibly for the Footer)
  */
 export const Header: React.FC<HeaderProps> = (props) => {
-  const { theme, colorMode, setColorMode } = useThemeUI();
+  const { theme, colorMode } = useThemeUI();
   const [isVisible, setIsVisible] = useState(true);
   const [isFixed, setIsFixed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const isDarkMode = colorMode === `dark`;
-
-  const toggleColorMode = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setColorMode(isDarkMode ? `light` : `dark`);
-  };
 
   const toggleHeaderMenu = (shouldOpen: boolean) => {
     shouldOpen ? document.body.classList.add("disable-scroll") : document.body.classList.remove("disable-scroll");
@@ -80,9 +72,9 @@ export const Header: React.FC<HeaderProps> = (props) => {
         <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false)}>
           <HeaderLogo isDark={!isDarkMode} />
           <Navigation />
-          <Flex>
-            <ColorModeToggle isDark={isDarkMode} toggle={toggleColorMode} />
-            <img src={iMenuDark} alt="Toggle Menu" width={32} onClick={() => toggleHeaderMenu(!isOpen)} />
+          <Flex sx={sxFlex}>
+            <HeaderColorModeToggle />
+            <HeaderMenuToggle isDark={!isDarkMode} isOpen={isOpen} onToggle={() => toggleHeaderMenu(!isOpen)} />
           </Flex>
         </header>
       </Headroom>
@@ -109,3 +101,7 @@ const sxHeader = (isVisible: boolean, isFixed: boolean, isTransparent: boolean):
   width: "100%",
   transition: "all 300ms ease",
 });
+
+const sxFlex: SystemStyleObject = {
+  height: "100%",
+};

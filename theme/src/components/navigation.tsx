@@ -43,7 +43,6 @@ const sxNav: SystemStyleObject = {
   justifyContent: "flex-end",
   alignItems: "center",
   overflow: "hidden",
-  border: "2px dashed mediumspringgreen",
   height: "100%",
 };
 
