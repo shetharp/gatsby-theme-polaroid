@@ -1,16 +1,18 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, useColorMode, Flex } from "theme-ui";
+import { jsx, useThemeUI, Flex } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 import ColorModeToggle from "./colormode-toggle";
 
 export type HeaderColorModeToggleProps = {
-  // empty
+  isTextDark: boolean;
 };
 
-export const HeaderColorModeToggle: React.FC<HeaderColorModeToggleProps> = () => {
-  const [colorMode, setColorMode] = useColorMode();
+export const HeaderColorModeToggle: React.FC<HeaderColorModeToggleProps> = (props) => {
+  const { isTextDark } = props;
+  const { theme, colorMode, setColorMode } = useThemeUI();
   const isDarkMode = colorMode === `dark`;
+  const fillColor = isTextDark ? (theme.colors?.black as string) : (theme.colors?.white as string);
 
   const toggleColorMode = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -19,7 +21,7 @@ export const HeaderColorModeToggle: React.FC<HeaderColorModeToggleProps> = () =>
 
   return (
     <Flex sx={sxFlex}>
-      <ColorModeToggle isDark={isDarkMode} toggle={toggleColorMode} />
+      <ColorModeToggle isDark={isDarkMode} fillColor={fillColor} toggle={toggleColorMode} />
     </Flex>
   );
 };

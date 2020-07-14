@@ -13,6 +13,7 @@ import Headroom from "react-headroom";
 import HeaderMenu from "./header-menu";
 import { useOnClickOutside } from "../hooks/use-on-click-outside";
 import { useKeyPressCallback } from "../hooks/use-key-press";
+import { ThemePolaroid } from "../gatsby-plugin-theme-ui";
 
 export type HeaderProps = {
   isTransparent?: boolean;
@@ -30,11 +31,13 @@ export type HeaderProps = {
  * TODO: Use <HeaderExternalLinks /> or refactor it (possibly for the Footer)
  */
 export const Header: React.FC<HeaderProps> = (props) => {
+  const { isTransparent } = props;
   const { theme, colorMode } = useThemeUI();
   const [isVisible, setIsVisible] = useState(true);
   const [isFixed, setIsFixed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const isDarkMode = colorMode === `dark`;
+  const isTextDark = !isDarkMode && (isFixed || !isTransparent);
 
   const toggleHeaderMenu = (shouldOpen: boolean) => {
     shouldOpen ? document.body.classList.add("disable-scroll") : document.body.classList.remove("disable-scroll");
@@ -69,12 +72,12 @@ export const Header: React.FC<HeaderProps> = (props) => {
           zIndex: theme.zIndices && theme.zIndices["header"] ? theme.zIndices["header"] : 999,
         }}
       >
-        <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false)}>
-          <HeaderLogo isDark={!isDarkMode} />
-          <Navigation />
+        <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false, theme as ThemePolaroid)}>
+          <HeaderLogo isTextDark={isTextDark} />
+          <Navigation isTextDark={isTextDark} />
           <Flex sx={sxFlex}>
-            <HeaderColorModeToggle />
-            <HeaderMenuToggle isDark={!isDarkMode} isOpen={isOpen} onToggle={() => toggleHeaderMenu(!isOpen)} />
+            <HeaderColorModeToggle isTextDark={isTextDark} />
+            <HeaderMenuToggle isTextDark={isTextDark} isOpen={isOpen} onToggle={() => toggleHeaderMenu(!isOpen)} />
           </Flex>
         </header>
       </Headroom>
@@ -89,9 +92,20 @@ export default Header;
  * Styles
  */
 
-const sxHeader = (isVisible: boolean, isFixed: boolean, isTransparent: boolean): SystemStyleObject => ({
+const sxHeader = (
+  isVisible: boolean,
+  isFixed: boolean,
+  isTransparent: boolean,
+  theme: ThemePolaroid
+): SystemStyleObject => ({
   outline: "4px solid mediumslateblue", // TODO Remove
   backgroundColor: !isFixed && isTransparent ? "transparent" : "background",
+  backgroundImage:
+    !isFixed && isTransparent ? `linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%)` : "none",
+  [`@media ${theme.mediaQuery.laptopS}`]: {
+    backgroundImage:
+      !isFixed && isTransparent ? `linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%)` : "none",
+  },
   opacity: isVisible ? 1 : 0,
   display: "flex",
   justifyContent: "space-between",

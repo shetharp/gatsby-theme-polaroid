@@ -10,13 +10,13 @@ import imgLogoDark from "../assets/logo-dark.svg";
 import imgLogoLight from "../assets/logo-light.svg";
 
 export type HeaderLogoProps = {
-  isDark: boolean;
+  isTextDark: boolean;
 };
 
 export const HeaderLogo: React.FC<HeaderLogoProps> = (props) => {
   const { siteTitle } = useSiteMetadata();
   const { basePath } = useMinimalBlogConfig();
-  const { isDark } = props;
+  const { isTextDark } = props;
 
   return (
     <Link
@@ -25,7 +25,7 @@ export const HeaderLogo: React.FC<HeaderLogoProps> = (props) => {
       sx={{ color: `heading`, textDecoration: `none`, height: "100%" }}
     >
       <h1 sx={sxH1}>
-        {isDark ? <img src={imgLogoDark} alt={siteTitle} /> : <img src={imgLogoLight} alt={siteTitle} />}
+        {isTextDark ? <img src={imgLogoDark} alt={siteTitle} /> : <img src={imgLogoLight} alt={siteTitle} />}
       </h1>
     </Link>
   );

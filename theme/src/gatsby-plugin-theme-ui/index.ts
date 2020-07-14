@@ -7,6 +7,7 @@ import "typeface-dm-sans";
 // ==================================================
 export type ThemePolaroid = Theme & {
   styles: Theme["styles"] & { del: SystemStyleObject };
+  mediaQuery: { [k: string]: string };
   opacities: { [k: string]: string };
   transitions: { [k: string]: string };
 };
@@ -27,6 +28,18 @@ const breakpointsDict = {
 };
 
 const breakpoints: ThemePolaroid["breakpoints"] = Object.values(breakpointsDict);
+
+const mediaQuery = {
+  mobileS: `(min-width: ${breakpointsDict.mobileS})`, // breakpoints[0]
+  mobileM: `(min-width: ${breakpointsDict.mobileM})`,
+  mobileL: `(min-width: ${breakpointsDict.mobileL})`, // breakpoints[2]
+  tabletS: `(min-width: ${breakpointsDict.tabletS})`,
+  tabletM: `(min-width: ${breakpointsDict.tabletM})`, // breakpoints[4]
+  tabletL: `(min-width: ${breakpointsDict.tabletL})`,
+  laptopS: `(min-width: ${breakpointsDict.laptopS})`, // breakpoints[6]
+  laptopM: `(min-width: ${breakpointsDict.laptopM})`,
+  laptopL: `(min-width: ${breakpointsDict.laptopL})`, // breakpoints[8]
+};
 
 // ==================================================
 // Theme scale > Colors
@@ -60,7 +73,6 @@ const colors: ThemePolaroid["colors"] = {
   muted: palette.genuineSilver,
 
   // Custom Color Definitions
-  toggleIcon: palette.neutral[4],
   heading: palette.black,
   divide: palette.neutral[1],
 
@@ -75,7 +87,6 @@ const colors: ThemePolaroid["colors"] = {
       muted: palette.genuineSilver,
 
       // Custom Color Definitions
-      toggleIcon: palette.neutral[1],
       heading: palette.white,
       divide: palette.neutral[4],
     },
@@ -413,6 +424,7 @@ const messages: ThemePolaroid["messages"] = {};
 export const themePolaroid: ThemePolaroid = {
   initialColorModeName: "light",
   breakpoints,
+  mediaQuery,
   borders,
   borderStyles,
   borderWidths,

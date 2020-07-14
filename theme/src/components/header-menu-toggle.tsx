@@ -8,20 +8,20 @@ import iCloseDark from "../assets/i-close-dark.svg";
 import iCloseLight from "../assets/i-close-light.svg";
 
 export type HeaderMenuToggleProps = {
-  isDark: boolean;
+  isTextDark: boolean;
   isOpen: boolean;
   onToggle: () => void;
 };
 
 export const HeaderMenuToggle: React.FC<HeaderMenuToggleProps> = (props) => {
-  const { isDark, isOpen } = props;
+  const { isTextDark, isOpen } = props;
 
   return (
     <button onClick={props.onToggle} sx={sxButton} aria-label={isOpen ? "Close Menu" : "Open Menu"}>
       {isOpen ? (
-        <img src={isDark ? iCloseDark : iCloseLight} alt="Toggle Menu" />
+        <img src={isTextDark ? iCloseDark : iCloseLight} alt="Toggle Menu" />
       ) : (
-        <img src={isDark ? iMenuDark : iMenuLight} alt="Toggle Menu" />
+        <img src={isTextDark ? iMenuDark : iMenuLight} alt="Toggle Menu" />
       )}
     </button>
   );
