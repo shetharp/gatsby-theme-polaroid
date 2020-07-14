@@ -4,7 +4,7 @@ import React, { useCallback, useState, useRef } from "react";
 import { jsx, useThemeUI } from "theme-ui";
 import { Flex } from "@theme-ui/components";
 import { SystemStyleObject } from "@styled-system/css";
-import Navigation from "./navigation";
+import HeaderNavigation from "./header-navigation";
 import HeaderLogo from "./header-logo";
 import HeaderColorModeToggle from "./header-colormode-toggle";
 import HeaderMenuToggle from "./header-menu-toggle";
@@ -75,7 +75,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
       >
         <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false, theme as ThemePolaroid)}>
           <HeaderLogo isTextDark={isTextDark} />
-          <Navigation isTextDark={isTextDark} />
+          <HeaderNavigation isTextDark={isTextDark} />
           <Flex sx={sxFlex}>
             <HeaderColorModeToggle isTextDark={isTextDark} />
             <HeaderMenuToggle isTextDark={isTextDark} isOpen={isOpen} onToggle={() => toggleHeaderMenu(!isOpen)} />
@@ -99,7 +99,6 @@ const sxHeader = (
   isTransparent: boolean,
   theme: ThemePolaroid
 ): SystemStyleObject => ({
-  outline: "4px solid mediumslateblue", // TODO Remove
   backgroundColor: !isFixed && isTransparent ? "transparent" : "background",
   backgroundImage:
     !isFixed && isTransparent ? `linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%)` : "none",

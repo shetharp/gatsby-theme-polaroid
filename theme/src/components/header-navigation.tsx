@@ -8,35 +8,33 @@ import useMinimalBlogConfig from "../hooks/use-minimal-blog-config";
 import replaceSlashes from "../utils/replaceSlashes";
 import { SystemStyleObject } from "@styled-system/css";
 
-export type NavigationProps = {
+export type HeaderNavigationProps = {
   isTextDark: boolean;
 };
 
-export const Navigation: React.FC<NavigationProps> = (props) => {
+export const HeaderNavigation: React.FC<HeaderNavigationProps> = (props) => {
   const { isTextDark } = props;
   const { basePath, navigation } = useMinimalBlogConfig();
 
   return (
-    <React.Fragment>
-      {navigation && navigation.length > 0 && (
-        <nav sx={sxNav}>
-          {navigation.map((item) => (
-            <NavLink
-              key={item.slug}
-              as={Link}
-              // @ts-ignore
-              to={replaceSlashes(`/${basePath}/${item.slug}`)}
-              sx={sxNavLink(isTextDark)}
-            >
-              {item.title}
-            </NavLink>
-          ))}
-        </nav>
-      )}
-    </React.Fragment>
+    <nav sx={sxNav}>
+      {navigation &&
+        navigation.length > 0 &&
+        navigation.map((item) => (
+          <NavLink
+            key={item.slug}
+            as={Link}
+            // @ts-ignore
+            to={replaceSlashes(`/${basePath}/${item.slug}`)}
+            sx={sxNavLink(isTextDark)}
+          >
+            {item.title}
+          </NavLink>
+        ))}
+    </nav>
   );
 };
-export default Navigation;
+export default HeaderNavigation;
 
 /**
  * Styles

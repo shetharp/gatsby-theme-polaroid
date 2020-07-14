@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { graphql, useStaticQuery } from "gatsby";
 
-type UseMinimalBlogConfigProps = {
+export type UseMinimalBlogConfigProps = {
   minimalBlogConfig: {
     basePath: string;
     blogPath: string;
@@ -20,7 +20,7 @@ type UseMinimalBlogConfigProps = {
   };
 };
 
-const useMinimalBlogConfig = () => {
+export const useMinimalBlogConfig = () => {
   const data = useStaticQuery<UseMinimalBlogConfigProps>(graphql`
     query {
       minimalBlogConfig {
