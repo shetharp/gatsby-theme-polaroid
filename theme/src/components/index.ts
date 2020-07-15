@@ -11,7 +11,7 @@ export * from "./item-tags";
 export * from "./layout";
 export * from "./list";
 export * from "./listing";
-export * from "./header-navigation";
+export * from "./header-nav";
 export * from "./page";
 export * from "./post";
 export * from "./seo";

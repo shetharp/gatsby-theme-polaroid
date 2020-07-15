@@ -13,7 +13,8 @@ export type HeaderMenuProps = {
 };
 
 export const HeaderMenu: React.FC<HeaderMenuProps> = (props) => {
-  const { basePath, navigation } = useMinimalBlogConfig();
+  const { basePath } = useMinimalBlogConfig();
+  const navigation: any[] = []; // TODO Remove
 
   return (
     <Box sx={sxBox(props.isOpen)}>
@@ -39,6 +40,17 @@ export default HeaderMenu;
 
 HeaderMenu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
+};
+
+/**
+ * Types
+ */
+export type HeaderMenuItem = {
+  label: string;
+  slug?: string;
+  href?: string;
+  isVisibleMobile?: boolean;
+  isVisibleTablet?: boolean;
 };
 
 /**

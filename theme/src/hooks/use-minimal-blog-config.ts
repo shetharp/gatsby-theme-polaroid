@@ -8,14 +8,6 @@ export type UseMinimalBlogConfigProps = {
     postsPath: string;
     pagesPath: string;
     tagsPath: string;
-    externalLinks: {
-      name: string;
-      url: string;
-    }[];
-    navigation: {
-      title: string;
-      slug: string;
-    }[];
     showLineNumbers: boolean;
   };
 };
@@ -29,14 +21,6 @@ export const useMinimalBlogConfig = () => {
         postsPath
         pagesPath
         tagsPath
-        externalLinks {
-          name
-          url
-        }
-        navigation {
-          title
-          slug
-        }
         showLineNumbers
       }
     }

@@ -26,42 +26,6 @@ module.exports = {
       options: {
         // TODO - Add more options if needed
         // https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-minimal-blog#theme-options
-
-        // TODO - Update navigation items for your site
-        navigation: [
-          {
-            title: `Blog`,
-            slug: `/blog`,
-          },
-          {
-            title: `About`,
-            slug: `/about`,
-          },
-          {
-            title: `Readme`,
-            slug: `/readme`,
-          },
-          {
-            title: `Theme Preview`,
-            slug: `/theme-preview`,
-          },
-          {
-            title: `404`,
-            slug: `/404`,
-          },
-        ],
-
-        // TODO - Update external links for your site
-        externalLinks: [
-          {
-            name: `Twitter`,
-            url: `https://twitter.com/shetharp`,
-          },
-          {
-            name: `Instagram`,
-            url: `https://www.instagram.com/shetharp/`,
-          },
-        ],
         feed: true,
         feedTitle: "Polaroid", // TODO - Update RSS feed title for your site
       },

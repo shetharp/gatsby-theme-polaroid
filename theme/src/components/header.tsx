@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { jsx, useThemeUI } from "theme-ui";
 import { Flex } from "@theme-ui/components";
 import { SystemStyleObject } from "@styled-system/css";
-import HeaderNavigation from "./header-navigation";
+import HeaderNav from "./header-nav";
 import HeaderLogo from "./header-logo";
 import HeaderColorModeToggle from "./header-colormode-toggle";
 import HeaderMenuToggle from "./header-menu-toggle";
@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
       >
         <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false, theme as ThemePolaroid)}>
           <HeaderLogo isTextDark={isTextDark} />
-          <HeaderNavigation isTextDark={isTextDark} />
+          <HeaderNav isTextDark={isTextDark} />
           <Flex sx={sxFlex}>
             <HeaderColorModeToggle isTextDark={isTextDark} />
             <HeaderMenuToggle isTextDark={isTextDark} isOpen={isOpen} onToggle={() => toggleHeaderMenu(!isOpen)} />
