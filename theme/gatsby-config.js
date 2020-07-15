@@ -1,9 +1,14 @@
 function GatsbyConfig(options) {
+  const optionsWithDefaults = {
+    formatString: "DD-MMM-YYYY",
+    ...options,
+  };
+
   return {
     plugins: [
       {
         resolve: `@lekoarts/gatsby-theme-minimal-blog-core`,
-        options,
+        options: optionsWithDefaults,
       },
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-catch-links`,

@@ -23,12 +23,7 @@ module.exports = {
   plugins: [
     {
       resolve: `@shetharp/gatsby-theme-polaroid`,
-      options: {
-        // TODO - Add more options if needed
-        // https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-minimal-blog#theme-options
-        feed: true,
-        feedTitle: "Polaroid", // TODO - Update RSS feed title for your site
-      },
+      options: {},
     },
     {
       resolve: `gatsby-plugin-google-analytics`,

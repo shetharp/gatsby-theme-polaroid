@@ -7,6 +7,10 @@ export const headerMenuItems: HeaderMenuItem[] = [
     isVisibleTablet: false,
   },
   {
+    label: "Tags",
+    slug: "/tags",
+  },
+  {
     label: "About",
     slug: "/about",
     isVisibleLaptop: false,
