@@ -19,7 +19,8 @@ export const HeaderNav: React.FC<HeaderNavProps> = (props) => {
 
   return (
     <nav sx={sxNav}>
-      {headerNavItems.map((navItem) => {
+      {headerNavItems.map((navItem, index) => {
+        const { isVisibleMobile, isVisibleTablet, isVisibleLaptop } = navItem;
         const isExternalLink = !!navItem.href;
         const navLinkProps = {
           ...(isExternalLink
@@ -28,8 +29,8 @@ export const HeaderNav: React.FC<HeaderNavProps> = (props) => {
         };
         return (
           <NavLink
-            key={navItem.label}
-            sx={sxNavLink(isTextDark, navItem.isVisibleMobile, navItem.isVisibleTablet)}
+            key={`${index}-${navItem.label}`}
+            sx={sxNavLink(isTextDark, isVisibleMobile, isVisibleTablet, isVisibleLaptop)}
             {...navLinkProps}
           >
             {navItem.label}
@@ -50,6 +51,7 @@ export type HeaderNavItem = {
   href?: string;
   isVisibleMobile?: boolean;
   isVisibleTablet?: boolean;
+  isVisibleLaptop?: boolean;
 };
 
 /**
@@ -65,7 +67,12 @@ const sxNav: SystemStyleObject = {
   height: "100%",
 };
 
-const sxNavLink = (isTextDark: boolean, isVisibleMobile?: boolean, isVisibleTablet?: boolean): SystemStyleObject => {
+const sxNavLink = (
+  isTextDark: boolean,
+  isVisibleMobile?: boolean,
+  isVisibleTablet?: boolean,
+  isVisibleLaptop?: boolean
+): SystemStyleObject => {
   const displayStyles = [
     isVisibleMobile ? "flex" : "none",
     null,
@@ -74,7 +81,7 @@ const sxNavLink = (isTextDark: boolean, isVisibleMobile?: boolean, isVisibleTabl
     isVisibleTablet ? "flex" : "none",
     null,
     null,
-    "flex",
+    isVisibleLaptop !== false ? "flex" : "none",
   ];
   return {
     color: isTextDark ? "text" : "white",

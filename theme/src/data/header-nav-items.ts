@@ -12,10 +12,6 @@ export const headerNavItems: HeaderNavItem[] = [
     slug: "/about",
   },
   {
-    label: "Work",
-    href: "https://arpitsheth.com",
-  },
-  {
     label: "Readme",
     slug: "/readme",
   },
@@ -23,5 +19,9 @@ export const headerNavItems: HeaderNavItem[] = [
     label: "Theme Preview",
     slug: "/theme-preview",
     isVisibleTablet: true,
+  },
+  {
+    label: "Contact",
+    href: "https://arpitsheth.com",
   },
 ];

@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { useThemeUI } from "theme-ui";
 
 type Props = {
   isDark: boolean;

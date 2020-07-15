@@ -7,6 +7,7 @@ import { Link } from "gatsby";
 import { SystemStyleObject } from "@styled-system/css";
 import { useMinimalBlogConfig } from "../hooks";
 import replaceSlashes from "../utils/replaceSlashes";
+import { headerMenuItems } from "../data/header-menu-items";
 
 export type HeaderMenuProps = {
   isOpen: boolean;
@@ -14,24 +15,28 @@ export type HeaderMenuProps = {
 
 export const HeaderMenu: React.FC<HeaderMenuProps> = (props) => {
   const { basePath } = useMinimalBlogConfig();
-  const navigation: any[] = []; // TODO Remove
 
   return (
     <Box sx={sxBox(props.isOpen)}>
       <nav sx={sxNav}>
-        {navigation &&
-          navigation.length > 0 &&
-          navigation.map((item) => (
+        {headerMenuItems.map((menuItem, index) => {
+          const { isVisibleMobile, isVisibleTablet, isVisibleLaptop } = menuItem;
+          const isExternalLink = !!menuItem.href;
+          const navLinkProps = {
+            ...(isExternalLink
+              ? { href: menuItem.href }
+              : { as: Link, to: replaceSlashes(`/${basePath}/${menuItem.slug}`) }),
+          };
+          return (
             <NavLink
-              key={item.slug}
-              as={Link}
-              // @ts-ignore
-              to={replaceSlashes(`/${basePath}/${item.slug}`)}
-              sx={sxNavLink}
+              key={`${index}-${menuItem.label}`}
+              sx={sxNavLink(isVisibleMobile, isVisibleTablet, isVisibleLaptop)}
+              {...navLinkProps}
             >
-              {item.title}
+              {menuItem.label}
             </NavLink>
-          ))}
+          );
+        })}
       </nav>
     </Box>
   );
@@ -51,6 +56,7 @@ export type HeaderMenuItem = {
   href?: string;
   isVisibleMobile?: boolean;
   isVisibleTablet?: boolean;
+  isVisibleLaptop?: boolean;
 };
 
 /**
@@ -77,7 +83,23 @@ const sxNav: SystemStyleObject = {
   zIndex: "headerMenu",
 };
 
-const sxNavLink: SystemStyleObject = {
-  display: "block",
-  padding: [2, null, null, null, 3, null, null, 4, null, 5],
+const sxNavLink = (
+  isVisibleMobile?: boolean,
+  isVisibleTablet?: boolean,
+  isVisibleLaptop?: boolean
+): SystemStyleObject => {
+  const displayStyles = [
+    isVisibleMobile !== false ? "block" : "none",
+    null,
+    null,
+    null,
+    isVisibleTablet !== false ? "block" : "none",
+    null,
+    null,
+    isVisibleLaptop !== false ? "block" : "none",
+  ];
+  return {
+    display: displayStyles,
+    padding: [2, null, null, null, 3, null, null, 4, null, 5],
+  };
 };

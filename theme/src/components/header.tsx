@@ -9,7 +9,6 @@ import HeaderNav from "./header-nav";
 import HeaderLogo from "./header-logo";
 import HeaderColorModeToggle from "./header-colormode-toggle";
 import HeaderMenuToggle from "./header-menu-toggle";
-import HeaderExternalLinks from "./header-external-links";
 import Headroom from "react-headroom";
 import HeaderMenu from "./header-menu";
 import { useOnClickOutside } from "../hooks";

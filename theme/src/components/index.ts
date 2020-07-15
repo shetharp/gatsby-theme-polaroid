@@ -4,7 +4,6 @@ export * from "./code";
 export * from "./colormode-toggle";
 export * from "./footer";
 export * from "./header";
-export * from "./header-external-links";
 export * from "./header-logo";
 export * from "./homepage";
 export * from "./item-tags";
