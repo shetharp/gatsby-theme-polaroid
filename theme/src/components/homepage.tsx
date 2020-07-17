@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Box } from "theme-ui";
 import { Link } from "gatsby";
 import Layout from "./layout";
 import Title from "./title";
@@ -34,6 +34,10 @@ const Homepage = ({ posts }: PostsProps) => {
 
   return (
     <Layout hasTransparentHeader>
+      {/* TODO Decouple Layout and Container components. (Consider refactoring, creating a new layout component, or a new container variant). */}
+      <Box bg="accent" sx={{ width: "100vw", height: "100vh" }}>
+        Slide?
+      </Box>
       <section sx={{ mb: [10, null, null, null, 11], p: { fontSize: [2, null, 3, null, 4], mt: 2 } }}>
         <Hero />
       </section>
