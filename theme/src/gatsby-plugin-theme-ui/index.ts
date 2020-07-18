@@ -193,6 +193,7 @@ const shadows: ThemePolaroid["shadows"] = {};
 const transitions: ThemePolaroid["transitions"] = {
   default: "all 200ms ease",
   fast: "all 100ms ease",
+  slow: "all 300ms ease",
 };
 
 // ==================================================
@@ -316,6 +317,10 @@ const layout: ThemePolaroid["layout"] = {
     width: [`calc(100% - ${space[2]})`, null, null, null, `calc(100% - ${space[3]})`],
     maxWidth: "tabletM",
     paddingY: 4,
+  },
+  containerFull: {
+    width: "100%",
+    maxWidth: "100%",
   },
 };
 

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { SystemStyleObject } from "@styled-system/css";
 
 const code = {
   "[data-name='live-editor']": {
@@ -190,4 +191,4 @@ const code = {
   },
 };
 
-export default code;
+export default code as SystemStyleObject;

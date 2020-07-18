@@ -12,6 +12,7 @@ import SkipNavLink from "./skip-nav";
 export type LayoutProps = {
   className?: string;
   hasTransparentHeader?: boolean;
+  hasFullWidthContainer?: boolean;
 };
 
 /**
@@ -19,7 +20,7 @@ export type LayoutProps = {
  * It applies the global styles to the page using the ThemeProvider.
  */
 export const Layout: React.FC<LayoutProps> = (props) => {
-  const { children, className = ``, hasTransparentHeader = false } = props;
+  const { children, className = ``, hasTransparentHeader = false, hasFullWidthContainer = false } = props;
   return (
     <React.Fragment>
       <Global
@@ -58,8 +59,7 @@ export const Layout: React.FC<LayoutProps> = (props) => {
       <SEO />
       <SkipNavLink>Skip to content</SkipNavLink>
       <Header isTransparent={hasTransparentHeader} />
-      <Container>
-        {/* @ts-ignore */}
+      <Container variant={hasFullWidthContainer ? "containerFull" : "container"}>
         <Box id="skip-nav" sx={{ ...CodeStyles }} className={className}>
           {children}
         </Box>

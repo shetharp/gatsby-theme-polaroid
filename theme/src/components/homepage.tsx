@@ -33,8 +33,7 @@ const Homepage = ({ posts }: PostsProps) => {
   const { basePath, blogPath } = useMinimalBlogConfig();
 
   return (
-    <Layout hasTransparentHeader>
-      {/* TODO Decouple Layout and Container components. (Consider refactoring, creating a new layout component, or a new container variant). */}
+    <Layout hasTransparentHeader hasFullWidthContainer>
       <Box bg="accent" sx={{ width: "100vw", height: "100vh" }}>
         Slide?
       </Box>
