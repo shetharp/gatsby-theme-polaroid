@@ -21,7 +21,7 @@ export const Slide: React.FC<SlideProps> = (props) => {
     }
   `);
   return (
-    <Box bg="accent" sx={{ width: "100vw", height: "100vh", border: "40px solid mediumvioletred" }}>
+    <Box as="section" bg="accent" sx={{ width: "100vw", height: "100vh", border: "40px solid mediumvioletred" }}>
       <Img
         fluid={data.file.childImageSharp.fluid}
         loading="eager" // Set loading="eager" for first slide image to make it load on the critical path

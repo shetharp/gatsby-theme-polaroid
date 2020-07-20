@@ -60,7 +60,7 @@ export const Layout: React.FC<LayoutProps> = (props) => {
       <SkipNavLink>Skip to content</SkipNavLink>
       <Header isTransparent={hasTransparentHeader} />
       <Container variant={hasFullWidthContainer ? "containerFull" : "container"}>
-        <Box id="skip-nav" sx={{ ...CodeStyles }} className={className}>
+        <Box as="main" id="skip-nav" sx={{ ...CodeStyles }} className={className}>
           {children}
         </Box>
       </Container>
