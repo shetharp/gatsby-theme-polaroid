@@ -1,9 +1,15 @@
 /** @jsx */
 import React, { ReactText, ReactNode } from "react";
-import { jsx, Box, Text, Button } from "theme-ui";
+import { jsx, Box } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
+import { SlideImage } from "./slide-image";
+import { SlideOverlay } from "./slide-overlay";
+import { SlideContainer } from "./slide-container";
+import { SlideTitle } from "./slide-title";
+import { SlideDescription } from "./slide-description";
+import { SlideButton } from "./slide-button";
 
 export type SlideProps = {
   id: string;
@@ -47,37 +53,23 @@ export const Slide: React.FC<SlideProps> = (props) => {
   `);
   return (
     <Box as="section" id={id} bg="accent" sx={sxSlide(isBorderless)}>
-      <Img
-        fluid={data.file.childImageSharp.fluid}
-        loading="eager" // Set loading="eager" for first slide image to make it load on the critical path
-        title=""
-        alt=""
-        // These styles allow the image to act like a background image by covering the parent container's dimensions.
-        // https://github.com/gatsbyjs/gatsby/issues/2470#issuecomment-338394370
-        style={{
-          width: "100%",
-          height: "100%",
-          // zIndex: -1,
-        }}
-        imgStyle={{
-          objectPosition: "50% 50%",
-        }}
-      />
+      <SlideImage fluid={data.file.childImageSharp.fluid} loading="eager" />
 
-      <Box sx={sxOverlay(overlayColor, isColorful)} />
-      <Box sx={sxContent(isBorderless)}>
+      <SlideOverlay overlayColor={overlayColor} isColorful={isColorful} />
+
+      <SlideContainer isBorderless={isBorderless}>
         <Box sx={sxBody}>
-          <Text variant="slideTitle">Savor the moment slowly, before it slips away.</Text>
-          <Text variant="slideDescription">
+          <SlideTitle>Savor the moment slowly, before it slips away.</SlideTitle>
+          <SlideDescription>
             I went down yesterday to the Piraeus with Glaucon the son of Ariston, that I might offer up my prayers to
             the goddess (Bendis, the Thracian Artemis.); and also because I wanted to see in what manner they would
             celebrate the festival, which was a new thing.
-          </Text>
+          </SlideDescription>
         </Box>
 
         {/* TODO Render the button if its props exist */}
-        <Button>Slide Button</Button>
-      </Box>
+        <SlideButton>Slide Button</SlideButton>
+      </SlideContainer>
     </Box>
   );
 };
@@ -100,35 +92,6 @@ const sxSlide = (isBorderless: boolean): SystemStyleObject => {
     position: "relative",
     // marginBottom: "-16px", // TODO Pull this from the theme
     border: "40px solid mediumvioletred", // TODO Pull this from the theme
-  };
-};
-
-const sxOverlay = (overlayColor: string, isColorful: boolean): SystemStyleObject => {
-  return {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    // zIndex: -1,
-    width: "100%",
-    height: "100%",
-    background: overlayColor,
-    opacity: 0.5,
-  };
-};
-
-const sxContent = (isBorderless: boolean): SystemStyleObject => {
-  return {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    height: "100%",
-    width: "100%",
-    overflow: "hidden",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-end",
-    color: "white", // TODO theme,
-    padding: isBorderless ? "32px" : "16px", // TODO theme
   };
 };
 
