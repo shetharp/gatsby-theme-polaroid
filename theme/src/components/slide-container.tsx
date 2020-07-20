@@ -26,6 +26,8 @@ const sxContainer = (isBorderless: boolean): SystemStyleObject => {
     flexDirection: "column",
     justifyContent: "flex-end",
     color: "white", // TODO theme,
-    padding: isBorderless ? "32px" : "16px", // TODO theme
+    padding: isBorderless
+      ? [4, null, null, null, 6, null, null, 7, null, 8]
+      : [2, null, null, null, 3, null, null, 4, null, 5],
   };
 };
