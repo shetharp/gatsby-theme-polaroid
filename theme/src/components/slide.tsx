@@ -53,7 +53,7 @@ export const Slide: React.FC<SlideProps> = (props) => {
   `);
   return (
     <Box as="section" id={id} sx={sxSlide(isBorderless)}>
-      <SlideImage fluid={data.file.childImageSharp.fluid} loading="eager" />
+      <SlideImage fluid={data.file.childImageSharp.fluid} imagePosition={imagePosition} loading="eager" />
 
       <SlideOverlay overlayColor={overlayColor} isColorful={isColorful} />
 
@@ -94,7 +94,8 @@ const sxSlide = (isBorderless: boolean): SystemStyleObject => {
     marginBottom: isBorderless ? 0 : [-2, null, null, null, -3, null, null, -4, null, -5],
     borderWidth: isBorderless ? 0 : ["16px", null, null, null, "24px", null, null, "32px", null, "40px"],
     borderStyle: "solid",
-    borderColor: "background",
+    borderColor: "transparent",
+    backgroundColor: "background",
     transition: (theme) => theme.transitions.default,
   };
 };

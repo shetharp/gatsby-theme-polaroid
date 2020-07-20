@@ -3,6 +3,7 @@ import Img, { GatsbyImageProps } from "gatsby-image";
 
 export type SlideImageProps = GatsbyImageProps & {
   fluid: Required<GatsbyImageProps["fluid"]>;
+  imagePosition?: string;
 };
 
 /**
@@ -12,20 +13,20 @@ export type SlideImageProps = GatsbyImageProps & {
  * Set loading prop to "eager" for the first Slide image to make it render on the critical path.
  */
 export const SlideImage: React.FC<SlideImageProps> = (props) => {
-  const {
-    fluid,
-    loading,
-    style = {
-      width: "100%",
-      height: "100%",
-    },
-    imgStyle = {
-      objectPosition: "50% 50%",
-    },
-    ...otherProps
-  } = props;
+  const { fluid, imagePosition, style, imgStyle, ...otherProps } = props;
 
-  return <Img fluid={fluid} loading={loading} style={style} imgStyle={imgStyle} {...otherProps} />;
+  const styleWithDefaults = {
+    width: "100%",
+    height: "100%",
+    ...style,
+  };
+
+  const imgStyleWithDefaults = {
+    objectPosition: imagePosition,
+    ...imgStyle,
+  };
+
+  return <Img fluid={fluid} style={styleWithDefaults} imgStyle={imgStyleWithDefaults} {...otherProps} />;
 };
 
 /**

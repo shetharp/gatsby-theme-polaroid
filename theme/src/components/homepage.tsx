@@ -37,7 +37,7 @@ const Homepage = ({ posts }: PostsProps) => {
   return (
     <Layout hasTransparentHeader hasFullWidthContainer>
       <Slide id="intro" isBorderless />
-      <Slide id="work" />
+      <Slide id="work" imagePosition="0% 0%" />
 
       {/* TODO Restyle all of the blog related content below to fit the Slides concept */}
 
