@@ -2,8 +2,7 @@
 import React, { ReactText, ReactNode } from "react";
 import { jsx, Box } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import { SlideImage } from "./slide-image";
 import { SlideOverlay } from "./slide-overlay";
 import { SlideContainer } from "./slide-container";
@@ -60,10 +59,10 @@ export const Slide: React.FC<SlideProps> = (props) => {
       <SlideContainer isBorderless={isBorderless}>
         <Box sx={sxBody}>
           <SlideTitle isExpanded={isExpanded}>Savor the moment slowly, before it slips away.</SlideTitle>
-          <SlideDescription>
-            I went down yesterday to the Piraeus with Glaucon the son of Ariston, that I might offer up my prayers to
-            the goddess (Bendis, the Thracian Artemis.); and also because I wanted to see in what manner they would
-            celebrate the festival, which was a new thing.
+          <SlideDescription isExpanded={isExpanded}>
+            I went down yesterday to the <a href="#!">Piraeus with Glaucon</a> the son of Ariston, that I might offer up
+            my prayers to the goddess (Bendis, the <Link to="#">Thracian Artemis.</Link>); and also because{" "}
+            <em>I wanted to see</em> in what manner they would celebrate the festival, which was a new thing.
           </SlideDescription>
         </Box>
 
