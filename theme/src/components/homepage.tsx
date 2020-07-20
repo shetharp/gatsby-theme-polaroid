@@ -13,6 +13,7 @@ import replaceSlashes from "../utils/replaceSlashes";
 import Hero from "../texts/hero";
 // @ts-ignore
 import Bottom from "../texts/bottom";
+import Slide from "./slide";
 
 type PostsProps = {
   posts: {
@@ -34,9 +35,7 @@ const Homepage = ({ posts }: PostsProps) => {
 
   return (
     <Layout hasTransparentHeader hasFullWidthContainer>
-      <Box bg="accent" sx={{ width: "100vw", height: "100vh" }}>
-        Slide?
-      </Box>
+      <Slide />
       <section sx={{ mb: [10, null, null, null, 11], p: { fontSize: [2, null, 3, null, 4], mt: 2 } }}>
         <Hero />
       </section>

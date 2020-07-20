@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 /** @jsx jsx */
 import React from "react";
 import { jsx, NavLink } from "theme-ui";
