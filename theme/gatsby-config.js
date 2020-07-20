@@ -1,5 +1,3 @@
-const path = require(`path`);
-
 function GatsbyConfig(options) {
   const optionsWithDefaults = {
     formatString: "DD-MMM-YYYY",
@@ -16,14 +14,14 @@ function GatsbyConfig(options) {
         resolve: `gatsby-source-filesystem`,
         options: {
           name: `images`,
-          path: path.join(__dirname, `content`, `images`),
+          path: `content/images`, // TODO make configurable with theme options
         },
       },
       `gatsby-plugin-react-helmet`,
       `gatsby-plugin-catch-links`,
       `gatsby-plugin-theme-ui`,
       `gatsby-transformer-sharp`,
-      `gatsby-plugin-sharp`
+      `gatsby-plugin-sharp`,
     ],
   };
 }
