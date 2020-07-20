@@ -362,6 +362,17 @@ const text: ThemePolaroid["text"] = {
     fontSize: [2, null, 3, null, 4],
     color: "muted",
   },
+  slideTitle: {
+    ...baseHeading,
+    fontSize: [4, null, 5, null, 6, null, null, 7, null, 8, 9],
+    color: "inherit",
+    outline: "2px dashed mediumspringgreen", // TODO remove
+  },
+  slideDescription: {
+    ...baseTextBlock,
+    color: "inherit",
+    outline: "4px dotted mediumslateblue", // TODO remove
+  },
 };
 
 const links: ThemePolaroid["links"] = {

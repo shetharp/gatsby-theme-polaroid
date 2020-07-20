@@ -35,7 +35,10 @@ const Homepage = ({ posts }: PostsProps) => {
 
   return (
     <Layout hasTransparentHeader hasFullWidthContainer>
-      <Slide />
+      <Slide id="intro" />
+
+      {/* TODO Restyle all of the blog related content below to fit the Slides concept */}
+
       <section sx={{ mb: [10, null, null, null, 11], p: { fontSize: [2, null, 3, null, 4], mt: 2 } }}>
         <Hero />
       </section>
