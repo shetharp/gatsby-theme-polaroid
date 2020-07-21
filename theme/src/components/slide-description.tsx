@@ -4,14 +4,19 @@ import { alpha } from "@theme-ui/color";
 import { SystemStyleObject } from "@styled-system/css";
 
 export type SlideDescriptionProps = {
+  className?: string; // Pass down className to allow overriding styles
   highlightColor?: string;
   isExpanded?: boolean;
   shouldAdjustWidth?: boolean;
 };
 
 export const SlideDescription: React.FC<SlideDescriptionProps> = (props) => {
-  const { highlightColor = "highlight", isExpanded = false, shouldAdjustWidth = false } = props;
-  return <Text sx={sxDescription(highlightColor, isExpanded, shouldAdjustWidth)}>{props.children}</Text>;
+  const { className, highlightColor = "highlight", isExpanded = false, shouldAdjustWidth = false } = props;
+  return (
+    <Text className={className} sx={sxDescription(highlightColor, isExpanded, shouldAdjustWidth)}>
+      {props.children}
+    </Text>
+  );
 };
 
 /**

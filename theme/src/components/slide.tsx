@@ -12,6 +12,7 @@ import { SlideButton } from "./slide-button";
 
 export type SlideProps = {
   id: string;
+  className?: string; // Pass down className to allow overriding styles
   title?: ReactText;
   description?: ReactNode;
   fluid?: GatsbyImageProps["fluid"];
@@ -29,6 +30,7 @@ export type SlideProps = {
 export const Slide: React.FC<SlideProps> = (props) => {
   const {
     id,
+    className,
     title,
     description,
     fluid,
@@ -45,7 +47,12 @@ export const Slide: React.FC<SlideProps> = (props) => {
   } = props;
 
   return (
-    <Box as="section" id={id} sx={sxSlide(isBorderless, hasDistinctBorder, hasScrollIndicator, highlightColor)}>
+    <Box
+      as="section"
+      id={id}
+      className={className}
+      sx={sxSlide(isBorderless, hasDistinctBorder, hasScrollIndicator, highlightColor)}
+    >
       {!!fluid && <SlideImage fluid={fluid} imagePosition={imagePosition} loading="eager" />}
 
       {!!overlayColor && <SlideOverlay overlayColor={overlayColor} isColorful={isColorful} />}

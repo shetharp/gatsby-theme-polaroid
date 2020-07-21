@@ -5,15 +5,16 @@ import { SystemStyleObject } from "@styled-system/css";
 import { ThemePolaroid } from "../gatsby-plugin-theme-ui";
 
 export type SlideOverlayProps = {
+  className?: string; // Pass down className to allow overriding styles
   overlayColor: string;
   isColorful: boolean;
 };
 
 export const SlideOverlay: React.FC<SlideOverlayProps> = (props) => {
-  const { overlayColor, isColorful } = props;
+  const { className, overlayColor = "primary", isColorful } = props;
   const { theme } = useThemeUI();
 
-  return <Box sx={sxOverlay(overlayColor, isColorful, theme as ThemePolaroid)} />;
+  return <Box className={className} sx={sxOverlay(overlayColor, isColorful, theme as ThemePolaroid)} />;
 };
 
 /**

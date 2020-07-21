@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /** @jsx jsx */
 import React from "react";
 import { jsx, Link as TLink } from "theme-ui";
@@ -9,27 +8,33 @@ import ItemTags from "./item-tags";
 import { Post } from "../types/posts";
 
 type BlogListItemProps = {
+  className?: string; // Pass down className to allow overriding styles
   post: Post;
   showTags?: boolean;
 };
 
-const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
-  <Box as="article" sx={sxBlogPostItem}>
-    {/* @ts-ignore */}
-    <TLink as={Link} to={post.slug} sx={sxBlogPostTitleLink}>
-      <Text sx={sxBlogPostTitle}>{post.title}</Text>
-    </TLink>
-    <p sx={sxBlogPostDetails}>
-      <time>{post.date}</time>
-      {post.tags && showTags && (
-        <React.Fragment>
-          {` — `}
-          <ItemTags tags={post.tags} />
-        </React.Fragment>
-      )}
-    </p>
-  </Box>
-);
+const BlogListItem: React.FC<BlogListItemProps> = (props) => {
+  const { className, post, showTags = true } = props;
+  return (
+    <Box as="article" className={className} sx={sxBlogPostItem}>
+      {/* @ts-ignore */}
+      <TLink as={Link} to={post.slug} sx={sxBlogPostTitleLink}>
+        <Text sx={sxBlogPostTitle}>{post.title}</Text>
+      </TLink>
+
+      <p sx={sxBlogPostDetails}>
+        <time>{post.date}</time>
+
+        {post.tags && showTags && (
+          <React.Fragment>
+            {` — `}
+            <ItemTags tags={post.tags} />
+          </React.Fragment>
+        )}
+      </p>
+    </Box>
+  );
+};
 export default BlogListItem;
 
 /**

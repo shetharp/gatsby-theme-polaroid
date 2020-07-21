@@ -4,14 +4,15 @@ import { jsx, Text } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 
 export type SlideButtonProps = {
+  className?: string; // Pass down className to allow overriding styles
   href: string;
   isBorderless?: boolean;
 };
 
 export const SlideButton: React.FC<SlideButtonProps> = (props) => {
-  const { href, isBorderless = false } = props;
+  const { className, href, isBorderless = false } = props;
   return (
-    <a href={href} sx={sxButton(isBorderless)}>
+    <a className={className} href={href} sx={sxButton(isBorderless)}>
       <Text variant="uppercase">{props.children}</Text>
     </a>
   );

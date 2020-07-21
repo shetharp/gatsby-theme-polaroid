@@ -85,7 +85,7 @@ const Homepage: React.FC<HomepageProps> = (props) => {
         isExpanded
         hasDistinctBorder
       />
-      <SlideBlog id="blog" overlayColor={null} posts={posts}>
+      <SlideBlog id="blog" posts={posts}>
         <SlideTitle>More</SlideTitle>
         <SlideDescription>
           <p>

@@ -3,6 +3,7 @@ import { Box } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 
 export type SlideContainerProps = {
+  className?: string; // Pass down className to allow overriding styles
   isBorderless?: boolean;
   shouldJustifyContent?: boolean;
 };
@@ -11,8 +12,12 @@ export type SlideContainerProps = {
  * The base slide container
  */
 export const SlideContainerBase: React.FC<SlideContainerProps> = (props) => {
-  const { isBorderless = false } = props;
-  return <Box sx={sxContainerBase(isBorderless)}>{props.children}</Box>;
+  const { className, isBorderless = false } = props;
+  return (
+    <Box className={className} sx={sxContainerBase(isBorderless)}>
+      {props.children}
+    </Box>
+  );
 };
 
 /**
@@ -20,8 +25,12 @@ export const SlideContainerBase: React.FC<SlideContainerProps> = (props) => {
  * It is positioned absolute so that it overlays on top of the slide container
  */
 export const SlideContainer: React.FC<SlideContainerProps> = (props) => {
-  const { isBorderless = false, shouldJustifyContent = false } = props;
-  return <Box sx={sxContainer(isBorderless, shouldJustifyContent)}>{props.children}</Box>;
+  const { className, isBorderless = false, shouldJustifyContent = false } = props;
+  return (
+    <Box className={className} sx={sxContainer(isBorderless, shouldJustifyContent)}>
+      {props.children}
+    </Box>
+  );
 };
 
 /**
@@ -29,6 +38,8 @@ export const SlideContainer: React.FC<SlideContainerProps> = (props) => {
  */
 const sxContainerBase = (isBorderless: boolean): SystemStyleObject => {
   return {
+    position: "relative",
+    zIndex: 1,
     color: "white", // TODO theme,
     padding: isBorderless
       ? [4, null, null, null, 6, null, null, 7, null, 8]

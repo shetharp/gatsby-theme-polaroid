@@ -3,14 +3,15 @@ import { Text } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 
 export type SlideTitleProps = {
+  className?: string; // Pass down className to allow overriding styles
   isExpanded?: boolean;
   shouldAdjustWidth?: boolean;
 };
 
 export const SlideTitle: React.FC<SlideTitleProps> = (props) => {
-  const { isExpanded = false, shouldAdjustWidth = false } = props;
+  const { className, isExpanded = false, shouldAdjustWidth = false } = props;
   return (
-    <Text as="h2" sx={sxTitle(isExpanded, shouldAdjustWidth)}>
+    <Text as="h2" className={className} sx={sxTitle(isExpanded, shouldAdjustWidth)}>
       {props.children}
     </Text>
   );
