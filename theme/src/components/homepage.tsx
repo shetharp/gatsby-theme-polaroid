@@ -65,6 +65,7 @@ const Homepage = ({ posts }: PostsProps) => {
         }
         fluid={data.imgIntro.childImageSharp.fluid}
         isBorderless
+        hasScrollIndicator
       />
       <Slide
         id="work"

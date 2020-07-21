@@ -21,6 +21,7 @@ export type SlideProps = {
   isColorful?: boolean;
   isExpanded?: boolean;
   isBorderless?: boolean;
+  hasScrollIndicator?: boolean;
   imagePosition?: string;
   button?: { text: string; href: string };
 };
@@ -36,12 +37,13 @@ export const Slide: React.FC<SlideProps> = (props) => {
     isColorful = false,
     isExpanded = false,
     isBorderless = false,
+    hasScrollIndicator = false,
     imagePosition = "50% 50%",
     button,
   } = props;
 
   return (
-    <Box as="section" id={id} sx={sxSlide(isBorderless)}>
+    <Box as="section" id={id} sx={sxSlide(isBorderless, hasScrollIndicator, highlightColor)}>
       {!!fluid && <SlideImage fluid={fluid} imagePosition={imagePosition} loading="eager" />}
 
       {!!overlayColor && <SlideOverlay overlayColor={overlayColor} isColorful={isColorful} />}
@@ -72,7 +74,39 @@ export default Slide;
 /**
  * Styles
  */
-const sxSlide = (isBorderless: boolean): SystemStyleObject => {
+const sxSlide = (isBorderless: boolean, hasScrollIndicator: boolean, highlightColor: string): SystemStyleObject => {
+  const sxScrollIndicator: SystemStyleObject = {
+    ["@keyframes animateSlideScrollIndicator"]: {
+      "0%": {
+        opacity: 1,
+        transform: "translate(100%, 0px) rotate(-90deg)",
+      },
+      "100%": {
+        opacity: 0.6,
+        transform: "translate(100%, 40px) rotate(-90deg)",
+      },
+    },
+    ["::after"]: {
+      content: "'<< SCROLL'",
+      fontSize: ["10px", null, null, null, "12px", null, null, "14px", null, 0],
+      fontFamily: "heading",
+      letterSpacing: "0.5ch",
+      color: "white",
+      background: highlightColor,
+      display: "flex",
+      alignItems: "center",
+      height: ["16", null, null, null, "24", null, null, "32", null, "40"],
+      paddingLeft: [6, null, null, null, null, null, null, null, null, 7],
+      paddingRight: [1, null, null, null, 2, null, null, 3, null, 4],
+      position: "absolute",
+      bottom: 0,
+      right: [0, null, 2, null, 3, null, null, 4, null, 5],
+      transform: "translateX(100%) rotate(-90deg)",
+      transformOrigin: "bottom left",
+      animation: "animateSlideScrollIndicator 2s ease-in alternate infinite",
+    },
+  };
+
   return {
     display: "flex",
     flexDirection: "column",
@@ -87,6 +121,7 @@ const sxSlide = (isBorderless: boolean): SystemStyleObject => {
     borderColor: "transparent",
     backgroundColor: "background",
     transition: (theme) => theme.transitions.default,
+    ...(hasScrollIndicator && sxScrollIndicator),
   };
 };
 
