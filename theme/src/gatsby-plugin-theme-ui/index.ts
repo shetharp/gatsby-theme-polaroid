@@ -332,7 +332,6 @@ const baseButton = {
   transition: transitions.fast,
   "&:active": {
     opacity: opacities.high,
-    transform: "scale(0.95)",
   },
 };
 
@@ -367,7 +366,7 @@ const text: ThemePolaroid["text"] = {
 const links: ThemePolaroid["links"] = {
   nav: {
     ...text.uppercase,
-    fontSize: [1, null, null, null, 2],
+    fontSize: [0, null, null, null, 1],
   },
   secondary: {
     color: "secondary",

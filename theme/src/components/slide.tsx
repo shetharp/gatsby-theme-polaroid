@@ -67,7 +67,7 @@ export const Slide: React.FC<SlideProps> = (props) => {
         </Box>
 
         {/* TODO Render the button if its props exist */}
-        <SlideButton>Slide Button</SlideButton>
+        <SlideButton isBorderless={isBorderless}>Slide Button</SlideButton>
       </SlideContainer>
     </Box>
   );
@@ -89,7 +89,7 @@ const sxSlide = (isBorderless: boolean): SystemStyleObject => {
     height: "100vh",
     overflow: "hidden",
     position: "relative",
-    minHeight: (theme) => theme.breakpoints[1],
+    minHeight: (theme) => [theme.breakpoints[1], null, null, null, null, null, theme.breakpoints[2]],
     marginBottom: isBorderless ? 0 : [-2, null, null, null, -3, null, null, -4, null, -5],
     borderWidth: isBorderless ? 0 : ["16px", null, null, null, "24px", null, null, "32px", null, "40px"],
     borderStyle: "solid",

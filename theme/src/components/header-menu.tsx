@@ -70,6 +70,7 @@ const sxBox = (isOpen: boolean): SystemStyleObject => ({
   position: "fixed",
   top: 0,
   right: 0,
+  zIndex: "headerMenu",
   transform: isOpen ? "translateX(0)" : "translateX(100%)",
   transition: "all 300ms ease-in-out",
 });
@@ -80,7 +81,6 @@ const sxNav: SystemStyleObject = {
   height: "100%",
   textAlign: "center",
   overflowY: "scroll",
-  zIndex: "headerMenu",
 };
 
 const sxNavLink = (
