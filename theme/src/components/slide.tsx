@@ -2,7 +2,6 @@
 import React, { ReactText, ReactNode } from "react";
 import { jsx, Box } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
-import { Link } from "gatsby";
 import { GatsbyImageProps } from "gatsby-image";
 import { SlideImage } from "./slide-image";
 import { SlideOverlay } from "./slide-overlay";

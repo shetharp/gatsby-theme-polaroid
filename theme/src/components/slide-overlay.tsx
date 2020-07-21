@@ -1,5 +1,5 @@
 import React from "react";
-import { useThemeUI, Theme, Box } from "theme-ui";
+import { useThemeUI, Box } from "theme-ui";
 import { alpha } from "@theme-ui/color";
 import { SystemStyleObject } from "@styled-system/css";
 import { ThemePolaroid } from "../gatsby-plugin-theme-ui";
@@ -20,21 +20,26 @@ export const SlideOverlay: React.FC<SlideOverlayProps> = (props) => {
  * Styles
  */
 
+/**
+ * Generates gradients from the overlay color
+ * https://theme-ui.com/packages/color#advanced-usage
+ */
 const sxOverlay = (overlayColor: string, isColorful: boolean, theme: ThemePolaroid): SystemStyleObject => {
-  // Generate gradients from the overlay color
-  // https://theme-ui.com/packages/color#advanced-usage
   const gradientColorfulMobile = `linear-gradient(185deg, ${alpha(overlayColor, 0.4)(theme)} 0%, ${alpha(
     overlayColor,
     0.8
   )(theme)} 50%, ${alpha(overlayColor, 0.9)(theme)} 100%)`;
+
   const gradientMobile = `linear-gradient(185deg, ${alpha(overlayColor, 0.0)(theme)} 0%, ${alpha(
     overlayColor,
     0.6
   )(theme)} 50%, ${alpha(overlayColor, 0.9)(theme)} 100%)`;
+
   const gradientColorfulLaptop = `linear-gradient(190deg, ${alpha(overlayColor, 0.3)(theme)} 0%, ${alpha(
     overlayColor,
     0.6
   )(theme)} 50%, ${alpha(overlayColor, 0.9)(theme)} 100%)`;
+
   const gradientLaptop = `linear-gradient(190deg, ${alpha(overlayColor, 0.0)(theme)} 0%, ${alpha(
     overlayColor,
     0.4

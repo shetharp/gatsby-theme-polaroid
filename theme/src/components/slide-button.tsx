@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, Button, Text, Flex } from "theme-ui";
+import { jsx, Text } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 
 export type SlideButtonProps = {
