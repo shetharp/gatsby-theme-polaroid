@@ -9,9 +9,9 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import theme from "prism-react-renderer/themes/nightOwl";
 import { useMinimalBlogConfig } from "../hooks";
-import { Language } from "../types";
+import { Language } from "../types/code";
 
-type CodeProps = {
+export type CodeProps = {
   codeString: string;
   language: Language;
   noLineNumbers?: boolean;
@@ -48,7 +48,7 @@ const calculateLinesToHighlight = (meta: string) => {
   };
 };
 
-const Code = ({
+export const Code = ({
   codeString,
   noLineNumbers = false,
   className: blockClassName,
