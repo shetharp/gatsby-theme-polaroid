@@ -13,6 +13,7 @@ export type LayoutProps = {
   className?: string;
   hasTransparentHeader?: boolean;
   hasFullWidthContainer?: boolean;
+  hasFooter?: boolean;
 };
 
 /**
@@ -20,7 +21,13 @@ export type LayoutProps = {
  * It applies the global styles to the page using the ThemeProvider.
  */
 export const Layout: React.FC<LayoutProps> = (props) => {
-  const { children, className = ``, hasTransparentHeader = false, hasFullWidthContainer = false } = props;
+  const {
+    children,
+    className = ``,
+    hasTransparentHeader = false,
+    hasFullWidthContainer = false,
+    hasFooter = true,
+  } = props;
   return (
     <React.Fragment>
       <Global
@@ -64,7 +71,7 @@ export const Layout: React.FC<LayoutProps> = (props) => {
           {children}
         </Box>
       </Container>
-      <Footer />
+      {hasFooter && <Footer />}
     </React.Fragment>
   );
 };

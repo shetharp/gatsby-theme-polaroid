@@ -35,7 +35,7 @@ const Homepage = ({ posts }: PostsProps) => {
   const { basePath, blogPath } = useMinimalBlogConfig();
 
   return (
-    <Layout hasTransparentHeader hasFullWidthContainer>
+    <Layout hasTransparentHeader hasFullWidthContainer hasFooter={false}>
       <Slide id="intro" isBorderless />
       <Slide id="work" imagePosition="0% 0%" />
 
