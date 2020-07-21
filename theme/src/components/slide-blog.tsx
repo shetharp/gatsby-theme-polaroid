@@ -3,7 +3,7 @@ import React from "react";
 import { jsx } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 import Slide from "./slide";
-import { SlideContainerBase } from "./slide-container";
+import { SlideContainer } from "./slide-container";
 import { SlideTitle } from "./slide-title";
 
 export type SlideBlogProps = {
@@ -13,9 +13,9 @@ export type SlideBlogProps = {
 export const SlideBlog: React.FC<SlideBlogProps> = (props) => {
   return (
     <Slide id="blog" isBorderless isColorful>
-      <SlideContainerBase isBorderless>
+      <SlideContainer isBorderless>
         <SlideTitle isExpanded={false}>Latest Posts</SlideTitle>
-      </SlideContainerBase>
+      </SlideContainer>
     </Slide>
   );
 };

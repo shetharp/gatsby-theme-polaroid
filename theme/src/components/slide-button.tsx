@@ -5,14 +5,14 @@ import { SystemStyleObject } from "@styled-system/css";
 
 export type SlideButtonProps = {
   href: string;
-  isBorderless: boolean;
+  isBorderless?: boolean;
 };
 
 export const SlideButton: React.FC<SlideButtonProps> = (props) => {
-  const { children, href, isBorderless } = props;
+  const { href, isBorderless = false } = props;
   return (
     <a href={href} sx={sxButton(isBorderless)}>
-      <Text variant="uppercase">{children}</Text>
+      <Text variant="uppercase">{props.children}</Text>
     </a>
   );
 };

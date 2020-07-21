@@ -51,13 +51,16 @@ export const Slide: React.FC<SlideProps> = (props) => {
 
       {!!overlayColor && <SlideOverlay overlayColor={overlayColor} isColorful={isColorful} />}
 
+      {/* If the slide has the children prop passed in, render the custom slide content. Otherwise, render the standard slide format. */}
       {!!children ? (
         children
       ) : (
-        <SlideContainer isBorderless={isBorderless}>
+        <SlideContainer isBorderless={isBorderless} shouldJustifyContent>
           <Box sx={sxBody}>
-            <SlideTitle isExpanded={isExpanded}>{title}</SlideTitle>
-            <SlideDescription isExpanded={isExpanded} highlightColor={highlightColor}>
+            <SlideTitle isExpanded={isExpanded} shouldAdjustWidth>
+              {title}
+            </SlideTitle>
+            <SlideDescription highlightColor={highlightColor} isExpanded={isExpanded} shouldAdjustWidth>
               {description}
             </SlideDescription>
           </Box>
