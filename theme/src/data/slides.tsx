@@ -15,25 +15,22 @@ export type SlidesProps = {
 /**
  * Shadow this file to add your own Slides to the homepage.
  * You can also split individual slides into their own file and import them here.
- * @param props
  */
 const Slides: React.FC<SlidesProps> = (props) => {
   const { posts } = props;
-  const data = useStaticQuery(graphql`
+
+  /**
+   * Query for images
+   * By default, these images should be located in your `/content/images` directory
+   * The configuration for slideImageFragment is in `/src/data/slide-image-fragment.ts`
+   */
+  const slideImages = useStaticQuery(graphql`
     query {
       imgIntro: file(relativePath: { eq: "kite-festival-1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 4000, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        ...slideImageFragment
       }
       imgWork: file(relativePath: { eq: "kite-festival-2.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 4000, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+        ...slideImageFragment
       }
     }
   `);
@@ -52,7 +49,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
             tags/categories, syntax-highlighting on code blocks, Theme UI for dark mode, and Typescript.
           </React.Fragment>
         }
-        fluid={data.imgIntro.childImageSharp.fluid}
+        fluid={slideImages.imgIntro.childImageSharp.fluid}
         isBorderless
         hasScrollIndicator
       />
@@ -70,7 +67,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
             <em>I wanted to see</em> in what manner they would celebrate the festival, which was a new thing.
           </React.Fragment>
         }
-        fluid={data.imgWork.childImageSharp.fluid}
+        fluid={slideImages.imgWork.childImageSharp.fluid}
         overlayColor="properBlue"
         highlightColor="#1481b8"
         isColorful
@@ -93,7 +90,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
             with very little to distress or vex her.
           </React.Fragment>
         }
-        fluid={data.imgWork.childImageSharp.fluid}
+        fluid={slideImages.imgWork.childImageSharp.fluid}
         overlayColor="equitableBlue"
         highlightColor="directRed"
         isColorful
@@ -122,5 +119,4 @@ const Slides: React.FC<SlidesProps> = (props) => {
     </React.Fragment>
   );
 };
-
 export default Slides;
