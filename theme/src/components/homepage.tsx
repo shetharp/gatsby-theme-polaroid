@@ -15,6 +15,7 @@ import Hero from "../texts/hero";
 // @ts-ignore
 import Bottom from "../texts/bottom";
 import Slide from "./slide";
+import { SlideBlog } from "./slide-blog";
 
 type PostsProps = {
   posts: {
@@ -82,9 +83,11 @@ const Homepage = ({ posts }: PostsProps) => {
         highlightColor="#1481b8"
         isColorful
         isExpanded
+        hasDistinctBorder
         imagePosition="0% 0%"
         button={{ text: "Learn more", href: "https://arpitsheth.com/" }}
       />
+      <SlideBlog />
 
       {/* TODO Restyle all of the blog related content below to fit the Slides concept */}
 

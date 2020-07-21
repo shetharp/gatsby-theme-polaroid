@@ -21,6 +21,7 @@ export type SlideProps = {
   isColorful?: boolean;
   isExpanded?: boolean;
   isBorderless?: boolean;
+  hasDistinctBorder?: boolean;
   hasScrollIndicator?: boolean;
   imagePosition?: string;
   button?: { text: string; href: string };
@@ -37,31 +38,37 @@ export const Slide: React.FC<SlideProps> = (props) => {
     isColorful = false,
     isExpanded = false,
     isBorderless = false,
+    hasDistinctBorder = false,
     hasScrollIndicator = false,
     imagePosition = "50% 50%",
     button,
+    children,
   } = props;
 
   return (
-    <Box as="section" id={id} sx={sxSlide(isBorderless, hasScrollIndicator, highlightColor)}>
+    <Box as="section" id={id} sx={sxSlide(isBorderless, hasDistinctBorder, hasScrollIndicator, highlightColor)}>
       {!!fluid && <SlideImage fluid={fluid} imagePosition={imagePosition} loading="eager" />}
 
       {!!overlayColor && <SlideOverlay overlayColor={overlayColor} isColorful={isColorful} />}
 
-      <SlideContainer isBorderless={isBorderless}>
-        <Box sx={sxBody}>
-          <SlideTitle isExpanded={isExpanded}>{title}</SlideTitle>
-          <SlideDescription isExpanded={isExpanded} highlightColor={highlightColor}>
-            {description}
-          </SlideDescription>
-        </Box>
+      {!!children ? (
+        children
+      ) : (
+        <SlideContainer isBorderless={isBorderless}>
+          <Box sx={sxBody}>
+            <SlideTitle isExpanded={isExpanded}>{title}</SlideTitle>
+            <SlideDescription isExpanded={isExpanded} highlightColor={highlightColor}>
+              {description}
+            </SlideDescription>
+          </Box>
 
-        {!!button && (
-          <SlideButton href={button.href} isBorderless={isBorderless}>
-            {button.text}
-          </SlideButton>
-        )}
-      </SlideContainer>
+          {!!button && (
+            <SlideButton href={button.href} isBorderless={isBorderless}>
+              {button.text}
+            </SlideButton>
+          )}
+        </SlideContainer>
+      )}
     </Box>
   );
 };
@@ -74,7 +81,12 @@ export default Slide;
 /**
  * Styles
  */
-const sxSlide = (isBorderless: boolean, hasScrollIndicator: boolean, highlightColor: string): SystemStyleObject => {
+const sxSlide = (
+  isBorderless: boolean,
+  hasDistinctBorder: boolean,
+  hasScrollIndicator: boolean,
+  highlightColor: string
+): SystemStyleObject => {
   const sxScrollIndicator: SystemStyleObject = {
     ["@keyframes animateSlideScrollIndicator"]: {
       "0%": {
@@ -115,7 +127,7 @@ const sxSlide = (isBorderless: boolean, hasScrollIndicator: boolean, highlightCo
     overflow: "hidden",
     position: "relative",
     minHeight: (theme) => [theme.breakpoints[1], null, null, null, null, null, theme.breakpoints[2]],
-    marginBottom: isBorderless ? 0 : [-2, null, null, null, -3, null, null, -4, null, -5],
+    marginBottom: hasDistinctBorder ? 0 : [-2, null, null, null, -3, null, null, -4, null, -5],
     borderWidth: isBorderless ? 0 : ["16px", null, null, null, "24px", null, null, "32px", null, "40px"],
     borderStyle: "solid",
     borderColor: "transparent",
