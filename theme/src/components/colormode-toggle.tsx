@@ -1,17 +1,20 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /** @jsx jsx */
+import React from "react";
 import { jsx } from "theme-ui";
 
-type Props = {
+export type ColorModeToggleProps = {
   isDark: boolean;
   fillColor: string;
   toggle: (e: any) => void;
 };
 
-// Adapted from: https://codepen.io/aaroniker/pen/KGpXZo and https://github.com/narative/gatsby-theme-novela/blob/714b6209c5bd61b220370e8a7ad84c0b1407946a/%40narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx
-
-const ColorModeToggle = ({ isDark, fillColor, toggle }: Props) => {
+/**
+ * Adapted from
+ * https://codepen.io/aaroniker/pen/KGpXZo
+ * https://github.com/narative/gatsby-theme-novela/blob/714b6209c5bd61b220370e8a7ad84c0b1407946a/%40narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx
+ */
+export const ColorModeToggle: React.FC<ColorModeToggleProps> = ({ isDark, fillColor, toggle }) => {
   return (
     <button
       onClick={toggle}
@@ -80,5 +83,4 @@ const ColorModeToggle = ({ isDark, fillColor, toggle }: Props) => {
     </button>
   );
 };
-
 export default ColorModeToggle;

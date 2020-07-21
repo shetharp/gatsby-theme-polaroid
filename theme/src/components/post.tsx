@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /** @jsx jsx */
 import { jsx, Heading } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
@@ -7,7 +6,7 @@ import Layout from "./layout";
 import ItemTags from "./item-tags";
 import SEO from "./seo";
 
-type PostProps = {
+export type PostProps = {
   data: {
     post: {
       slug: string;
@@ -35,7 +34,7 @@ type PostProps = {
 const px = [`32px`, `16px`, `8px`, `4px`];
 const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`);
 
-const Post = ({ data: { post } }: PostProps) => (
+export const Post: React.FC<PostProps> = ({ data: { post } }) => (
   <Layout>
     <SEO
       title={post.title}

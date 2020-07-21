@@ -1,6 +1,6 @@
 /** @jsx */
 import React, { ReactText, ReactNode } from "react";
-import { jsx, Box } from "theme-ui";
+import { Box } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 import { GatsbyImageProps } from "gatsby-image";
 import { SlideImage } from "./slide-image";

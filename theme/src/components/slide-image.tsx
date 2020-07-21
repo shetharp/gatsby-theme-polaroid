@@ -28,7 +28,3 @@ export const SlideImage: React.FC<SlideImageProps> = (props) => {
 
   return <Img fluid={fluid} style={styleWithDefaults} imgStyle={imgStyleWithDefaults} {...otherProps} />;
 };
-
-/**
- * Styles
- */

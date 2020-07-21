@@ -6,11 +6,11 @@ import { Flex } from "@theme-ui/components";
 import { Link } from "gatsby";
 import Layout from "./layout";
 import { useMinimalBlogConfig } from "../hooks";
-import Listing from "./listing";
+import BlogList from "./blog-list";
 import replaceSlashes from "../utils/replaceSlashes";
 import SEO from "./seo";
 
-type TagProps = {
+export type TagProps = {
   posts: {
     slug: string;
     title: string;
@@ -31,7 +31,7 @@ type TagProps = {
   };
 };
 
-const Tag = ({ posts, pageContext }: TagProps) => {
+export const Tag = ({ posts, pageContext }: TagProps) => {
   const { tagsPath, basePath } = useMinimalBlogConfig();
 
   return (
@@ -44,7 +44,7 @@ const Tag = ({ posts, pageContext }: TagProps) => {
           View all tags
         </TLink>
       </Flex>
-      <Listing posts={posts} sx={{ mt: [4, 5] }} />
+      <BlogList posts={posts} sx={{ mt: [4, 5] }} />
     </Layout>
   );
 };

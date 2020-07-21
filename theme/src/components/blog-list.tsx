@@ -3,13 +3,13 @@ import { jsx } from "theme-ui";
 import BlogListItem from "./blog-list-item";
 import { Post } from "../types/posts";
 
-type ListingProps = {
+export type BlogListProps = {
   posts: Post[];
   className?: string; // Pass down className to allow overriding styles
   showTags?: boolean;
 };
 
-const Listing: React.FC<ListingProps> = ({ posts, className = ``, showTags = true }) => (
+export const BlogList: React.FC<BlogListProps> = ({ posts, className = ``, showTags = true }) => (
   <section className={className}>
     {posts.map((post) => (
       <BlogListItem key={post.slug} post={post} showTags={showTags} />
@@ -17,4 +17,4 @@ const Listing: React.FC<ListingProps> = ({ posts, className = ``, showTags = tru
   </section>
 );
 
-export default Listing;
+export default BlogList;

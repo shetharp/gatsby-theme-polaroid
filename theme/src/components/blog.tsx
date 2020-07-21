@@ -4,27 +4,17 @@ import { jsx, Heading, Link as TLink } from "theme-ui";
 import { Link } from "gatsby";
 import { Flex } from "@theme-ui/components";
 import Layout from "./layout";
-import Listing from "./listing";
+import BlogList from "./blog-list";
 import { useMinimalBlogConfig } from "../hooks";
 import replaceSlashes from "../utils/replaceSlashes";
+import { Post } from "../types/posts";
 import SEO from "./seo";
 
-type PostsProps = {
-  posts: {
-    slug: string;
-    title: string;
-    date: string;
-    excerpt: string;
-    description: string;
-    timeToRead?: number;
-    tags?: {
-      name: string;
-      slug: string;
-    }[];
-  }[];
+export type BlogProps = {
+  posts: Post[];
 };
 
-const Blog = ({ posts }: PostsProps) => {
+export const Blog: React.FC<BlogProps> = ({ posts }) => {
   const { tagsPath, basePath } = useMinimalBlogConfig();
 
   return (
@@ -37,7 +27,7 @@ const Blog = ({ posts }: PostsProps) => {
           View all tags
         </TLink>
       </Flex>
-      <Listing posts={posts} sx={{ mt: [4, 5] }} />
+      <BlogList posts={posts} />
     </Layout>
   );
 };

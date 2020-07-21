@@ -9,7 +9,7 @@ export type HomepageProps = {
   posts: Post[];
 };
 
-const Homepage: React.FC<HomepageProps> = (props) => {
+export const Homepage: React.FC<HomepageProps> = (props) => {
   const { posts } = props;
 
   return (
@@ -18,5 +18,4 @@ const Homepage: React.FC<HomepageProps> = (props) => {
     </Layout>
   );
 };
-
 export default Homepage;

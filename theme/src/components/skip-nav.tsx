@@ -1,13 +1,24 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React from "react";
 
-type SkipNavLinkProps = {
+export type SkipNavLinkProps = {
   children: React.ReactNode;
 };
 
+export const SkipNavLink: React.FC<SkipNavLinkProps> = ({ children, ...props }) => (
+  // @ts-ignore
+  <a {...props} sx={{ ...skipNavStyles }} href="#skip-nav" data-skip-link="true">
+    {children}
+  </a>
+);
+
+export default SkipNavLink;
+
+/**
+ * Styles
+ */
 const skipNavStyles = {
   border: 0,
   clip: `react(0 0 0 0)`,
@@ -31,12 +42,3 @@ const skipNavStyles = {
     textDecoration: `none`,
   },
 };
-
-const SkipNavLink = ({ children, ...props }: SkipNavLinkProps) => (
-  // @ts-ignore
-  <a {...props} sx={{ ...skipNavStyles }} href="#skip-nav" data-skip-link="true">
-    {children}
-  </a>
-);
-
-export default SkipNavLink;

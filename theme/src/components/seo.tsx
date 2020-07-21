@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import { withPrefix } from "gatsby";
 import { useSiteMetadata } from "../hooks";
 
-type SEOProps = {
+export type SEOProps = {
   title?: string;
   description?: string;
   pathname?: string;
@@ -12,7 +12,7 @@ type SEOProps = {
   children?: React.ReactNode;
 };
 
-const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children = null }: SEOProps) => {
+export const SEO = ({ title = ``, description = ``, pathname = ``, image = ``, children = null }: SEOProps) => {
   const site = useSiteMetadata();
 
   const {

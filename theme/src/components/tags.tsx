@@ -10,14 +10,14 @@ import { useMinimalBlogConfig } from "../hooks";
 import SEO from "./seo";
 import replaceSlashes from "../utils/replaceSlashes";
 
-type PostsProps = {
+export type PostsProps = {
   list: {
     fieldValue: string;
     totalCount: number;
   }[];
 };
 
-const Tags = ({ list }: PostsProps) => {
+export const Tags = ({ list }: PostsProps) => {
   const { tagsPath, basePath } = useMinimalBlogConfig();
 
   return (

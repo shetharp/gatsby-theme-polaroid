@@ -1,18 +1,17 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from "react";
 import { Link as TLink } from "theme-ui";
 import { Link } from "gatsby";
 import { useMinimalBlogConfig } from "../hooks";
 import replaceSlashes from "../utils/replaceSlashes";
 
-type TagsProps = {
+export type ItemTagsProps = {
   tags: {
     name: string;
     slug: string;
   }[];
 };
 
-const ItemTags = ({ tags }: TagsProps) => {
+export const ItemTags: React.FC<ItemTagsProps> = ({ tags }) => {
   const { tagsPath, basePath } = useMinimalBlogConfig();
 
   return (
@@ -29,5 +28,4 @@ const ItemTags = ({ tags }: TagsProps) => {
     </React.Fragment>
   );
 };
-
 export default ItemTags;

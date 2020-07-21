@@ -7,13 +7,13 @@ import { Link } from "gatsby";
 import ItemTags from "./item-tags";
 import { Post } from "../types/posts";
 
-type BlogListItemProps = {
+export type BlogListItemProps = {
   className?: string; // Pass down className to allow overriding styles
   post: Post;
   showTags?: boolean;
 };
 
-const BlogListItem: React.FC<BlogListItemProps> = (props) => {
+export const BlogListItem: React.FC<BlogListItemProps> = (props) => {
   const { className, post, showTags = true } = props;
   return (
     <Box as="article" className={className} sx={sxBlogPostItem}>

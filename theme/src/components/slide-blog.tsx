@@ -7,7 +7,7 @@ import { sxSlideBase } from "./slide";
 import { SlideOverlay } from "./slide-overlay";
 import { SlideContainerBase } from "./slide-container";
 import { SlideTitle } from "./slide-title";
-import Listing from "./listing";
+import BlogList from "./blog-list";
 import { Post } from "../types/posts";
 import replaceSlashes from "../utils/replaceSlashes";
 import { useMinimalBlogConfig } from "../hooks";
@@ -44,7 +44,7 @@ export const SlideBlog: React.FC<SlideBlogProps> = (props) => {
           <Box>
             <SlideTitle>Latest Posts</SlideTitle>
             <Box sx={sxSectionDetails}>
-              <Listing posts={posts} showTags={false} />
+              <BlogList posts={posts} showTags={false} />
               <SlideDescription>
                 <Link to={replaceSlashes(`/${basePath}/${blogPath}`)}>Read all posts</Link>
               </SlideDescription>

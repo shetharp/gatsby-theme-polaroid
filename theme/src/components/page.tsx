@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /** @jsx jsx */
 import { jsx, Heading } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "./layout";
 import SEO from "./seo";
 
-type PageProps = {
+export type PageProps = {
   data: {
     page: {
       title: string;
@@ -16,7 +15,7 @@ type PageProps = {
   };
 };
 
-const Page = ({ data: { page } }: PageProps) => (
+export const Page: React.FC<PageProps> = ({ data: { page } }) => (
   <Layout>
     <SEO title={page.title} description={page.excerpt} />
     <Heading variant="styles.h2">{page.title}</Heading>
