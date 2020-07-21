@@ -21,6 +21,7 @@ const sxDescription = (isExpanded: boolean, highlightColor: string): SystemStyle
     color: "white",
     fontSize: [0, null, null, 1, null, null, 2, null, 3],
     lineHeight: [1.4, null, null, null, null, null, null, null, 1.5],
+    marginTop: [2, null, null, null, 3, null, null, 4, null, 5],
     width: isExpanded
       ? ["100%", null, "85%", null, "85%", null, "75%", "66.667%", "50%"]
       : ["100%", null, "85%", null, "75%", null, "66.667%", null, "50%"],

@@ -4,14 +4,15 @@ import { jsx, Button, Text, Flex } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 
 export type SlideButtonProps = {
+  href: string;
   isBorderless: boolean;
 };
 
 export const SlideButton: React.FC<SlideButtonProps> = (props) => {
-  const { isBorderless } = props;
+  const { children, href, isBorderless } = props;
   return (
-    <a href="https://arpitsheth.com/" sx={sxButton(isBorderless)}>
-      <Text variant="uppercase">{props.children}</Text>
+    <a href={href} sx={sxButton(isBorderless)}>
+      <Text variant="uppercase">{children}</Text>
     </a>
   );
 };

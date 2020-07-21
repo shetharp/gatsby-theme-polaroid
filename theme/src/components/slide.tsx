@@ -2,7 +2,8 @@
 import React, { ReactText, ReactNode } from "react";
 import { jsx, Box } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { Link } from "gatsby";
+import { GatsbyImageProps } from "gatsby-image";
 import { SlideImage } from "./slide-image";
 import { SlideOverlay } from "./slide-overlay";
 import { SlideContainer } from "./slide-container";
@@ -14,14 +15,14 @@ export type SlideProps = {
   id: string;
   title?: ReactText;
   description?: ReactNode;
-  fluid?: unknown; // TODO
-  overlayColor?: string;
+  fluid?: GatsbyImageProps["fluid"];
+  overlayColor?: string | null;
   highlightColor?: string;
   isColorful?: boolean;
   isExpanded?: boolean;
   isBorderless?: boolean;
   imagePosition?: string;
-  button?: ReactNode; // TODO
+  button?: { text: string; href: string };
 };
 
 export const Slide: React.FC<SlideProps> = (props) => {
@@ -39,35 +40,25 @@ export const Slide: React.FC<SlideProps> = (props) => {
     button,
   } = props;
 
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      file(relativePath: { eq: "kite-festival-1.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 4000, quality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
   return (
     <Box as="section" id={id} sx={sxSlide(isBorderless)}>
-      <SlideImage fluid={data.file.childImageSharp.fluid} imagePosition={imagePosition} loading="eager" />
+      {!!fluid && <SlideImage fluid={fluid} imagePosition={imagePosition} loading="eager" />}
 
-      <SlideOverlay overlayColor={overlayColor} isColorful={isColorful} />
+      {!!overlayColor && <SlideOverlay overlayColor={overlayColor} isColorful={isColorful} />}
 
       <SlideContainer isBorderless={isBorderless}>
         <Box sx={sxBody}>
-          <SlideTitle isExpanded={isExpanded}>Savor the moment slowly, before it slips away.</SlideTitle>
+          <SlideTitle isExpanded={isExpanded}>{title}</SlideTitle>
           <SlideDescription isExpanded={isExpanded} highlightColor={highlightColor}>
-            I went down yesterday to the <a href="#!">Piraeus with Glaucon</a> the son of Ariston, that I might offer up
-            my prayers to the goddess (Bendis, the <Link to="#">Thracian Artemis.</Link>); and also because{" "}
-            <em>I wanted to see</em> in what manner they would celebrate the festival, which was a new thing.
+            {description}
           </SlideDescription>
         </Box>
 
-        {/* TODO Render the button if its props exist */}
-        <SlideButton isBorderless={isBorderless}>Slide Button</SlideButton>
+        {!!button && (
+          <SlideButton href={button.href} isBorderless={isBorderless}>
+            {button.text}
+          </SlideButton>
+        )}
       </SlideContainer>
     </Box>
   );

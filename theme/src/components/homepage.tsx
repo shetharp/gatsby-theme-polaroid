@@ -3,7 +3,7 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx, Box } from "theme-ui";
-import { Link } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Layout from "./layout";
 import Title from "./title";
 import Listing from "./listing";
@@ -33,11 +33,57 @@ type PostsProps = {
 
 const Homepage = ({ posts }: PostsProps) => {
   const { basePath, blogPath } = useMinimalBlogConfig();
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      imgIntro: file(relativePath: { eq: "kite-festival-1.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 4000, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      imgWork: file(relativePath: { eq: "kite-festival-2.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 4000, quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
 
   return (
     <Layout hasTransparentHeader hasFullWidthContainer hasFooter={false}>
-      <Slide id="intro" isBorderless />
-      <Slide id="work" imagePosition="0% 0%" />
+      <Slide
+        id="intro"
+        title="Smile for the camera! And say hello to Polaroid."
+        description={
+          <React.Fragment>
+            Polaroid is a photography-focused Gatsby theme for building websites that support for a portfolio, blog, and
+            code notes right out the box.
+          </React.Fragment>
+        }
+        fluid={data.imgIntro.childImageSharp.fluid}
+        isBorderless
+      />
+      <Slide
+        id="work"
+        title="Savor the moment slowly, for it may slip away too soon."
+        description={
+          <React.Fragment>
+            I went down yesterday to the <a href="#!">Piraeus with Glaucon</a> the son of Ariston, that I might offer up
+            my prayers to the goddess (Bendis, the <Link to="#">Thracian Artemis.</Link>); and also because{" "}
+            <em>I wanted to see</em> in what manner they would celebrate the festival, which was a new thing.
+          </React.Fragment>
+        }
+        fluid={data.imgWork.childImageSharp.fluid}
+        overlayColor="properBlue"
+        highlightColor="#1481b8"
+        isColorful
+        isExpanded
+        imagePosition="0% 0%"
+        button={{ text: "Learn more", href: "https://arpitsheth.com/" }}
+      />
 
       {/* TODO Restyle all of the blog related content below to fit the Slides concept */}
 

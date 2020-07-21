@@ -2,7 +2,7 @@ import React from "react";
 import Img, { GatsbyImageProps } from "gatsby-image";
 
 export type SlideImageProps = GatsbyImageProps & {
-  fluid: Required<GatsbyImageProps["fluid"]>;
+  fluid: GatsbyImageProps["fluid"];
   imagePosition?: string;
 };
 
