@@ -14,7 +14,7 @@ type BlogListItemProps = {
 };
 
 const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
-  <Box as="article" mb={4}>
+  <Box as="article" sx={sxBlogPostItem}>
     {/* @ts-ignore */}
     <TLink as={Link} to={post.slug} sx={sxBlogPostTitleLink}>
       <Text sx={sxBlogPostTitle}>{post.title}</Text>
@@ -35,6 +35,10 @@ export default BlogListItem;
 /**
  * Styles
  */
+const sxBlogPostItem: SystemStyleObject = {
+  marginBottom: [4, null, null, null, 5, null, 6, 7, 8],
+};
+
 const sxBlogPostTitleLink: SystemStyleObject = {
   color: "inherit",
   textDecoration: "none",
@@ -45,10 +49,14 @@ const sxBlogPostTitleLink: SystemStyleObject = {
 
 const sxBlogPostTitle: SystemStyleObject = {
   color: "inherit",
-  fontFamily: "heading",
   lineHeight: "heading",
   fontWeight: "heading",
-  fontSize: [0],
+  fontSize: [1, null, null, 2, null, null, 3, null, 4], // Size up from SlideDescription fontSize
 };
 
-const sxBlogPostDetails: SystemStyleObject = {};
+const sxBlogPostDetails: SystemStyleObject = {
+  fontSize: [0, null, null, null, null, null, 1, null, 2],
+  fontFamily: "monospace",
+  marginY: [0, null, null, null, null, null, 1],
+  opacity: 0.5,
+};

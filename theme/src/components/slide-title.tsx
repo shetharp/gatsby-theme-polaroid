@@ -27,7 +27,6 @@ const sxTitle = (isExpanded: boolean, shouldAdjustWidth: boolean): SystemStyleOb
     : "100%";
 
   return {
-    outline: "2px dashed mediumspringgreen", // TODO remove
     fontFamily: "heading",
     lineHeight: "heading",
     fontWeight: "heading",

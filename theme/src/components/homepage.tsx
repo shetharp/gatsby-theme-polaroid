@@ -78,7 +78,7 @@ const Homepage: React.FC<HomepageProps> = (props) => {
         imagePosition="0% 0%"
         button={{ text: "Learn more", href: "https://arpitsheth.com/" }}
       />
-      <SlideBlog posts={posts} />
+      <SlideBlog id="blog" overlayColor={null} posts={posts} />
 
       {/* TODO Restyle all of the blog related content below to fit the Slides concept */}
 

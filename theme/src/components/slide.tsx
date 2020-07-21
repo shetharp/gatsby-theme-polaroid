@@ -78,12 +78,26 @@ export const Slide: React.FC<SlideProps> = (props) => {
 export default Slide;
 
 /**
- * Types
- */
-
-/**
  * Styles
  */
+export const sxSlideBase = (isBorderless: boolean, hasDistinctBorder: boolean): SystemStyleObject => {
+  return {
+    display: "flex",
+    flexDirection: "column",
+    width: "100vw",
+    height: "auto",
+    minHeight: "100vh",
+    overflow: "hidden",
+    position: "relative",
+    marginBottom: isBorderless || hasDistinctBorder ? 0 : [-2, null, null, null, -3, null, null, -4, null, -5],
+    borderWidth: isBorderless ? 0 : ["16px", null, null, null, "24px", null, null, "32px", null, "40px"],
+    borderStyle: "solid",
+    borderColor: "transparent",
+    backgroundColor: "background",
+    transition: (theme) => theme.transitions.default,
+  };
+};
+
 const sxScrollIndicator = (highlightColor: string): SystemStyleObject => {
   return {
     ["@keyframes animateSlideScrollIndicator"]: {
@@ -125,19 +139,10 @@ const sxSlide = (
   highlightColor: string
 ): SystemStyleObject => {
   return {
-    display: "flex",
-    flexDirection: "column",
-    width: "100vw",
+    ...sxSlideBase(isBorderless, hasDistinctBorder),
     height: "100vh",
-    overflow: "hidden",
-    position: "relative",
     minHeight: (theme) => [theme.breakpoints[1], null, null, null, null, null, theme.breakpoints[2]],
-    marginBottom: hasDistinctBorder ? 0 : [-2, null, null, null, -3, null, null, -4, null, -5],
-    borderWidth: isBorderless ? 0 : ["16px", null, null, null, "24px", null, null, "32px", null, "40px"],
-    borderStyle: "solid",
-    borderColor: "transparent",
-    backgroundColor: "background",
-    transition: (theme) => theme.transitions.default,
+
     ...(hasScrollIndicator && sxScrollIndicator(highlightColor)),
   };
 };

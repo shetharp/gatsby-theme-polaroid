@@ -4,13 +4,13 @@ import { alpha } from "@theme-ui/color";
 import { SystemStyleObject } from "@styled-system/css";
 
 export type SlideDescriptionProps = {
-  highlightColor: string;
+  highlightColor?: string;
   isExpanded?: boolean;
   shouldAdjustWidth?: boolean;
 };
 
 export const SlideDescription: React.FC<SlideDescriptionProps> = (props) => {
-  const { highlightColor, isExpanded = false, shouldAdjustWidth = false } = props;
+  const { highlightColor = "highlight", isExpanded = false, shouldAdjustWidth = false } = props;
   return <Text sx={sxDescription(highlightColor, isExpanded, shouldAdjustWidth)}>{props.children}</Text>;
 };
 
@@ -25,7 +25,6 @@ const sxDescription = (highlightColor: string, isExpanded: boolean, shouldAdjust
     : "100%";
 
   return {
-    outline: "2px dashed mediumslateblue", // TODO remove
     color: "white",
     fontSize: [0, null, null, 1, null, null, 2, null, 3],
     lineHeight: [1.4, null, null, null, null, null, null, null, 1.5],

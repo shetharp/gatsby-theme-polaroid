@@ -8,7 +8,16 @@ export type SlideContainerProps = {
 };
 
 /**
- * The default slide container
+ * The base slide container
+ */
+export const SlideContainerBase: React.FC<SlideContainerProps> = (props) => {
+  const { isBorderless = false } = props;
+  return <Box sx={sxContainerBase(isBorderless)}>{props.children}</Box>;
+};
+
+/**
+ * The standard slide container
+ * It is positioned absolute so that it overlays on top of the slide container
  */
 export const SlideContainer: React.FC<SlideContainerProps> = (props) => {
   const { isBorderless = false, shouldJustifyContent = false } = props;
@@ -18,8 +27,18 @@ export const SlideContainer: React.FC<SlideContainerProps> = (props) => {
 /**
  * Styles
  */
+const sxContainerBase = (isBorderless: boolean): SystemStyleObject => {
+  return {
+    color: "white", // TODO theme,
+    padding: isBorderless
+      ? [4, null, null, null, 6, null, null, 7, null, 8]
+      : [2, null, null, null, 3, null, null, 4, null, 5],
+  };
+};
+
 const sxContainer = (isBorderless: boolean, shouldJustifyContent: boolean): SystemStyleObject => {
   return {
+    ...sxContainerBase(isBorderless),
     position: "absolute",
     bottom: 0,
     left: 0,
@@ -29,9 +48,5 @@ const sxContainer = (isBorderless: boolean, shouldJustifyContent: boolean): Syst
     display: "flex",
     flexDirection: "column",
     justifyContent: shouldJustifyContent ? "flex-end" : "normal",
-    color: "white", // TODO theme,
-    padding: isBorderless
-      ? [4, null, null, null, 6, null, null, 7, null, 8]
-      : [2, null, null, null, 3, null, null, 4, null, 5],
   };
 };
