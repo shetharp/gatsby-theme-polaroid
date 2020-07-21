@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { SystemStyleObject } from "@styled-system/css";
 
-const code = {
+export const codeStyles = {
   "[data-name='live-editor']": {
     fontSize: 1,
     "textarea, pre": {
@@ -191,4 +191,4 @@ const code = {
   },
 };
 
-export default code as SystemStyleObject;
+export default codeStyles as SystemStyleObject;
