@@ -59,7 +59,7 @@ export const Slide: React.FC<SlideProps> = (props) => {
       <SlideContainer isBorderless={isBorderless}>
         <Box sx={sxBody}>
           <SlideTitle isExpanded={isExpanded}>Savor the moment slowly, before it slips away.</SlideTitle>
-          <SlideDescription isExpanded={isExpanded}>
+          <SlideDescription isExpanded={isExpanded} highlightColor={highlightColor}>
             I went down yesterday to the <a href="#!">Piraeus with Glaucon</a> the son of Ariston, that I might offer up
             my prayers to the goddess (Bendis, the <Link to="#">Thracian Artemis.</Link>); and also because{" "}
             <em>I wanted to see</em> in what manner they would celebrate the festival, which was a new thing.
