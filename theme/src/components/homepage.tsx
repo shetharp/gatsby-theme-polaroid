@@ -16,23 +16,14 @@ import Hero from "../texts/hero";
 import Bottom from "../texts/bottom";
 import Slide from "./slide";
 import { SlideBlog } from "./slide-blog";
+import { Post } from "../types/posts";
 
-type PostsProps = {
-  posts: {
-    slug: string;
-    title: string;
-    date: string;
-    excerpt: string;
-    description: string;
-    timeToRead?: number;
-    tags?: {
-      name: string;
-      slug: string;
-    }[];
-  }[];
+export type HomepageProps = {
+  posts: Post[];
 };
 
-const Homepage = ({ posts }: PostsProps) => {
+const Homepage: React.FC<HomepageProps> = (props) => {
+  const { posts } = props;
   const { basePath, blogPath } = useMinimalBlogConfig();
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -87,7 +78,7 @@ const Homepage = ({ posts }: PostsProps) => {
         imagePosition="0% 0%"
         button={{ text: "Learn more", href: "https://arpitsheth.com/" }}
       />
-      <SlideBlog />
+      <SlideBlog posts={posts} />
 
       {/* TODO Restyle all of the blog related content below to fit the Slides concept */}
 
@@ -110,3 +101,7 @@ const Homepage = ({ posts }: PostsProps) => {
 };
 
 export default Homepage;
+
+/**
+ * Types
+ */

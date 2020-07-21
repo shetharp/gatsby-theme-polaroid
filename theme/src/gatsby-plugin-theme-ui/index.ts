@@ -353,7 +353,6 @@ const text: ThemePolaroid["text"] = {
   heading: {
     ...baseHeading,
     fontSize: [4, null, 5, null, 6],
-    color: "primary",
   },
   subheading: {
     ...baseHeading,

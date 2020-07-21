@@ -2,33 +2,24 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx, Link as TLink } from "theme-ui";
-import { Box } from "@theme-ui/components";
+import { Box, Text } from "@theme-ui/components";
+import { SystemStyleObject } from "@styled-system/css";
 import { Link } from "gatsby";
 import ItemTags from "./item-tags";
+import { Post } from "../types/posts";
 
 type BlogListItemProps = {
-  post: {
-    slug: string;
-    title: string;
-    date: string;
-    excerpt: string;
-    description: string;
-    timeToRead?: number;
-    tags?: {
-      name: string;
-      slug: string;
-    }[];
-  };
+  post: Post;
   showTags?: boolean;
 };
 
 const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
-  <Box mb={4}>
+  <Box as="article" mb={4}>
     {/* @ts-ignore */}
-    <TLink as={Link} to={post.slug} sx={{ fontSize: [1, 2, 3], color: `text` }}>
-      {post.title}
+    <TLink as={Link} to={post.slug} sx={sxBlogPostTitleLink}>
+      <Text sx={sxBlogPostTitle}>{post.title}</Text>
     </TLink>
-    <p sx={{ color: `secondary`, mt: 1, a: { color: `secondary` }, fontSize: [1, 1, 2] }}>
+    <p sx={sxBlogPostDetails}>
       <time>{post.date}</time>
       {post.tags && showTags && (
         <React.Fragment>
@@ -39,5 +30,25 @@ const BlogListItem = ({ post, showTags = true }: BlogListItemProps) => (
     </p>
   </Box>
 );
-
 export default BlogListItem;
+
+/**
+ * Styles
+ */
+const sxBlogPostTitleLink: SystemStyleObject = {
+  color: "inherit",
+  textDecoration: "none",
+  [":hover"]: {
+    textDecoration: "underline",
+  },
+};
+
+const sxBlogPostTitle: SystemStyleObject = {
+  color: "inherit",
+  fontFamily: "heading",
+  lineHeight: "heading",
+  fontWeight: "heading",
+  fontSize: [0],
+};
+
+const sxBlogPostDetails: SystemStyleObject = {};

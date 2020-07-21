@@ -2,20 +2,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import BlogListItem from "./blog-list-item";
+import { Post } from "../types/posts";
 
 type ListingProps = {
-  posts: {
-    slug: string;
-    title: string;
-    date: string;
-    excerpt: string;
-    description: string;
-    timeToRead?: number;
-    tags?: {
-      name: string;
-      slug: string;
-    }[];
-  }[];
+  posts: Post[];
   className?: string;
   showTags?: boolean;
 };

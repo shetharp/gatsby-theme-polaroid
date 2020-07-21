@@ -84,13 +84,8 @@ export default Slide;
 /**
  * Styles
  */
-const sxSlide = (
-  isBorderless: boolean,
-  hasDistinctBorder: boolean,
-  hasScrollIndicator: boolean,
-  highlightColor: string
-): SystemStyleObject => {
-  const sxScrollIndicator: SystemStyleObject = {
+const sxScrollIndicator = (highlightColor: string): SystemStyleObject => {
+  return {
     ["@keyframes animateSlideScrollIndicator"]: {
       "0%": {
         opacity: 1,
@@ -121,7 +116,14 @@ const sxSlide = (
       animation: "animateSlideScrollIndicator 2s ease-in alternate infinite",
     },
   };
+};
 
+const sxSlide = (
+  isBorderless: boolean,
+  hasDistinctBorder: boolean,
+  hasScrollIndicator: boolean,
+  highlightColor: string
+): SystemStyleObject => {
   return {
     display: "flex",
     flexDirection: "column",
@@ -136,7 +138,7 @@ const sxSlide = (
     borderColor: "transparent",
     backgroundColor: "background",
     transition: (theme) => theme.transitions.default,
-    ...(hasScrollIndicator && sxScrollIndicator),
+    ...(hasScrollIndicator && sxScrollIndicator(highlightColor)),
   };
 };
 
