@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx } from "theme-ui";
-import { Post } from "../types/posts";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { Post } from "../types/post";
+import { Link } from "gatsby";
 import Slide from "../components/slide";
 import { SlideBlog } from "../components/slide-blog";
 import { SlideTitle } from "../components/slide-title";
@@ -24,16 +24,16 @@ const Slides: React.FC<SlidesProps> = (props) => {
    * By default, these images should be located in your `/content/images` directory
    * The configuration for slideImageFragment is in `/src/data/slide-image-fragment.ts`
    */
-  const slideImages = useStaticQuery(graphql`
-    query {
-      imgIntro: file(relativePath: { eq: "kite-festival-1.jpg" }) {
-        ...slideImageFragment
-      }
-      imgWork: file(relativePath: { eq: "kite-festival-2.jpg" }) {
-        ...slideImageFragment
-      }
-    }
-  `);
+  // const slideImages = useStaticQuery(graphql`
+  //   query {
+  //     imgIntro: file(relativePath: { eq: "intro.jpg" }) {
+  //       ...slideImageFragment
+  //     }
+  //     imgWork: file(relativePath: { eq: "work.jpg" }) {
+  //       ...slideImageFragment
+  //     }
+  //   }
+  // `);
 
   return (
     <React.Fragment>
@@ -45,11 +45,19 @@ const Slides: React.FC<SlidesProps> = (props) => {
         title="Smile for the camera! And say hello to Polaroid."
         description={
           <React.Fragment>
-            Polaroid is a photography-focused Gatsby theme for building portfolio websites. It supports an MDX blog with
-            tags/categories, syntax-highlighting on code blocks, Theme UI for dark mode, and Typescript.
+            <p>
+              Polaroid is a <em>photography-focused</em> Gatsby theme for building portfolio websites. It supports an
+              MDX blog with tags/categories, syntax-highlighting on code blocks, Theme UI for dark mode, and Typescript.
+            </p>
+            <p>
+              Designed &amp; developed by <a href="https://arpitsheth.com">Arpit Sheth</a>.
+            </p>
           </React.Fragment>
         }
-        fluid={slideImages.imgIntro.childImageSharp.fluid}
+        // fluid={slideImages.imgIntro.childImageSharp.fluid}
+        overlayColor="indianred"
+        highlightColor="tomato"
+        isColorful
         isBorderless
         hasScrollIndicator
       />
@@ -67,10 +75,9 @@ const Slides: React.FC<SlidesProps> = (props) => {
             <em>I wanted to see</em> in what manner they would celebrate the festival, which was a new thing.
           </React.Fragment>
         }
-        fluid={slideImages.imgWork.childImageSharp.fluid}
-        overlayColor="properBlue"
-        highlightColor="#1481b8"
-        isColorful
+        // fluid={slideImages.imgWork.childImageSharp.fluid}
+        overlayColor="secondary"
+        highlightColor="accent"
         isExpanded
         imagePosition="0% 0%"
         button={{ text: "Learn more", href: "https://arpitsheth.com/" }}
@@ -90,9 +97,8 @@ const Slides: React.FC<SlidesProps> = (props) => {
             with very little to distress or vex her.
           </React.Fragment>
         }
-        fluid={slideImages.imgWork.childImageSharp.fluid}
-        overlayColor="equitableBlue"
-        highlightColor="directRed"
+        overlayColor="mediumslateblue"
+        highlightColor="mediumorchid"
         isColorful
         isExpanded
         hasDistinctBorder
@@ -101,7 +107,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
       {/**
        * BLOG
        */}
-      <SlideBlog id="blog" posts={posts}>
+      <SlideBlog id="blog" posts={posts} backgroundColor="mediumblue" overlayColor="mediumturquoise">
         <SlideTitle>More</SlideTitle>
         <SlideDescription>
           <p>

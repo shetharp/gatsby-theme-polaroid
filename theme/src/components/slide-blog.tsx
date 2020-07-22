@@ -16,6 +16,7 @@ import { SlideDescription } from "./slide-description";
 export type SlideBlogProps = {
   id: string;
   className?: string;
+  backgroundColor?: string;
   overlayColor?: string | null;
   isColorful?: boolean;
   isBorderless?: boolean;
@@ -27,6 +28,7 @@ export const SlideBlog: React.FC<SlideBlogProps> = (props) => {
   const {
     id,
     className,
+    backgroundColor = "background",
     overlayColor = "primary",
     isColorful = false,
     isBorderless = false,
@@ -36,7 +38,7 @@ export const SlideBlog: React.FC<SlideBlogProps> = (props) => {
   const { basePath, blogPath } = useMinimalBlogConfig();
 
   return (
-    <Box as="section" id={id} className={className} sx={sxSlideBlog(isBorderless, hasDistinctBorder)}>
+    <Box as="section" id={id} className={className} sx={sxSlideBlog(isBorderless, hasDistinctBorder, backgroundColor)}>
       {!!overlayColor && <SlideOverlay overlayColor={overlayColor} isColorful={isColorful} />}
 
       <SlideContainerBase>
@@ -60,10 +62,10 @@ export const SlideBlog: React.FC<SlideBlogProps> = (props) => {
 /**
  * Styles
  */
-const sxSlideBlog = (isBorderless: boolean, hasDistinctBorder: boolean): SystemStyleObject => {
+const sxSlideBlog = (isBorderless: boolean, hasDistinctBorder: boolean, backgroundColor: string): SystemStyleObject => {
   return {
     ...sxSlideBase(isBorderless, hasDistinctBorder),
-    backgroundColor: "clearBlue",
+    backgroundColor: backgroundColor,
   };
 };
 

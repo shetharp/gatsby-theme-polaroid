@@ -122,7 +122,7 @@ const sxScrollIndicator = (highlightColor: string): SystemStyleObject => {
       fontFamily: "heading",
       letterSpacing: "0.5ch",
       color: "white",
-      background: highlightColor,
+      backgroundColor: highlightColor,
       display: "flex",
       alignItems: "center",
       height: ["16", null, null, null, "24", null, null, "32", null, "40"],
