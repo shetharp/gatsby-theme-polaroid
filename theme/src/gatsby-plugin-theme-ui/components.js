@@ -3,17 +3,9 @@
 /* eslint react/prop-types: 0 */
 import React from "react";
 import { preToCodeBlock } from "mdx-utils";
-import { Text } from "@theme-ui/components";
 import Code from "../components/code";
-import Title from "../components/title";
 
 const components = {
-  Text: ({ children, ...props }) => <Text {...props}>{children}</Text>,
-  Title: ({ children, text, ...props }) => (
-    <Title text={text} {...props}>
-      {children}
-    </Title>
-  ),
   pre: (preProps) => {
     const props = preToCodeBlock(preProps);
     // if there's a codeString and some props, we passed the test
