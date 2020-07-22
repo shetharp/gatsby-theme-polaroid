@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react";
 import { jsx } from "theme-ui";
-import { Post } from "../types/posts";
+import { Post } from "../types/post";
 import Layout from "./layout";
 import Slides from "../data/slides";
 

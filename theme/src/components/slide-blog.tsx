@@ -8,7 +8,7 @@ import { SlideOverlay } from "./slide-overlay";
 import { SlideContainerBase } from "./slide-container";
 import { SlideTitle } from "./slide-title";
 import BlogList from "./blog-list";
-import { Post } from "../types/posts";
+import { Post } from "../types/post";
 import replaceSlashes from "../utils/replaceSlashes";
 import { useMinimalBlogConfig } from "../hooks";
 import { SlideDescription } from "./slide-description";

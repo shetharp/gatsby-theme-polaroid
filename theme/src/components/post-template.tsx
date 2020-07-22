@@ -6,7 +6,7 @@ import Layout from "./layout";
 import ItemTags from "./item-tags";
 import SEO from "./seo";
 
-export type PostProps = {
+export type PostTemplateProps = {
   data: {
     post: {
       slug: string;
@@ -34,7 +34,7 @@ export type PostProps = {
 const px = [`32px`, `16px`, `8px`, `4px`];
 const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`);
 
-export const Post: React.FC<PostProps> = ({ data: { post } }) => (
+export const PostTemplate: React.FC<PostTemplateProps> = ({ data: { post } }) => (
   <Layout>
     <SEO
       title={post.title}
@@ -60,4 +60,4 @@ export const Post: React.FC<PostProps> = ({ data: { post } }) => (
   </Layout>
 );
 
-export default Post;
+export default PostTemplate;

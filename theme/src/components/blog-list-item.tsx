@@ -5,7 +5,7 @@ import { Box, Text } from "@theme-ui/components";
 import { SystemStyleObject } from "@styled-system/css";
 import { Link } from "gatsby";
 import ItemTags from "./item-tags";
-import { Post } from "../types/posts";
+import { Post } from "../types/post";
 
 export type BlogListItemProps = {
   className?: string; // Pass down className to allow overriding styles

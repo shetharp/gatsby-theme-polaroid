@@ -7,7 +7,7 @@ import Layout from "./layout";
 import BlogList from "./blog-list";
 import { useMinimalBlogConfig } from "../hooks";
 import replaceSlashes from "../utils/replaceSlashes";
-import { Post } from "../types/posts";
+import { Post } from "../types/post";
 import SEO from "./seo";
 
 export type BlogProps = {

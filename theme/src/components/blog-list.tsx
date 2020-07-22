@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import BlogListItem from "./blog-list-item";
-import { Post } from "../types/posts";
+import { Post } from "../types/post";
 
 export type BlogListProps = {
   posts: Post[];

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
-import Post from "../../../components/post";
+import PostTemplate from "../../../components/post-template";
 
 type Props = {
   data: {
@@ -13,5 +13,5 @@ type Props = {
 export default function MinimalBlogCorePost({ data }: Props) {
   const { post } = data;
 
-  return <Post data={{ ...data, post }} />;
+  return <PostTemplate data={{ ...data, post }} />;
 }

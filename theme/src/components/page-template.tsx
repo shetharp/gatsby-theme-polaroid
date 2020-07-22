@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "./layout";
 import SEO from "./seo";
 
-export type PageProps = {
+export type PageTemplateProps = {
   data: {
     page: {
       title: string;
@@ -15,7 +15,7 @@ export type PageProps = {
   };
 };
 
-export const Page: React.FC<PageProps> = ({ data: { page } }) => (
+export const PageTemplate: React.FC<PageTemplateProps> = ({ data: { page } }) => (
   <Layout>
     <SEO title={page.title} description={page.excerpt} />
     <Heading variant="styles.h2">{page.title}</Heading>
@@ -25,4 +25,4 @@ export const Page: React.FC<PageProps> = ({ data: { page } }) => (
   </Layout>
 );
 
-export default Page;
+export default PageTemplate;
