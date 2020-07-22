@@ -1,5 +1,7 @@
 import React from "react";
 import Img, { GatsbyImageProps } from "gatsby-image";
+import { useThemeUI } from "theme-ui";
+import { ThemePolaroid } from "../gatsby-plugin-theme-ui";
 
 export type SlideImageProps = GatsbyImageProps & {
   fluid: GatsbyImageProps["fluid"];
@@ -14,10 +16,13 @@ export type SlideImageProps = GatsbyImageProps & {
  */
 export const SlideImage: React.FC<SlideImageProps> = (props) => {
   const { fluid, imagePosition, style, imgStyle, ...otherProps } = props;
+  const { colorMode } = useThemeUI();
+  const isDarkMode = colorMode === "dark";
 
   const styleWithDefaults = {
     width: "100%",
     height: "100%",
+    ...(isDarkMode && { filter: "brightness(50%)" }),
     ...style,
   };
 
