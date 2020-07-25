@@ -44,8 +44,7 @@ export default Footer;
  */
 const sxFooter: SystemStyleObject = {
   border: `4px solid mediumslateblue`, // TODO Remove
-  boxSizing: `border-box`,
-  mt: [6],
+  mt: 6,
 };
 
 const sxFooterInner: SystemStyleObject = {
