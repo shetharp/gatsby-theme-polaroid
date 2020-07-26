@@ -11,6 +11,7 @@ export type FooterProps = {
 export const Footer: React.FC<FooterProps> = () => {
   const { siteTitle } = useSiteMetadata();
 
+  // TODO: Add mini logo in assets and footer text in data
   return (
     <footer sx={sxFooter}>
       <Container>
