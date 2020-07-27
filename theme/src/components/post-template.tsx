@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Heading, Text } from "theme-ui";
+import { jsx, Heading, Divider, Text } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import React from "react";
 import Layout from "./layout";
@@ -57,6 +57,9 @@ export const PostTemplate: React.FC<PostTemplateProps> = ({ data: { post } }) =>
         </React.Fragment>
       )}
     </p>
+
+    <Divider variant="dividers.pageHeading" />
+
     <section>
       <MDXRenderer>{post.body}</MDXRenderer>
     </section>

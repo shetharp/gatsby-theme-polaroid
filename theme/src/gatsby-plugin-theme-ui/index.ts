@@ -8,6 +8,7 @@ import "typeface-dm-sans";
 export type ThemePolaroid = Theme & {
   styles: Theme["styles"] & { del: SystemStyleObject };
   mediaQuery: { [k: string]: string };
+  dividers: { [k: string]: SystemStyleObject };
   opacities: { [k: string]: string };
   transitions: { [k: string]: string };
 };
@@ -404,6 +405,13 @@ const links: ThemePolaroid["links"] = {
   },
 };
 
+const dividers: ThemePolaroid["dividers"] = {
+  pageHeading: {
+    ...styles.hr,
+    marginTop: 0,
+  },
+};
+
 const cards: ThemePolaroid["cards"] = {
   primary: {
     borderWidth: "sm",
@@ -482,6 +490,7 @@ export const themePolaroid: ThemePolaroid = {
   buttons,
   text,
   links,
+  dividers,
   cards,
   forms,
   badges,
