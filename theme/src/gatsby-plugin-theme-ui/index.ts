@@ -45,50 +45,73 @@ const mediaQuery = {
 // Theme scale > Colors
 // ==================================================
 const palette = {
-  white: "#FFFFFF",
-  fairWhite: "#F2F2F2",
-  genuineSilver: "#828291",
-  reliableGray: "#424150",
-  impartialGray: "#2A2A36",
-  black: "#000000",
-  neutral: ["#FFFFFF", "#F2F2F2", "#828291", "#424150", "#2A2A36", "#000000"],
-  candidOrange: "#F18F01",
-  directRed: "#ED254E",
-  virtuousViolet: "#B721FF",
-  unyieldingYellow: "#F8E71C",
-  crispEucalyptus: "#40F99B",
-  clearBlue: "#21D4FD",
-  equitableBlue: "#3F89FF",
-  properBlue: "#102341",
+  white100: "#FFFFFF",
+  white80: "rgba(255, 255, 255, 0.8)",
+  white50: "rgba(255, 255, 255, 0.5)",
+  white20: "rgba(255, 255, 255, 0.2)",
+
+  flash100: "#EEEEEE",
+  flash80: "rgba(238, 238, 238, 0.8)",
+  flash50: "rgba(238, 238, 238, 0.8)",
+  flash20: "rgba(238, 238, 238, 0.8)",
+
+  silver100: "#CCCCCC",
+  silver80: "rgba(204, 204, 204, 0.8)",
+  silver50: "rgba(204, 204, 204, 0.5)",
+  silver20: "rgba(204, 204, 204, 0.2)",
+
+  black100: "#000000",
+  black80: "rgba(0, 0, 0, 0.8)",
+  black50: "rgba(0, 0, 0, 0.5)",
+  black20: "rgba(0, 0, 0, 0.2)",
+
+  film100: "#212121",
+  film80: "rgba(33, 33, 33, 0.8)",
+  film50: "rgba(33, 33, 33, 0.5)",
+  film20: "rgba(33, 33, 33, 0.2)",
+
+  carbon100: "#333333",
+  carbon80: "rgba(51, 51, 51, 0.8)",
+  carbon50: "rgba(51, 51, 51, 0.5)",
+  carbon20: "rgba(51, 51, 51, 0.2)",
+
+  // Base colors increment by 30 degrees in hue
+  // Base colors have been tested to have good contrast on light and dark backgrounds
+  // Light and Dark colors were computed using lighten and darken functions on the base color by 80%
+  saffron: { base: "#F45454", light: "#FAE2E2", dark: "#412207" },
+  mango: { base: "#FF9933", light: "#FCEEDD", dark: "hsl(30, 100%, 12%)" },
+  lemon: { base: "#EBEB47", light: "#FBFBE2", dark: "#3F3E0E" },
+  lime: { base: "#A6FB51", light: "#F3FEE3", dark: "#2D4810" },
+  aloe: { base: "#83FC83", light: "#EEFEEC", dark: "#225313" },
+  eucalyptus: { base: "#51FBA6", light: "#E6FEF1", dark: "#1C4827" },
+  crystal: { base: "#3DF5F5", light: "#E3FDFE", dark: "#194243" },
+  azure: { base: "#007FFF", light: "#D6EAFD", dark: "#051C39" },
+  lavender: { base: "#5555F5", light: "#E1E2FC", dark: "#000746" },
+  veronica: { base: "#A459EF", light: "#EEE4FB", dark: "#200A42" },
+  blush: { base: "#F668F6", light: "#FAE7FD", dark: "#460D4B" },
+  rose: { base: "#F23C97", light: "#F8DFED", dark: "#3B0821" },
+  alloy: { base: "#CCCCCC", light: "#F7F7F7", dark: "#2E2E2E" },
 };
 
 const colors: ThemePolaroid["colors"] = {
   ...palette,
-  text: palette.neutral[4],
-  background: palette.neutral[0],
-  primary: palette.candidOrange,
-  secondary: palette.clearBlue,
-  accent: palette.crispEucalyptus,
-  highlight: palette.equitableBlue,
-  muted: palette.genuineSilver,
-
-  // Custom Color Definitions
-  heading: palette.black,
-  divide: palette.neutral[1],
+  text: palette.carbon100,
+  background: palette.white100,
+  primary: palette.crystal.base,
+  secondary: palette.saffron.base,
+  accent: palette.film80,
+  highlight: palette.silver80,
+  muted: palette.flash100,
 
   modes: {
     dark: {
-      text: palette.neutral[0],
-      background: palette.properBlue,
-      primary: palette.candidOrange,
-      secondary: palette.clearBlue,
-      accent: palette.crispEucalyptus,
-      highlight: palette.equitableBlue,
-      muted: palette.genuineSilver,
-
-      // Custom Color Definitions
-      heading: palette.white,
-      divide: palette.neutral[4],
+      text: palette.white100,
+      background: palette.carbon100,
+      primary: palette.crystal.base,
+      secondary: palette.saffron.base,
+      accent: palette.film80,
+      highlight: palette.silver80,
+      muted: palette.film100,
     },
   },
 };
