@@ -2,9 +2,8 @@
 /** @jsx jsx */
 import { Link } from "gatsby";
 import { jsx } from "theme-ui";
-import replaceSlashes from "../utils/replaceSlashes";
-import { useSiteMetadata } from "../hooks";
-import { useMinimalBlogConfig } from "../hooks";
+import { replaceSlashes } from "../utils";
+import { useSiteMetadata, useMinimalBlogConfig } from "../hooks";
 import { SystemStyleObject } from "@styled-system/css";
 import imgLogoDark from "../assets/logo-dark.svg";
 import imgLogoLight from "../assets/logo-light.svg";
@@ -25,7 +24,7 @@ export const HeaderLogo: React.FC<HeaderLogoProps> = (props) => {
       sx={{ color: `heading`, textDecoration: `none`, height: "100%" }}
     >
       <h1 sx={sxH1}>
-        {isTextDark ? <img src={imgLogoDark} alt={siteTitle} /> : <img src={imgLogoLight} alt={siteTitle} />}
+        <img src={isTextDark ? imgLogoDark : imgLogoLight} alt={siteTitle} />
       </h1>
     </Link>
   );

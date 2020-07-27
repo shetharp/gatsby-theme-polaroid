@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx } from "theme-ui";
-import { Post, Slide, SlideBlog, SlideTitle, SlideDescription } from "@shetharp/gatsby-theme-polaroid";
+import { jsx, Text } from "theme-ui";
+import { Post, Slide, SlideBlog, SlideTitle, SlideDescription, FooterLogo } from "@shetharp/gatsby-theme-polaroid";
 import { useStaticQuery, graphql, Link } from "gatsby";
 
 export type SlidesProps = {
@@ -119,6 +119,19 @@ const Slides: React.FC<SlidesProps> = (props) => {
           </p>
           <p>
             From <a href="https://www.gutenberg.org/files/36/36-h/36-h.htm">the War of Worlds</a> by H.G. Wells
+          </p>
+        </SlideDescription>
+        <SlideDescription>
+          <p>
+            <br />
+            &mdash;
+          </p>
+          <p>
+            <FooterLogo />
+            <br />
+            Polaroid Theme
+            <br />
+            By <a href="https://arpitsheth.com/">Arpit Sheth</a>
           </p>
         </SlideDescription>
       </SlideBlog>

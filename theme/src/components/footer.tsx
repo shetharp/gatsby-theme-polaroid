@@ -1,39 +1,23 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, Link, Container } from "theme-ui";
-import { useSiteMetadata } from "../hooks";
+import { jsx, Container, Flex } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
+import { FooterLogo } from "./footer-logo";
+import footerLogoLink from "../data/footer-logo-link";
+import FooterBody from "../data/footer-body";
 
 export type FooterProps = {
   // empty
 };
 
 export const Footer: React.FC<FooterProps> = () => {
-  const { siteTitle } = useSiteMetadata();
-
-  // TODO: Add mini logo in assets and footer text in data
   return (
     <footer sx={sxFooter}>
       <Container>
-        <div sx={sxFooterInner}>
-          <div>
-            &copy; {new Date().getFullYear()} by {siteTitle}. All rights reserved.
-          </div>
-          <div>
-            <Link
-              aria-label="Link to the theme's GitHub repository"
-              href="https://github.com/shetharp/gatsby-theme-polaroid"
-            >
-              Theme
-            </Link>
-            {` `}
-            by
-            {` `}
-            <Link aria-label="Link to the theme author's website" href="https://www.arpitsheth.com">
-              Arpit Sheth
-            </Link>
-          </div>
-        </div>
+        <Flex sx={sxFooterInner}>
+          <FooterLogo slug={footerLogoLink} />
+          <FooterBody />
+        </Flex>
       </Container>
     </footer>
   );
@@ -49,9 +33,8 @@ const sxFooter: SystemStyleObject = {
 };
 
 const sxFooterInner: SystemStyleObject = {
-  display: `flex`,
-  justifyContent: `space-between`,
-  color: `secondary`,
-  a: {},
-  flexDirection: [`column`, null, null, null, `row`],
+  flexDirection: "column",
+  alignItems: "center",
+  color: "accent",
+  textAlign: "center",
 };
