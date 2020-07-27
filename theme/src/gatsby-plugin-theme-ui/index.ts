@@ -107,12 +107,12 @@ const colors: ThemePolaroid["colors"] = {
   modes: {
     dark: {
       text: palette.white100,
-      background: palette.carbon100,
+      background: palette.film100,
       primary: palette.crystal.base,
       secondary: palette.saffron.base,
       accent: palette.silver50,
-      highlight: palette.film80,
-      muted: palette.film100,
+      highlight: palette.black80,
+      muted: palette.carbon100,
     },
   },
 };
