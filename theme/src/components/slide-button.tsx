@@ -36,5 +36,8 @@ const sxButton = (isBorderless: boolean): SystemStyleObject => {
       ? [4, null, null, null, 3, null, null, 4, null, 5]
       : [2, null, null, null, 3, null, null, 4, null, 5],
     fontSize: [0, null, null, null, 1], // Match with NavLink fontSize
+    ":hover": {
+      boxShadow: "default",
+    },
   };
 };

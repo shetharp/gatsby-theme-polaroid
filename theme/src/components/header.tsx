@@ -22,8 +22,6 @@ export type HeaderProps = {
 /**
  * Uses react-headroom to show/hide the header when the user scrolls.
  * https://kyleamathews.github.io/react-headroom/
- *
- * TODO: Use <HeaderExternalLinks /> or refactor it (possibly for the Footer)
  */
 export const Header: React.FC<HeaderProps> = (props) => {
   const { isTransparent } = props;
@@ -68,7 +66,7 @@ export const Header: React.FC<HeaderProps> = (props) => {
           zIndex: theme.zIndices && theme.zIndices["header"] ? theme.zIndices["header"] : 999,
         }}
       >
-        <header sx={sxHeader(isVisible, isFixed, props.isTransparent || false, theme as ThemePolaroid)}>
+        <header sx={sxHeader(isOpen, isVisible, isFixed, props.isTransparent || false, theme as ThemePolaroid)}>
           <HeaderLogo isTextDark={isTextDark} />
           <HeaderNav isTextDark={isTextDark} />
           <Flex sx={sxFlex}>
@@ -93,6 +91,7 @@ Header.propTypes = {
  */
 
 const sxHeader = (
+  isOpen: boolean,
   isVisible: boolean,
   isFixed: boolean,
   isTransparent: boolean,
@@ -112,6 +111,7 @@ const sxHeader = (
   alignItems: "center",
   height: ["48", null, null, null, "64", null, null, "80"],
   width: "100%",
+  boxShadow: isOpen ? "default" : "none",
   transition: "all 300ms ease",
 });
 
