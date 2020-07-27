@@ -15,7 +15,7 @@ export const codeStyles = {
   },
   "[data-name='live-preview']": {
     padding: (t: any) => `calc(${t.space[2]} + 10px) !important`,
-    backgroundColor: "fairWhite",
+    backgroundColor: "muted",
   },
   ".prism-code": {
     fontFamily: "monospace",

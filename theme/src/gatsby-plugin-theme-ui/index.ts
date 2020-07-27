@@ -416,7 +416,7 @@ const cards: ThemePolaroid["cards"] = {
   primary: {
     borderWidth: "sm",
     borderStyle: "solid",
-    borderColor: "neutral.2",
+    borderColor: "highlight",
     borderRadius: "default",
     padding: 1,
   },
@@ -442,19 +442,19 @@ const badges: ThemePolaroid["badges"] = {
 const alerts: ThemePolaroid["alerts"] = {
   primary: {
     backgroundColor: "primary",
-    color: "white",
+    color: "white100",
   },
   secondary: {
     backgroundColor: "secondary",
-    color: "white",
+    color: "white100",
   },
   accent: {
     backgroundColor: "accent",
-    color: "white",
+    color: "white100",
   },
   highlight: {
     backgroundColor: "highlight",
-    color: "white",
+    color: "white100",
   },
 };
 

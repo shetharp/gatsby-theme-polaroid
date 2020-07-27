@@ -45,7 +45,7 @@ const sxDescription = (highlightColor: string, isExpanded: boolean, shouldAdjust
       textDecoration: "none",
       borderBottomWidth: ["1px", null, null, null, "2px"],
       borderBottomStyle: "solid",
-      borderBottomColor: alpha("white", 0.5),
+      borderBottomColor: alpha("white100", 0.5),
       transition: (theme) => theme.transitions.fast,
       paddingX: "4px",
       marginX: "-2px",

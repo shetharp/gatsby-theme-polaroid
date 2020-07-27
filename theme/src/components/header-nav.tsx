@@ -82,7 +82,7 @@ const sxNavLink = (
     isVisibleLaptop !== false ? "flex" : "none",
   ];
   return {
-    color: isTextDark ? "text" : "white",
+    color: isTextDark ? "text" : "white100",
     display: displayStyles,
     alignItems: "center",
     whiteSpace: "nowrap",
