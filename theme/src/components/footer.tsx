@@ -28,8 +28,7 @@ export default Footer;
  * Styles
  */
 const sxFooter: SystemStyleObject = {
-  border: `4px solid mediumslateblue`, // TODO Remove
-  mt: 6,
+  mt: [6, null, null, null, 7, 8, 9, 10],
 };
 
 const sxFooterInner: SystemStyleObject = {

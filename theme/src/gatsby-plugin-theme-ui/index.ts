@@ -343,9 +343,9 @@ const styles: ThemePolaroid["styles"] = {
 const layout: ThemePolaroid["layout"] = {
   container: {
     // TODO Disable when done debugging styles
-    borderWidth: "md",
-    borderStyle: ["solid", "solid", "dashed", "dotted", "solid", "dashed", "dotted", "solid", "dashed", "dotted"],
-    borderColor: ["primary", "accent", null, null, "highlight", null, null, "muted"],
+    // borderWidth: "md",
+    // borderStyle: ["solid", "solid", "dashed", "dotted", "solid", "dashed", "dotted", "solid", "dashed", "dotted"],
+    // borderColor: ["accent", "primary", null, null, "secondary", null, null, "muted"],
 
     width: [`calc(100% - ${space[2]})`, null, null, null, `calc(100% - ${space[3]})`],
     maxWidth: "tabletM",
