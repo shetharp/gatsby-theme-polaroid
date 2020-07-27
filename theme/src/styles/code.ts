@@ -1,8 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { themePolaroid } from "../gatsby-plugin-theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
 
 export const codeStyles = {
+  code: {
+    ...themePolaroid.styles.code,
+  },
   "[data-name='live-editor']": {
     fontSize: 1,
     "textarea, pre": {
@@ -31,14 +35,6 @@ export const codeStyles = {
   },
   ".token": {
     display: `inline-block`,
-  },
-  "p > code, li > code": {
-    fontFamily: "monospace",
-    bg: `neutral.1`,
-    color: `neutral.3`,
-    px: 2,
-    py: 1,
-    borderRadius: `2px`,
   },
   ".gatsby-highlight": {
     fontSize: "inherit",
@@ -167,12 +163,9 @@ export const codeStyles = {
     position: `relative`,
   },
   ".code-title": {
-    fontFamily: `monospace`,
-    fontWeight: "bold",
-    fontStyle: "italic",
-    backgroundColor: "secondary",
-    color: `black`,
-    fontSize: 1,
+    ...themePolaroid.styles.code,
+    border: "none",
+    borderRadius: "none",
     px: 3,
     py: 2,
   },
