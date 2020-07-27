@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Heading } from "theme-ui";
+import { jsx, Heading, Text } from "theme-ui";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import React from "react";
 import Layout from "./layout";
@@ -31,9 +31,6 @@ export type PostTemplateProps = {
   };
 };
 
-const px = [`32px`, `16px`, `8px`, `4px`];
-const shadow = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`);
-
 export const PostTemplate: React.FC<PostTemplateProps> = ({ data: { post } }) => (
   <Layout>
     <SEO
@@ -42,19 +39,25 @@ export const PostTemplate: React.FC<PostTemplateProps> = ({ data: { post } }) =>
       image={post.banner ? post.banner.childImageSharp.resize.src : undefined}
       pathname={post.slug}
     />
-    <Heading variant="styles.h2">{post.title}</Heading>
-    <p sx={{ color: `secondary`, mt: 3, a: { color: `secondary` }, fontSize: [1, 1, 2] }}>
-      <time>{post.date}</time>
+    <Heading>{post.title}</Heading>
+    <p sx={{ color: "accent" }}>
+      <Text variant="mono">
+        <time>{post.date}</time>
+      </Text>
       {post.tags && (
         <React.Fragment>
           {` — `}
           <ItemTags tags={post.tags} />
         </React.Fragment>
       )}
-      {post.timeToRead && ` — `}
-      {post.timeToRead && <span>{post.timeToRead} min read</span>}
+      {post.timeToRead && (
+        <React.Fragment>
+          <br />
+          <span>{post.timeToRead} min read</span>
+        </React.Fragment>
+      )}
     </p>
-    <section sx={{ my: 5, ".gatsby-resp-image-wrapper": { my: [4, 4, 5], boxShadow: shadow.join(`, `) } }}>
+    <section>
       <MDXRenderer>{post.body}</MDXRenderer>
     </section>
   </Layout>

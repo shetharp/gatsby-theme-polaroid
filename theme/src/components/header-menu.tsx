@@ -64,7 +64,7 @@ export type HeaderMenuItem = {
  */
 const sxBox = (isOpen: boolean): SystemStyleObject => ({
   paddingTop: [6, null, null, null, 7, null, null, 8], // Offset by height of header
-  backgroundColor: "background",
+  backgroundColor: "muted",
   height: "100vh",
   width: ["100vw", null, null, null, "66vw", null, "50vw", null, "33vw"],
   position: "fixed",

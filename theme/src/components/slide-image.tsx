@@ -1,7 +1,6 @@
 import React from "react";
 import Img, { GatsbyImageProps } from "gatsby-image";
 import { useThemeUI } from "theme-ui";
-import { ThemePolaroid } from "../gatsby-plugin-theme-ui";
 
 export type SlideImageProps = GatsbyImageProps & {
   fluid: GatsbyImageProps["fluid"];

@@ -40,7 +40,7 @@ const sxContainerBase = (isBorderless: boolean): SystemStyleObject => {
   return {
     position: "relative",
     zIndex: 1,
-    color: "white", // TODO theme,
+    color: "white100",
     padding: isBorderless
       ? [4, null, null, null, 6, null, null, 7, null, 8]
       : [2, null, null, null, 3, null, null, 4, null, 5],

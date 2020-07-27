@@ -18,8 +18,8 @@ export type PageTemplateProps = {
 export const PageTemplate: React.FC<PageTemplateProps> = ({ data: { page } }) => (
   <Layout>
     <SEO title={page.title} description={page.excerpt} />
-    <Heading variant="styles.h2">{page.title}</Heading>
-    <section sx={{ my: 5 }}>
+    <Heading>{page.title}</Heading>
+    <section>
       <MDXRenderer>{page.body}</MDXRenderer>
     </section>
   </Layout>

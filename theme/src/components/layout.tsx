@@ -54,8 +54,8 @@ export const Layout: React.FC<LayoutProps> = (props) => {
             display: `none`,
           },
           "::selection": {
-            backgroundColor: theme.colors.text,
-            color: theme.colors.background,
+            color: theme.colors.text,
+            backgroundColor: theme.colors.highlight,
           },
           a: {
             transition: theme.transitions.default,

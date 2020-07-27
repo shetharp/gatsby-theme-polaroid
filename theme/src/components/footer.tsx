@@ -52,8 +52,6 @@ const sxFooterInner: SystemStyleObject = {
   display: `flex`,
   justifyContent: `space-between`,
   color: `secondary`,
-  a: {
-    variant: `links.secondary`,
-  },
+  a: {},
   flexDirection: [`column`, null, null, null, `row`],
 };

@@ -63,5 +63,5 @@ const sxBlogPostDetails: SystemStyleObject = {
   fontSize: [0, null, null, null, null, null, 1, null, 2],
   fontFamily: "monospace",
   marginY: [0, null, null, null, null, null, 1],
-  opacity: 0.5,
+  color: "accent",
 };
