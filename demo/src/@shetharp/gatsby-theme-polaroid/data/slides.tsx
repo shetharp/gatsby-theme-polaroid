@@ -1,7 +1,15 @@
 /** @jsx jsx */
 import React from "react";
-import { jsx, Text } from "theme-ui";
-import { Post, Slide, SlideBlog, SlideTitle, SlideDescription, FooterLogo } from "@shetharp/gatsby-theme-polaroid";
+import { jsx } from "theme-ui";
+import {
+  Post,
+  Slide,
+  SlideBlog,
+  SlideTitle,
+  SlideDescription,
+  FooterLogo,
+  SlideButton,
+} from "@shetharp/gatsby-theme-polaroid";
 import { useStaticQuery, graphql, Link } from "gatsby";
 
 export type SlidesProps = {
@@ -114,13 +122,17 @@ const Slides: React.FC<SlidesProps> = (props) => {
             Yet so vain is man, and so <em>blinded by his vanity</em>, that no writer, up to the very end of the
             nineteenth century, expressed any idea that <a href="#">intelligent life</a> might have developed there far,
             or indeed at all, beyond its earthly level. Nor was it generally understood that since Mars is older than
-            our earth, with scarcely a quarter of the superficial area and remoter from the sun, it necessarily follows
-            that it is not only more distant from time’s beginning but nearer its end.
-          </p>
-          <p>
-            From <a href="https://www.gutenberg.org/files/36/36-h/36-h.htm">the War of Worlds</a> by H.G. Wells
+            our earth... (<a href="https://www.gutenberg.org/files/36/36-h/36-h.htm">The War of Worlds</a>, H.G. Wells).
           </p>
         </SlideDescription>
+        <p>
+          <SlideButton
+            href="/readme"
+            sx={{ "&&&": { width: ["100%", null, "75%", "66.667%", "75%", null, "66.667%", null, "50%"] } }}
+          >
+            Go to README
+          </SlideButton>
+        </p>
         <SlideDescription>
           <p>
             <br />
