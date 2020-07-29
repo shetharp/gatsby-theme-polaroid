@@ -30,7 +30,10 @@ const Slides: React.FC<SlidesProps> = (props) => {
    */
   const slideImages = useStaticQuery(graphql`
     query {
-      imgIntro: file(relativePath: { eq: "kite-festival-1.jpg" }) {
+      imgIntro: file(relativePath: { eq: "polaroid-bg-textured.jpg" }) {
+        ...slideImageFragment
+      }
+      imgPreview: file(relativePath: { eq: "kite-festival-1.jpg" }) {
         ...slideImageFragment
       }
       imgWork: file(relativePath: { eq: "kite-festival-2.jpg" }) {
@@ -62,11 +65,37 @@ const Slides: React.FC<SlidesProps> = (props) => {
           </React.Fragment>
         }
         fluid={slideImages.imgIntro.childImageSharp.fluid}
-        overlayColor="indianred"
-        highlightColor="tomato"
+        overlayColor="veronica.dark"
+        highlightColor="primary"
         isColorful
         isBorderless
         hasScrollIndicator
+      />
+
+      {/**
+       * PREVIEW
+       */}
+      <Slide
+        id="preview"
+        title="A picture is worth  a thousand words. A demo is a million more."
+        description={
+          <React.Fragment>
+            <p>
+              You&apos;re looking at Polaroid&apos;s homepage. It&apos;s a great place to put together a{" "}
+              <em>photo-rich portfolio</em>. Take a look at the <Link to="/theme-preview">Theme Preview</Link> page to
+              see the other components that come with the theme.
+            </p>
+            <p sx={{ marginBottom: 0 }}>
+              If you like what you see, get started with the <Link to="/readme">Readme</Link>.
+            </p>
+          </React.Fragment>
+        }
+        fluid={slideImages.imgPreview.childImageSharp.fluid}
+        overlayColor="primary"
+        highlightColor="accent"
+        isExpanded
+        imagePosition="0% 0%"
+        button={{ text: "Theme Preview", href: "/theme-preview" }}
       />
 
       {/**
@@ -84,10 +113,10 @@ const Slides: React.FC<SlidesProps> = (props) => {
         }
         fluid={slideImages.imgWork.childImageSharp.fluid}
         overlayColor="secondary"
-        highlightColor="accent"
+        highlightColor="saffron.dark"
         isExpanded
         imagePosition="0% 0%"
-        button={{ text: "Learn more", href: "https://arpitsheth.com/" }}
+        button={{ text: "Get started", href: "/readme" }}
       />
 
       {/**
@@ -115,7 +144,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
       {/**
        * BLOG
        */}
-      <SlideBlog id="blog" posts={posts} backgroundColor="mediumblue" overlayColor="mediumturquoise">
+      <SlideBlog id="blog" posts={posts} backgroundColor="mediumblue" overlayColor="primary">
         <SlideTitle>More</SlideTitle>
         <SlideDescription>
           <p>

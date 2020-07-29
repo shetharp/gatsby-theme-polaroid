@@ -7,6 +7,8 @@ import Slide from "../components/slide";
 import { SlideBlog } from "../components/slide-blog";
 import { SlideTitle } from "../components/slide-title";
 import { SlideDescription } from "../components/slide-description";
+import { SlideButton } from "../components/slide-button";
+import { FooterLogo } from "../components/footer-logo";
 
 export type SlidesProps = {
   posts: Post[];
@@ -27,6 +29,9 @@ const Slides: React.FC<SlidesProps> = (props) => {
   // const slideImages = useStaticQuery(graphql`
   //   query {
   //     imgIntro: file(relativePath: { eq: "intro.jpg" }) {
+  //       ...slideImageFragment
+  //     }
+  //     imgPreview: file(relativePath: { eq: "preview.jpg" }) {
   //       ...slideImageFragment
   //     }
   //     imgWork: file(relativePath: { eq: "work.jpg" }) {
@@ -55,11 +60,37 @@ const Slides: React.FC<SlidesProps> = (props) => {
           </React.Fragment>
         }
         // fluid={slideImages.imgIntro.childImageSharp.fluid}
-        overlayColor="indianred"
-        highlightColor="tomato"
+        overlayColor="veronica.dark"
+        highlightColor="primary"
         isColorful
         isBorderless
         hasScrollIndicator
+      />
+
+      {/**
+       * PREVIEW
+       */}
+      <Slide
+        id="preview"
+        title="A picture is worth  a thousand words. A demo is a million more."
+        description={
+          <React.Fragment>
+            <p>
+              You&apos;re looking at Polaroid&apos;s homepage. It&apos;s a great place to put together a{" "}
+              <em>photo-rich portfolio</em>. Take a look at the <Link to="/theme-preview">Theme Preview</Link> page to
+              see the other components that come with the theme.
+            </p>
+            <p sx={{ marginBottom: 0 }}>
+              If you like what you see, get started with the <Link to="/readme">Readme</Link>.
+            </p>
+          </React.Fragment>
+        }
+        // fluid={slideImages.imgPreview.childImageSharp.fluid}
+        overlayColor="primary"
+        highlightColor="accent"
+        isExpanded
+        imagePosition="0% 0%"
+        button={{ text: "Theme Preview", href: "/theme-preview" }}
       />
 
       {/**
@@ -77,7 +108,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         }
         // fluid={slideImages.imgWork.childImageSharp.fluid}
         overlayColor="secondary"
-        highlightColor="accent"
+        highlightColor="saffron.dark"
         isExpanded
         imagePosition="0% 0%"
         button={{ text: "Learn more", href: "https://arpitsheth.com/" }}
@@ -107,18 +138,38 @@ const Slides: React.FC<SlidesProps> = (props) => {
       {/**
        * BLOG
        */}
-      <SlideBlog id="blog" posts={posts} backgroundColor="mediumblue" overlayColor="mediumturquoise">
+      <SlideBlog id="blog" posts={posts} backgroundColor="mediumblue" overlayColor="primary">
         <SlideTitle>More</SlideTitle>
         <SlideDescription>
           <p>
             Yet so vain is man, and so <em>blinded by his vanity</em>, that no writer, up to the very end of the
             nineteenth century, expressed any idea that <a href="#">intelligent life</a> might have developed there far,
             or indeed at all, beyond its earthly level. Nor was it generally understood that since Mars is older than
-            our earth, with scarcely a quarter of the superficial area and remoter from the sun, it necessarily follows
-            that it is not only more distant from time’s beginning but nearer its end.
+            our earth... (<a href="https://www.gutenberg.org/files/36/36-h/36-h.htm">The War of Worlds</a>, H.G. Wells).
           </p>
           <p>
             From <a href="https://www.gutenberg.org/files/36/36-h/36-h.htm">the War of Worlds</a> by H.G. Wells
+          </p>
+        </SlideDescription>
+        <p>
+          <SlideButton
+            href="/readme"
+            sx={{ "&&&": { width: ["100%", null, "75%", "66.667%", "75%", null, "66.667%", null, "50%"] } }}
+          >
+            Go to README
+          </SlideButton>
+        </p>
+        <SlideDescription>
+          <p>
+            <br />
+            &mdash;
+          </p>
+          <p>
+            <FooterLogo />
+            <br />
+            Polaroid Theme
+            <br />
+            By <a href="https://arpitsheth.com/">Arpit Sheth</a>
           </p>
         </SlideDescription>
       </SlideBlog>

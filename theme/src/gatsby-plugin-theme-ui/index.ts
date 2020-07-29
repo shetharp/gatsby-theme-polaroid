@@ -79,8 +79,8 @@ const palette = {
   // Base colors increment by 30 degrees in hue
   // Base colors have been tested to have good contrast on light and dark backgrounds
   // Light and Dark colors were computed using lighten and darken functions on the base color by 80%
-  saffron: { base: "#F45454", light: "#FAE2E2", dark: "#412207" },
-  mango: { base: "#FF9933", light: "#FCEEDD", dark: "hsl(30, 100%, 12%)" },
+  saffron: { base: "#F45454", light: "#FAE2E2", dark: "#3D0303" },
+  mango: { base: "#FF9933", light: "#FCEEDD", dark: "#3D1F00" },
   lemon: { base: "#EBEB47", light: "#FBFBE2", dark: "#3F3E0E" },
   lime: { base: "#A6FB51", light: "#F3FEE3", dark: "#2D4810" },
   aloe: { base: "#83FC83", light: "#EEFEEC", dark: "#225313" },
