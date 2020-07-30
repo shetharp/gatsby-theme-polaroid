@@ -42,7 +42,7 @@ Designed & developed by [Arpit Sheth](https://arpitsheth.com/).
 
 - [How to Contribute](https://github.com/shetharp/gatsby-theme-polaroid#how-to-contribute)
 - [Deploy and Publish](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Deploy-and-Publish)
-- [Creating New Gatsby Theme with Typescript, MDX, and Theme-UI](https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u) _– Article by Arpit Sheth_
+- [Creating New Gatsby Theme with Typescript, MDX, and Theme-UI](https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u) _– article by Arpit Sheth_
 
 ---
 
@@ -144,7 +144,7 @@ It will help if you have some basic experience with Yarn workspaces, Gatsby, and
 
 - [What are Gatsby themes?](https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes) _– oficial documentation_
 - [Building Themes](https://www.gatsbyjs.org/docs/themes/building-themes) _– oficial documentation_
-- [Creating New Gatsby Theme with Typescript, MDX, and Theme-UI](https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u) _– Article by Arpit Sheth_
+- [Creating New Gatsby Theme with Typescript, MDX, and Theme-UI](https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u) _– article by Arpit Sheth_
 
 This repo uses Yarn workspaces and Gatsby, so make sure you have them installed on your machine.
 
@@ -165,4 +165,4 @@ This repo uses Yarn workspaces and Gatsby, so make sure you have them installed 
      ```
    - Please take a moment to update any relevant documentation in the Readme or Wiki.
 
-Thank you for helping make this project better! 💙❤️
+💙 Thank you for helping make this project better! ❤️
