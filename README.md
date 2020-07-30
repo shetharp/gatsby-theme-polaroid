@@ -16,7 +16,8 @@ Designed & developed by [Arpit Sheth](https://arpitsheth.com/).
 - [Install the Polaroid Theme](https://github.com/shetharp/gatsby-theme-polaroid/blob/master/README.md#install-the-polaroid-theme)
 - [Start with the Polaroid Workspace](https://github.com/shetharp/gatsby-theme-polaroid/blob/master/README.md#start-with-the-polaroid-workspace)
 - [Features](https://github.com/shetharp/gatsby-theme-polaroid/blob/master/README.md#features)
-- [📖 Read Wiki Documentation →](https://shetharp.github.io/gatsby-theme-polaroid/wiki)
+- [📖 Read Wiki Documentation →](https://github.com/shetharp/gatsby-theme-polaroid/wiki)
+- [How to Contribute](https://github.com/shetharp/gatsby-theme-polaroid#how-to-contribute)
 
 ### [Add Content](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Add-Content)
 
@@ -36,6 +37,12 @@ Designed & developed by [Arpit Sheth](https://arpitsheth.com/).
 ### [Features](https://github.com/shetharp/gatsby-theme-polaroid/blob/master/README.md#features)
 
 - [Use Syntax Highlighted Code Blocks](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Use-Syntax-Highlighted-Code-Blocks)
+
+### [Developer Guide](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Developer-Guide)
+
+- [How to Contribute](https://github.com/shetharp/gatsby-theme-polaroid#how-to-contribute)
+- [Deploy and Publish](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Deploy-and-Publish)
+- [Creating New Gatsby Theme with Typescript, MDX, and Theme-UI](https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u) _– Article by Arpit Sheth_
 
 ---
 
@@ -129,7 +136,7 @@ Polaroid lets you quickly build a production-ready website that supports the fol
 
 The Polaroid Theme wiki contains more documentation on how to add content, customize the theme, and how to use its features.
 
-### [📖 Read Wiki Documentation →](https://shetharp.github.io/gatsby-theme-polaroid/wiki)
+### [📖 Read Wiki Documentation →](https://github.com/shetharp/gatsby-theme-polaroid/wiki)
 
 # How to Contribute
 
@@ -137,7 +144,7 @@ It will help if you have some basic experience with Yarn workspaces, Gatsby, and
 
 - [What are Gatsby themes?](https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes) _– oficial documentation_
 - [Building Themes](https://www.gatsbyjs.org/docs/themes/building-themes) _– oficial documentation_
-- [Creating New Gatsby Theme with Typescript, MDX, and Theme-UI](https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u) _– by Arpit Sheth_
+- [Creating New Gatsby Theme with Typescript, MDX, and Theme-UI](https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u) _– Article by Arpit Sheth_
 
 This repo uses Yarn workspaces and Gatsby, so make sure you have them installed on your machine.
 
