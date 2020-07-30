@@ -131,6 +131,31 @@ The Polaroid Theme wiki contains more documentation on how to add content, custo
 
 ### [📖 Read Wiki Documentation →](https://shetharp.github.io/gatsby-theme-polaroid/wiki)
 
-# Contributing
+# How to Contribute
 
-TODO
+It will help if you have some basic experience with Yarn workspaces, Gatsby, and Gatsby themes. If you don't have much experience with this, I suggest looking into these resources:
+
+- [What are Gatsby themes?](https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes) _– oficial documentation_
+- [Building Themes](https://www.gatsbyjs.org/docs/themes/building-themes) _– oficial documentation_
+- [Creating New Gatsby Theme with Typescript, MDX, and Theme-UI](https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u) _– by Arpit Sheth_
+
+This repo uses Yarn workspaces and Gatsby, so make sure you have them installed on your machine.
+
+1. Clone this repo and `cd` into it
+2. Install dependencies
+   ```shell
+   yarn
+   ```
+3. Make changes to the theme itself in the `theme` directory. To update the demo site, make changes in the `demo` directory.
+4. Launch the development server for the demo site to see your changes live.
+   ```shell
+   yarn workspace demo develop
+   ```
+5. Commit your changes to your own branch and make a PR against this repo.
+   - Be sure to test your PR with a production build of the demo site.
+     ```shell
+     yarn workspace demo build
+     ```
+   - Please take a moment to update any relevant documentation in the Readme or Wiki.
+
+Thank you for helping make this project better! 💙❤️
