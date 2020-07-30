@@ -111,7 +111,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
         highlightColor="saffron.dark"
         isExpanded
         imagePosition="0% 0%"
-        button={{ text: "Learn more", href: "https://arpitsheth.com/" }}
+        button={{ text: "Get started", href: "/readme" }}
       />
 
       {/**
