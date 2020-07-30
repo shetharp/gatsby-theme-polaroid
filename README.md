@@ -2,7 +2,7 @@
 
 ![Polaroid Banner](./demo/static/banner.png)
 
-Polaroid is a _photography-focused_ Gatsby theme for building portfolio websites. It supports an MDX blog with tags/categories, syntax-highlighting on code blocks, Theme UI for dark mode, and Typescript.
+Polaroid is a _photography-focused_ Gatsby theme for building portfolio websites. It supports an MDX blog with tags/categories, syntax-highlighted code blocks, Theme UI for dark mode, and Typescript.
 
 Designed & developed by [Arpit Sheth](https://arpitsheth.com/).
 
@@ -204,6 +204,21 @@ You'll find instructions below on how to perform common customizations.
 If you need to do more advanced customizations, you may need to shadow the component itself. Creating a directory `/src/@shetharp/gatsby-theme-polaroid/components` if it doesn't exist and shadowing the respective component.
 
 If you are making significant customizations, you may want to consider forking off of this theme. You can do this by following the instructions under the [Start with the Polaroid Workspace](#start-with-the-polaroid-workspace) section.
+
+## Site Metadata
+
+Polaroid uses the following site metadata throughout your website and especially for SEO. If you decide the modify these keys, you should first reflect those changes by shadowing the the `use-site-metadata.ts` and `seo.tsx` files.
+
+| Key               | Example Value                                                                     | Description                                                     |
+| ----------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `siteTitle`       | `Polaroid`                                                                        | Used for the title template on pages other than the index site  |
+| `siteTitleAlt`    | `Polaroid @shetharp/gatsby-theme-polaroid`                                        | Default title of the page                                       |
+| `siteHeadline`    | `Polaroid Gatsby Theme by Arpit Sheth`                                            | _Not used by default_                                           |
+| `siteUrl`         | `https://shetharp.github.io/gatsby-theme-polaroid/`                               | Will be used to generate absolute URLs for og:image etc.        |
+| `siteDescription` | `Polaroid is a photography-focused Gatsby theme for building portfolio websites.` | Used for SEO                                                    |
+| `siteLanguage`    | `en`                                                                              | Will be set on the `<html />` tag                               |
+| `siteImage`       | `/banner.png`                                                                     | Used for og:image and must be placed inside the `static` folder |
+| `author`          | `@shetharp`                                                                       | Twitter Handle                                                  |
 
 ## Theme Options
 

@@ -10,9 +10,9 @@ module.exports = {
     // Can be used for e.g. JSONLD
     siteHeadline: `Polaroid Gatsby Theme by Arpit Sheth`,
     // Will be used to generate absolute URLs for og:image etc.
-    siteUrl: `https://arpitsheth.com`,
+    siteUrl: `https://shetharp.github.io/gatsby-theme-polaroid/`,
     // Used for SEO
-    siteDescription: `Build a gorgeous developer blog with support for Typescript, MDX, syntax-highlighted code blocks, and tags. Polaroid is a Gatsby theme built on top of @lekoarts/gatsby-theme-minimal-blog.`,
+    siteDescription: `Polaroid is a photography-focused Gatsby theme for building portfolio websites. It supports an MDX blog with tags/categories, syntax-highlighted code blocks, Theme UI for dark mode, and Typescript. Designed & developed by Arpit Sheth.`,
     // Will be set on the <html /> tag
     siteLanguage: `en`,
     // Used for og:image and must be placed inside the `static` folder

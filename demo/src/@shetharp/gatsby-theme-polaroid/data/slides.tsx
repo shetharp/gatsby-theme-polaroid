@@ -57,7 +57,7 @@ const Slides: React.FC<SlidesProps> = (props) => {
           <React.Fragment>
             <p>
               Polaroid is a <em>photography-focused</em> Gatsby theme for building portfolio websites. It supports an
-              MDX blog with tags/categories, syntax-highlighting on code blocks, Theme UI for dark mode, and Typescript.
+              MDX blog with tags/categories, syntax-highlighted code blocks, Theme UI for dark mode, and Typescript.
             </p>
             <p>
               Designed &amp; developed by <a href="https://arpitsheth.com">Arpit Sheth</a>.
