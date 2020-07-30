@@ -1,6 +1,6 @@
 # gatsby-theme-polaroid-workspace
 
-![Polaroid Banner](./demo/static/banner.png)
+[![Polaroid Banner](./demo/static/banner.png)](https://shetharp.github.io/gatsby-theme-polaroid/)
 
 Polaroid is a _photography-focused_ Gatsby theme for building portfolio websites. It supports an MDX blog with tags/categories, syntax-highlighted code blocks, Theme UI for dark mode, and Typescript.
 
@@ -289,15 +289,35 @@ The header has links in two main components:
 
 ## Customize Theme UI
 
+If you want to customize the colors, fonts, or other theme styles, you will need to shadow Theme UI.
+
+1. Create a directory to shadow the theme object if it doesn't exist yet `/src/gatsby-plugin-theme-ui`
+2. Create a file for `index.ts`
+3. I recommend importing the `themePolaroid` theme object and `ThemePolaroid` type definition from `@shetharp/gatsby-theme-polaroid`, as well as `merged` from `theme-ui` to help merge your custom styles with the original.
+
+```ts
+import { merge } from "theme-ui";
+import { themePolaroid, ThemePolaroid } from "@shetharp/gatsby-theme-polaroid";
+
+/**
+ * The theme overrides for this site.
+ */
+export const themeSite = merge(themePolaroid, {
+  colors: {
+    primary: themePolaroid.colors.mango.base,
+  },
+  fontWeights: {
+    body: 300,
+    bold: 500,
+    heading: 500,
+  },
+});
+export default themeSite;
+```
+
 ---
 
-<!--
- -->
-
-<!--
- -->
-
-# Code Highlighting
+# Syntax-highlighted Code Blocks
 
 If you want to change certain code styles or add additional language tabs, you need to shadow the file `src/@shetharp/gatsby-theme-polaroid/styles/code.ts`.
 
