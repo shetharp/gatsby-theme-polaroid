@@ -2,6 +2,10 @@ import { HeaderMenuItem } from "../components/header-menu";
 
 export const headerMenuItems: HeaderMenuItem[] = [
   {
+    label: "Home",
+    slug: "/",
+  },
+  {
     label: "Blog",
     slug: "/blog",
     isVisibleTablet: false,
@@ -13,12 +17,6 @@ export const headerMenuItems: HeaderMenuItem[] = [
   {
     label: "About",
     slug: "/about",
-    isVisibleLaptop: false,
-  },
-  {
-    label: "Readme",
-    slug: "/readme",
-    isVisibleLaptop: false,
   },
   {
     label: "Theme Preview",
@@ -26,23 +24,23 @@ export const headerMenuItems: HeaderMenuItem[] = [
     isVisibleLaptop: false,
   },
   {
-    label: "Contact",
-    href: "https://arpitsheth.com",
+    label: "Readme",
+    slug: "/readme",
   },
   {
     label: "GitHub",
-    href: "https://github.com/shetharp",
+    href: "https://github.com/shetharp/gatsby-theme-polaroid",
   },
   {
     label: "Twitter",
     href: "https://twitter.com/shetharp",
   },
   {
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/shetharp",
-  },
-  {
     label: "Instagram",
     href: "https://instagram.com/shetharp",
+  },
+  {
+    label: "Contact",
+    href: "https://arpitsheth.com",
   },
 ];

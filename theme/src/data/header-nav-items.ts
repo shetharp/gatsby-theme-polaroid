@@ -12,16 +12,12 @@ export const headerNavItems: HeaderNavItem[] = [
     slug: "/about",
   },
   {
-    label: "Readme",
-    slug: "/readme",
-  },
-  {
     label: "Theme Preview",
     slug: "/theme-preview",
     isVisibleTablet: true,
   },
   {
-    label: "Contact",
-    href: "https://arpitsheth.com",
+    label: "GitHub",
+    href: "https://github.com/shetharp/gatsby-theme-polaroid",
   },
 ];
