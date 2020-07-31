@@ -16,6 +16,7 @@ export * from "./item-tags";
 export * from "./layout";
 export * from "./page-template";
 export * from "./post-template";
+export * from "./redirect";
 export * from "./seo";
 export * from "./skip-nav";
 export * from "./slide";
