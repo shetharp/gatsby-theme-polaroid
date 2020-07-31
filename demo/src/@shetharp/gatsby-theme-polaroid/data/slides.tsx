@@ -156,10 +156,10 @@ const Slides: React.FC<SlidesProps> = (props) => {
         </SlideDescription>
         <p>
           <SlideButton
-            href="/readme"
+            href="https://github.com/shetharp/gatsby-theme-polaroid"
             sx={{ "&&&": { width: ["100%", null, "75%", "66.667%", "75%", null, "66.667%", null, "50%"] } }}
           >
-            Go to README
+            View on GitHub
           </SlideButton>
         </p>
         <SlideDescription>
