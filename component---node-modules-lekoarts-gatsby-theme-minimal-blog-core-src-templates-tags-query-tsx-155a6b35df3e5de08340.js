@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{DdbM:function(n,r,t){"use strict";t.r(r),t.d(r,"query",(function(){return o}));var a=t("mXGw"),e=t.n(a),u=t("1Nzr");r.default=function(n){var r=n.data.allPost;return e.a.createElement(u.a,{list:r.group})};var o="2973783538"}}]);
+//# sourceMappingURL=component---node-modules-lekoarts-gatsby-theme-minimal-blog-core-src-templates-tags-query-tsx-155a6b35df3e5de08340.js.map

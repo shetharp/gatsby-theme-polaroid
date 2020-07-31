@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{egFG:function(e,n,t){"use strict";t.r(n);var a=t("mXGw"),l=t.n(a);n.default=function(e){return l.a.createElement(l.a.Fragment,null,l.a.createElement("h1",null,"Path:"),"Example page using typescript.",l.a.createElement("pre",null,e.path))}}}]);
+//# sourceMappingURL=component---src-pages-example-typescript-index-tsx-10a26c05b7813cccc39d.js.map
