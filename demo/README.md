@@ -1,9 +1,50 @@
 # gatsby-theme-polaroid-demo
 
-Polaroid is a Gatsby theme built on top of [`@lekoarts/gatsby-theme-minimal-blog`](https://www.gatsbyjs.org/packages/@lekoarts/gatsby-theme-minimal-blog/).
-Use Polaroid to quickly build a gorgeous developer blog with support for Typescript, MDX, syntax-highlighted code blocks, and tags.
+[![Polaroid Banner](./demo/static/banner.png)](https://shetharp.github.io/gatsby-theme-polaroid/)
 
-### [⚓️ View Demo Site →](https://shetharp.github.io/gatsby-theme-polaroid/)
+Polaroid is a _photography-focused_ Gatsby theme for building portfolio websites. It supports an MDX blog with tags/categories, syntax-highlighted code blocks, Theme UI for dark mode, and Typescript.
+
+Designed & developed by [Arpit Sheth](https://arpitsheth.com/).
+
+### [📸 View Demo Site →](https://shetharp.github.io/gatsby-theme-polaroid/)
+
+---
+
+### [Readme](https://github.com/shetharp/gatsby-theme-polaroid/blob/master/README.md)
+
+- [📸 View Demo Site →](https://shetharp.github.io/gatsby-theme-polaroid/)
+- [Install the Polaroid Theme](https://github.com/shetharp/gatsby-theme-polaroid/blob/master/README.md#install-the-polaroid-theme)
+- [Start with the Polaroid Workspace](https://github.com/shetharp/gatsby-theme-polaroid/blob/master/README.md#start-with-the-polaroid-workspace)
+- [Features](https://github.com/shetharp/gatsby-theme-polaroid/blob/master/README.md#features)
+- [📖 Read Wiki Documentation →](https://github.com/shetharp/gatsby-theme-polaroid/wiki)
+- [How to Contribute](https://github.com/shetharp/gatsby-theme-polaroid#how-to-contribute)
+
+### [Add Content](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Add-Content)
+
+- [Add a new slide to the homepage](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Add-a-new-slide-to-the-homepage)
+- [Add a new page](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Add-a-new-page)
+- [Add a new blog post](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Add-a-new-blog-post)
+
+### [Customizing and Shadowing](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Customizing-and-Shadowing)
+
+- [Customize Site Metadata](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Customize-Site-Metadata)
+- [Customize Theme Options](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Customize-Theme-Options)
+- [Customize Theme UI](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Customize-Theme-UI)
+- [Customize the Logo](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Customize-the-Logo)
+- [Customize the Header Links](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Customize-the-Header-Links)
+- [Customize the Footer](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Customize-the-Footer)
+
+### [Features](https://github.com/shetharp/gatsby-theme-polaroid/blob/master/README.md#features)
+
+- [Use Syntax Highlighted Code Blocks](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Use-Syntax-Highlighted-Code-Blocks)
+
+### [Developer Guide](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Developer-Guide)
+
+- [How to Contribute](https://github.com/shetharp/gatsby-theme-polaroid#how-to-contribute)
+- [Deploy and Publish](https://github.com/shetharp/gatsby-theme-polaroid/wiki/Deploy-and-Publish)
+- [Creating New Gatsby Theme with Typescript, MDX, and Theme-UI](https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u) _– article by Arpit Sheth_
+
+---
 
 # Install the Polaroid Theme
 
@@ -25,15 +66,13 @@ module.exports = {
 
 3. Modify the [theme options](https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-minimal-blog) and site metadata in your `gatsby-config.js` file.
 
-4. Create `.mdx` files for your site's pages or posts.
+4. Create `.mdx` files for your site's pages or posts. By default this should be in your site's `content/posts` and `content/pages` directories. You should create these directories if they don't already exist.
 
-5. Shadow, override, and customize the theme to fit your needs.
-
----
+5. Shadow, override, and customize the theme to fit your needs. See the list of features below for more info.
 
 # Start with the Polaroid Workspace
 
-To start developing your own theme using this repo as a starting point:
+1. start developing your own theme using this repo as a starting point:
 
 ```shell
 gatsby new gatsby-theme-custom https://github.com/shetharp/gatsby-theme-polaroid
@@ -44,145 +83,86 @@ yarn workspace demo develop
 
 _Replace `gatsby-theme-custom` with whatever you wish to name your theme._
 
-The `theme` workspace directory contains the components, styles, and theme configurations.
+2. The `theme` workspace directory contains the components, styles, and theme configurations.
 
-- You should update the `package.json` to match the details for your theme (such as name, author, repository, etc.)
-- This workspace can be used to publish your theme as its own npm package
+   - You should update the `package.json` to match the details for your theme (such as name, author, repository, etc.)
+   - This workspace can be used to publish your theme as its own npm package
 
-The `demo` workspace directory contains the content, components, and styles for an example site that consumes the theme.
+3. The `demo` workspace directory contains the content, components, and styles for an example site that consumes the theme.
 
-- You should update the `package.json` to include your theme as a dependency. Make sure the name of the dependency matches the name in your theme's `package.json` file!
-- You should then update the `gatsby-config.js` to include your theme as a plugin
-- This workspace can be used to deploy a demo site for your theme
+   - You should update the `package.json` to include your theme as a dependency. Make sure the name of the dependency matches the name in your theme's `package.json` file!
+   - You should then update the `gatsby-config.js` to include your theme as a plugin
+   - This workspace can be used to deploy a demo site for your theme
 
 ---
 
 # Features
 
-Polaroid builds on top of the features provided in [@lekoarts/gatsby-theme-minimal-blog](https://www.gatsbyjs.org/packages/@lekoarts/gatsby-theme-minimal-blog/).
+Under the hood, Polaroid is built on top of the functionality provided by [@lekoarts/gatsby-theme-minimal-blog-core](https://www.gatsbyjs.org/packages/@lekoarts/gatsby-theme-minimal-blog-core/). Polaroid provides additional features, especially those that enhance the user experience for a photography-focused portfolio website and blog.
 
-- MDX
-- Theme UI
-- Light mode / Dark mode
-- Typography driven, minimal style
-- Tags/Categories support
-- Syntax highlighting for code blocks with [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer) and [react-live](https://github.com/FormidableLabs/react-live) support. Also allows adding line numbers, line highlighting, language tabs, and file titles.
+Polaroid lets you quickly build a production-ready website that supports the following out of the box:
 
-## Code Highlighting
+- **Photo-rich portfolio**
 
-If you want to change certain code styles or add additional language tabs, you need to shadow the file `src/@shetharp/gatsby-theme-polaroid/styles/code.js`.
+  - A gorgeous homepage that puts your photos or work on fullscreen display
+  - Responsive optimized images
+  - Automatically darkens images in dark mode
+  - Customizable props for colorful gradient overlays
+  - Customizable props for titles, descriptions, links, and call to action buttons
+  - Beautiful typography with plenty of responsive styling for all screen sizes
 
-#### Language tabs:
+- **MDX Blog Posts and Site Pages**
 
-When you add a language (such as e.g. js or javascript) to the code block, a little tab will appear at the top left corner.
+  - MDX support for pages and posts
+  - A blog with tags/categories for posts
+  - Syntax-highlighted code blocks if you want to set up a developer blog
+    - Allows adding line numbers, line highlighting, language tabs, and file titles
+    - Provided by [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer) and [react-live](https://github.com/FormidableLabs/react-live)
+  - Typography driven with minimal styles
+  - Great reading experience with light and dark mode options
 
-````
-```js
-// code goes here
-```
-````
+- **Built with Theme UI**
 
-#### Code titles:
+  - A custom theme with beautiful colors
+  - Typography driven with minimal styles
+  - Plenty of responsive styling for a great looking website on all screen sizes
+  - Support for light mode / dark mode
 
-You can display a title (e.g. the file path) above the code block.
+- **Easy to Customize with Typescript**
+  - Customizable `data` for the header, toggle header menu, and footer
+  - Easy to import, shadow, and customize components with plenty of Typescript types defined for you
 
-````
-```jsx:title=your-title
-// code goes here
-```
-````
+# Wiki Documentation
 
-Or without a specific language:
+The Polaroid Theme wiki contains more documentation on how to add content, customize the theme, and how to use its features.
 
-````
-```:title=your-title
-// code goes here
-```
-````
+### [📖 Read Wiki Documentation →](https://github.com/shetharp/gatsby-theme-polaroid/wiki)
 
-#### Line highlighting:
+# How to Contribute
 
-You can highlight single or multiple (or both) lines in a code block. You need to add a language.
+It will help if you have some basic experience with Yarn workspaces, Gatsby, and Gatsby themes. If you don't have much experience with this, I suggest looking into these resources:
 
-````
-```js {2,4-5}
-const test = 3;
-const foo = "bar";
-const harry = "potter";
-const hermione = "granger";
-const ron = "weasley";
-```
-````
+- [What are Gatsby themes?](https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes) _– oficial documentation_
+- [Building Themes](https://www.gatsbyjs.org/docs/themes/building-themes) _– oficial documentation_
+- [Creating New Gatsby Theme with Typescript, MDX, and Theme-UI](https://hackernoon.com/creating-new-gatsby-theme-with-typescript-mdx-and-theme-ui-tz1c3u3u) _– article by Arpit Sheth_
 
-#### Hide line numbers:
+This repo uses Yarn workspaces and Gatsby, so make sure you have them installed on your machine.
 
-If you want to hide line numbers you can either globally disable them (see Theme options) or on a block-by-block basis. You can also combine that with the other attributes.
+1. Clone this repo and `cd` into it
+2. Install dependencies
+   ```shell
+   yarn
+   ```
+3. Make changes to the theme itself in the `theme` directory. To update the demo site, make changes in the `demo` directory.
+4. Launch the development server for the demo site to see your changes live.
+   ```shell
+   yarn workspace demo develop
+   ```
+5. Commit your changes to your own branch and make a PR against this repo.
+   - Be sure to test your PR with a production build of the demo site.
+     ```shell
+     yarn workspace demo build
+     ```
+   - Please take a moment to update any relevant documentation in the Readme or Wiki.
 
-````
-```noLineNumbers
-// code goes here
-```
-````
-
-## Shadowing
-
-Please read the guide [Shadowing in Gatsby Themes](https://www.gatsbyjs.org/docs/themes/shadowing/) to understand how to customize the this theme!
-In general, you will want to place your files in `src/@shetharp/gatsby-theme-polaroid/` to shadow or override files.
-
-## Adding content
-
-### Adding a new blog post
-
-New blog posts will be shown on the index page (the three most recent ones) of this theme and on the blog overview page.
-They can be added by creating MDX files inside `content/posts`. General setup:
-
-- Create a new folder inside `content/posts`
-- Create a new `index.mdx` file, and add the frontmatter
-- Add images to the created folder (from step 1) you want to reference in your blog post
-- Reference an image as your `banner` in the frontmatter
-- Write your content below the frontmatter
-- Add a `slug` to the frontmatter to use a custom slug, e.g. `slug: "/my-slug"` (Optional)
-
-```mdx
----
-title: Introduction to "Defence against the Dark Arts"
-date: 2019-11-07
-description: Defence Against the Dark Arts (abbreviated as DADA) is a subject taught at Hogwarts School of Witchcraft and Wizardry and Ilvermorny School of Witchcraft and Wizardry.
-tags:
-  - Tutorial
-  - Dark Arts
-banner: ./defence-against-the-dark-arts.jpg
----
-
-Blog post content goes here...
-```
-
-📍 **The fields description and banner are optional!**
-If no description is provided, an excerpt of the blog post will be used.
-If no banner is provided, the default siteImage (from siteMetadata) is used.
-
-📍 The date field has to be written in the format `YYYY-MM-DD`!
-
-### Adding a new page
-
-Additional pages can be created by placing MDX files inside `contents/pages`, e.g. an "About" or "Contact" page.
-You'll manually need to link to those pages, for example by adding them to the navigation (in siteMetadata). General instructions:
-
-- Create a new folder inside `content/pages`
-- Create a new `index.mdx` file, and add the frontmatter
-- Write your content below the frontmatter
-- Optionally add files/images to the folder you want to reference from the page
-
-```mdx
----
-title: About
-slug: "/about"
----
-
-Page content goes here...
-```
-
-### Changing homepage text
-
-- To edit the hero text ("Ahoy! This is Polaroid &ndash; a Gatsby theme...), create a file at `src/@shetharp/gatsby-theme-polaroid/texts/hero.mdx` to shadow the text.
-- To edit the projects part below "Latest posts", create a file at `src/@shetharp/gatsby-theme-polaroid/texts/bottom.mdx` to shadow the contents.
+💙 Thank you for helping make this project better! ❤️
