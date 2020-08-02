@@ -1,6 +1,6 @@
 # gatsby-theme-polaroid-demo
 
-[![Polaroid Banner](./demo/static/banner.png)](https://shetharp.github.io/gatsby-theme-polaroid/)
+[![Polaroid Banner](./static/banner.png)](https://shetharp.github.io/gatsby-theme-polaroid/)
 
 Polaroid is a _photography-focused_ Gatsby theme for building portfolio websites. It supports an MDX blog with tags/categories, syntax-highlighted code blocks, Theme UI for dark mode, and Typescript.
 
