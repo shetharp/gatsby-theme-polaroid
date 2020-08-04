@@ -4,7 +4,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/shetharp/gatsby-theme-polaroid?logo=github&style=for-the-badge)
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/shetharp/gatsby-theme-polaroid/gh-pages?label=Demo%20Site%20Deployed&logo=github&style=for-the-badge)
 
-[![Polaroid Banner](./static/banner.png)](https://shetharp.github.io/gatsby-theme-polaroid/)
+[![Polaroid Banner](https://raw.githubusercontent.com/shetharp/gatsby-theme-polaroid/master/demo/static/banner.png)](https://shetharp.github.io/gatsby-theme-polaroid/)
 
 Polaroid is a _photography-focused_ Gatsby theme for building portfolio websites. It supports an MDX blog with tags/categories, syntax-highlighted code blocks, Theme UI for dark mode, and Typescript.
 
