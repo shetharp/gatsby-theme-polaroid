@@ -32,7 +32,7 @@ const sxTitle = (isExpanded: boolean, shouldAdjustWidth: boolean): SystemStyleOb
     lineHeight: "heading",
     fontWeight: "heading",
     color: "inherit",
-    fontSize: [3, null, null, 4, 5, 6, 7, null, 8, 9],
+    fontSize: [3, null, null, 4, 5, 6, 7, null, 8, null, 9],
     width: width,
     transition: (theme) => theme.transitions.default,
   };

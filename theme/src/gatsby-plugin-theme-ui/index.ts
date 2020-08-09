@@ -26,6 +26,7 @@ const breakpointsDict = {
   laptopS: "1280px", // breakpoints[6]
   laptopM: "1440px",
   laptopL: "1600px", // breakpoints[8]
+  desktop: "1820px",
 };
 
 const breakpoints: ThemePolaroid["breakpoints"] = Object.values(breakpointsDict);
@@ -40,6 +41,7 @@ const mediaQuery = {
   laptopS: `(min-width: ${breakpointsDict.laptopS})`, // breakpoints[6]
   laptopM: `(min-width: ${breakpointsDict.laptopM})`,
   laptopL: `(min-width: ${breakpointsDict.laptopL})`, // breakpoints[8]
+  desktop: `(min-width: ${breakpointsDict.desktop})`,
 };
 
 // ==================================================
