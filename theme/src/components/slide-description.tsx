@@ -47,11 +47,13 @@ const sxDescription = (highlightColor: string, isExpanded: boolean, shouldAdjust
       borderBottomStyle: "solid",
       borderBottomColor: alpha("white100", 0.5),
       transition: (theme) => theme.transitions.fast,
-      paddingX: "4px",
-      marginX: "-2px",
+      paddingX: "0",
+      marginX: "2px",
     },
     ["a:hover"]: {
       backgroundColor: alpha(highlightColor, 0.5),
+      paddingX: "4px",
+      marginX: "-2px",
     },
   };
 };
