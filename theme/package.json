@@ -1,7 +1,7 @@
 {
   "name": "@shetharp/gatsby-theme-polaroid",
   "author": "Arpit Sheth <arpit@arpitsheth.com> (@shetharp)",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "index.js",
   "license": "MIT",
   "description": "📸 Polaroid is a photography-focused Gatsby theme for building portfolio websites.",

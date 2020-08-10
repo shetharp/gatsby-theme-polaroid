@@ -349,7 +349,7 @@ const layout: ThemePolaroid["layout"] = {
     // borderStyle: ["solid", "solid", "dashed", "dotted", "solid", "dashed", "dotted", "solid", "dashed", "dotted"],
     // borderColor: ["accent", "primary", null, null, "secondary", null, null, "muted"],
 
-    width: [`calc(100% - ${space[2]})`, null, null, null, `calc(100% - ${space[3]})`],
+    width: [`calc(100% - ${space[4]})`, null, null, null, `calc(100% - ${space[6]})`],
     maxWidth: "tabletM",
     paddingY: 4,
   },
