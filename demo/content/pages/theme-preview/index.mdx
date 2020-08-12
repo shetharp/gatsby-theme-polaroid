@@ -14,6 +14,7 @@ import {
   Heading,
   Link,
   Image,
+  AspectRatio,
   Label,
   Input,
   Checkbox,
@@ -276,6 +277,17 @@ export settings;
 ![Redwood3](./redwood-3.jpg)
 
 ---
+
+# IFrame
+
+<AspectRatio
+  ratio={16/9}
+  sx={{
+    color: 'background',
+    bg: 'primary',
+  }}>
+  <iframe src="https://guidetoallyship.com/" width="100%" height="100%" css={{ border: "none", outline: "none" }} />
+</AspectRatio>
 
 # Theme-UI Components
 

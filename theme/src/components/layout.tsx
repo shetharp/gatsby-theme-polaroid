@@ -46,6 +46,9 @@ export const Layout: React.FC<LayoutProps> = (props) => {
           img: {
             borderStyle: `none`,
           },
+          iframe: {
+            border: `none`,
+          },
           pre: {
             fontFamily: theme.fonts.monospace,
             fontSize: `1em`,
