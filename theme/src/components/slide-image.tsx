@@ -1,9 +1,9 @@
 import React from "react";
-import Img, { GatsbyImageProps } from "gatsby-image";
+import Img, { GatsbyImageFluidProps } from "gatsby-image";
 import { useThemeUI } from "theme-ui";
 
-export type SlideImageProps = GatsbyImageProps & {
-  fluid: GatsbyImageProps["fluid"];
+export type SlideImageProps = GatsbyImageFluidProps & {
+  fluid: GatsbyImageFluidProps["fluid"];
   imagePosition?: string;
 };
 

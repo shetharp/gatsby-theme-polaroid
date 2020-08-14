@@ -57,10 +57,6 @@ export default Tags;
 /**
  * Styles
  */
-const sxTagListItem: SystemStyleObject = {
-  display: "flex",
-};
-
 const sxTagTitleLink: SystemStyleObject = {
   color: "inherit",
   textDecoration: "none",

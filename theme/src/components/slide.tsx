@@ -2,7 +2,7 @@
 import React, { ReactText, ReactNode } from "react";
 import { Box } from "theme-ui";
 import { SystemStyleObject } from "@styled-system/css";
-import { GatsbyImageProps } from "gatsby-image";
+import { GatsbyImageFluidProps } from "gatsby-image";
 import { SlideImage } from "./slide-image";
 import { SlideOverlay } from "./slide-overlay";
 import { SlideContainer } from "./slide-container";
@@ -15,7 +15,7 @@ export type SlideProps = {
   className?: string; // Pass down className to allow overriding styles
   title?: ReactText;
   description?: ReactNode;
-  fluid?: GatsbyImageProps["fluid"];
+  fluid?: GatsbyImageFluidProps["fluid"];
   overlayColor?: string | null;
   highlightColor?: string;
   isColorful?: boolean;
